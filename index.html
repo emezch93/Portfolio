@@ -1,351 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Portfolio - Ezenwa Chidera Emmanuel</title>
-
+  <title>Portfolio | Ezenwa Chidera Emmanuel</title>
+    <meta name="description" content="Portfolio of Ezenwa Chidera Emmanuel showcasing frontend skills, projects, and contact."/>
+      <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    rel="stylesheet"
+  />
   <style>
-    /* Reset and base styles */
-    * {
-      box-sizing: border-box;
-    }
-
+    /* Reset */
+    *, *::before, *::after { box-sizing: border-box; }
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
       margin: 0;
       padding: 0;
-      line-height: 1.6;
-      text-align: center;
-      background-color: #989;
-
+      background: #e0e0fa;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      color: #35365a;
+      line-height: 1.5;
     }
-
     a {
+      color: #2240d0;
       text-decoration: none;
       transition: color 0.3s ease;
     }
-
-    a:hover,
-    a:focus {
-      color: #cfc;
+    a:hover, a:focus {
+      color: #095;
       outline: none;
     }
-
-    /* Header */
     header {
-      background-color: #333;
-      color: white;
-      padding: 30px 20px;
-      font-family: serif;
-      font-size: 24px;
-      font-weight: 600;
+      background-color: #23234d;
+      color: #fff;
       text-align: center;
+      padding: 2rem 1rem 1rem;
+      font-family: 'Merriweather', serif;
+      letter-spacing: 2px;
       user-select: none;
     }
-
-    /* Navigation */
     nav.navbar {
-      background-color: #346;
+      background: #364173;
       display: flex;
       justify-content: center;
-      gap: 30px;
-      padding: 15px 0;
-      font-family: serif;
+      gap: 1.5rem;
+      padding: 1rem 0;
+      font-size: 1.1rem;
     }
-
     nav.navbar a {
-      font-size: 18px;
-      color: white;
-      padding: 6px 12px;
-      border-radius: 4px;
+      color: #fff;
+      padding: 0.4rem 1rem;
+      border-radius: 5px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.13);
+      transition: background-color 0.3s ease;
     }
-
-    nav.navbar a:hover,
-    nav.navbar a:focus {
-      background-color: #2a4a7a;
-      color: #d0e6ff;
-      outline: none;
+    nav.navbar a:hover, nav.navbar a:focus {
+      background-color: #5585c1;
+      color: #fff;
+      outline-offset: 2px;
     }
-
-    /* Sections */
-    section {
-      padding: 40px 20px;
+    main {
+      flex: 1 0 auto;
       max-width: 900px;
-      margin: 0 auto 60px auto;
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-      text-align: left;
-      border-radius: 0px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
-
+    section {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 18px rgba(34, 49, 161, 0.07);
+      margin-bottom: 2rem;
+      padding: 2rem;
+    }
     section h2 {
-      font-family: serif;
-      color: #222;
-      margin-bottom: 20px;
       text-align: center;
-      font-size: 28px;
+      color: #264169;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      font-family: 'Merriweather', serif;
     }
-
-    /* About Me */
-    #aboutme p {
-      font-size: 18px;
-      color: #333;
-      max-width: 700px;
-      margin: 20px auto;
-      line-height: 1.5;
+    /* About Me flex layout */
+    .aboutme-flex {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
     }
-
-    /* Image container and image styles */
     .image-container {
-      max-width: 320px;
-      margin: 0 auto 20px auto;
       cursor: pointer;
-      overflow: hidden;
-      transition: all 0.3s ease;
+      outline-offset: 3px;
+      flex-shrink: 0;
+      user-select: none;
+      display: flex;
+      justify-content: center;
     }
-
-    .round-image {
-      width: 150px;
-      height: 150px;
+    .image-container:focus-visible {
+      outline: 3px solid #5585c1;
       border-radius: 50%;
-      display: block;
-      margin: 0 auto;
-      transition: border-radius 0.3s ease, width 0.3s ease, height 0.3s ease;
     }
-
-    .block-image {
-      border-radius: 20px;
-      width: 320px;
-      height: 320px;
-      display: block;
-      margin: 0 auto;
-      transition: border-radius 0.3s ease, width 0.3s ease, height 0.3s ease;
-
+    #myImage {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 3px solid #5585c1;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.13);
+      transition: border-radius 0.4s, width 0.3s, height 0.3s;
     }
-
-    /* Read More button */
+    #myImage.block-image {
+      border-radius: 18px;
+      width: 250px;
+      height: 250px;
+    }
+    .aboutme-text {
+      flex: 1 1 340px;
+      min-width: 240px;
+      max-width: 500px;
+      font-size: 18px;
+      color: #35365a;
+    }
+    .aboutme-text p {
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
     .read-more-btn {
-      background-color: blue;
-      color: white;
+      background-color: #3b65c4;
+      color: #fff;
       border: none;
       border-radius: 7px;
-      padding: 8px 16px;
-      font-size: 16px;
+      padding: 10px 24px;
+      font-size: 1rem;
       cursor: pointer;
+      margin-top: 0.5rem;
       transition: background-color 0.3s ease;
-      display: block;
-      margin: 10px auto 0 auto;
+      display: inline-block;
     }
-
-    .read-more-btn:hover,
-    .read-more-btn:focus {
-      background-color: darkgreen;
-      outline: none;
+    .read-more-btn:hover, .read-more-btn:focus {
+      background-color: #0b7e13;
+      outline-offset: 3px;
     }
-
-    /* Portfolio list */
+    /* Portfolio */
     #Portfolio ul {
-      list-style: disc inside;
-      max-width: 700px;
-      margin: 0 auto;
+      list-style: none;
       padding: 0;
-      color: #222;
-      font-size: 18px;
-      text-align: left;
-    }
-
-    #Portfolio ul li {
-      margin-bottom: 15px;
-    }
-
-    #Portfolio ul li strong {
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    /* Contact */
-    #Contact .container {
-      max-width: 700px;
       margin: 0 auto;
-      font-size: 18px;
-      color: #222;
+      max-width: 700px;
+      
+    }
+    #Portfolio li {
+      background: #eef2fc;
+      margin-bottom: 40px;
+      padding: 1rem 1.2rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 5px rgba(212, 210, 241, 0.3);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    #Portfolio li img {
+      width: 100px;
+      height: 85px;
+      border-radius: 8px;
+      background: #cfd2e7;
+      box-shadow: 0 1px 3px rgba(187, 183, 183, 0.5);
+      flex-shrink: 0;
+    }
+    #Portfolio .proj-content {
+      flex: 1 1 350px;
+      color: #20317b;
+    }
+    #Portfolio strong {
+      font-size: 1.12rem;
+      color: #20317b;
+    }
+    #Portfolio em {
+      font-style: italic;
+      color: #2a2a6f;
+    }
+    #Portfolio a {
+      display: inline-block;
+      margin-top: 0.3rem;
+      color: #2240d0;
+    }
+    #Portfolio a:hover, #Portfolio a:focus {
+      color: #095;
+    }
+    /* Contact Section */
+    #Contact .container {
+      color: #233;
       text-align: center;
+      font-size: 1.1rem;
+      max-width: 380px;
+      margin: 0 auto;
     }
-
-    .contstrong {
-      font-size: 25px;
-      color: darkgreen;
-      margin-bottom: 10px;
-      display: block;
+    #Contact blockquote {
+      color: #264169;
+      font-style: italic;
+      background: #f6faee;
+      border-left: 4px solid #76d8a1;
+      padding: 1rem 1.5rem;
+      border-radius: 4px;
     }
-
     /* Footer */
     footer.ftr {
-      background-color: #0d1b2a;
-      color: white;
-      font-family: sans-serif;
-      font-size: 16px;
-      padding: 15px 20px;
+      background: #222d3a;
+      color: #fff;
       text-align: center;
-      margin-top: auto;
-      user-select: none;
-
+      padding: 1.5rem 1rem 0.5rem;
+      font-size: 1.08rem;
     }
-
     .footer-icons {
       display: flex;
       justify-content: center;
-      align-items: center;
-      gap: 20px;
-      margin-bottom: 10px;
-      flex-wrap: wrap;
-
+      gap: 24px;
+      margin-bottom: 0.8rem;
     }
-
-    /* Social Icons */
-    .facebook-icon,
-    .whatsapp-icon,
-    .app-icon {
-      width: 45px;
-      height: 45px;
-      display: flex;
+    .footer-icons a {
+      display: inline-flex;
+      align-items: center;
       justify-content: center;
-      align-items: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      cursor: pointer;
-      transition: transform 0.3s ease;
-      border-radius: 13px;
-      color: white;
-      font-weight: bold;
-      font-family: Helvetica, sans-serif;
-      font-size: 28px;
-      text-decoration: none;
-      user-select: none;
-
-    }
-
-    .facebook-icon {
-      background-color: #1877f2;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
-      font-size: 28px;
-      line-height: 1;
-      font-weight: 700;
-      text-align: center;
-    }
-
-    .facebook-icon:hover,
-    .whatsapp-icon:hover,
-    .app-icon:hover {
-      transform: scale(1.05);
-      outline: none;
-    }
-
-    .whatsapp-icon {
-      background-color: #25d366;
-      border-radius: 50%;
-      font-size: 0;
-      /* hide text fallback */
-    }
-
-    .whatsapp-icon svg {
-      width: 26px;
-      height: 26px;
-      fill: white;
-      pointer-events: none;
-    }
-
-    .app-icon {
-      background: linear-gradient(to bottom right, #2196f3, #1976d2);
-      border-radius: 50%;
-    }
-
-    .app-icon svg {
-      width: 28px;
-      height: 28px;
-      fill: white;
-      pointer-events: none;
-    }
-
-    /* Back to top button */
-    .back-btn {
-      position: fixed;
-      bottom: 20px;
-      right: -100%;
-      width: 50px;
-      height: 50px;
-      background: #111;
+      background: #3b5998;
+      font-size: 23px;
       color: #fff;
-      font-size: 14px;
-      line-height: 50px;
-      text-align: center;
-      border-radius: 50%;
-      box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
-      cursor: pointer;
-      z-index: 1000;
-      transition: right 0.4s ease;
-      user-select: none;
+      margin: 0 5px;
+      transition: transform 0.3s ease, background 0.4s ease;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      text-decoration: none;
     }
-
-    .back-btn.active {
-      right: 20px;
+    .footer-icons a[href*="facebook"] { background: #1877f2; }
+    .footer-icons a[href*="wa.me"] { background: #25d366; }
+    .footer-icons a[href*="tel:"] { background: #2980b9; }
+    .footer-icons a:hover, .footer-icons a:focus {
+      transform: scale(1.08);
+      outline-offset: 3px;
     }
-
     /* Loader */
     #loader {
       position: fixed;
       width: 100vw;
       height: 100vh;
-      background-color: white;
+      background: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
       z-index: 9999;
       transition: opacity 0.5s ease;
-
     }
-
     .spinner {
       width: 60px;
       height: 60px;
-      border: 6px solid white;
-      border-top: 6px solid darkgreen;
+      border: 8px solid #e9effe;
+      border-top: 8px solid #409e55;
       border-radius: 50%;
       animation: spin 1s linear infinite;
-      margin-left: 20px;
+      
+      
     }
-
-    @keyframes spin {
-      0% {
-        transform: rotate(0deg);
+    @keyframes spin { to { transform: rotate(360deg); } }
+    /* Back to top button */
+    .back-btn {
+      position: fixed;
+      bottom: 70px;         /* space above footer icons */
+      right: -120px;
+      width: 40px;          /* smaller size */
+      height: 40px;
+      background: #2d2d2d;
+      color: #fff;
+      border-radius: 50%;
+      font-size: 1.4rem;    /* smaller arrow */
+      border: none;
+      box-shadow: 2px 3px 7px rgba(0,0,0,0.13);
+      cursor: pointer;
+      z-index: 1002;
+      transition: right 0.5s ease, bottom 0.3s ease;
+    }
+    .back-btn.active { right: 30px; }
+    /* Responsive */
+    @media (max-width: 700px) {
+      .aboutme-flex {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
       }
-
-      100% {
-        transform: rotate(360deg);
+      .aboutme-text {
+        max-width: 100%;
+        min-width: unset;
       }
+      section, #Portfolio li {
+        padding: 1rem 0.7rem;
+      }
+      #Portfolio li img {
+        width: 200px;
+        height: 180px;
+        margin-right: 10px;
+      }
+      nav.navbar {
+        gap: 12px;
+      }
+      .back-btn {
+        bottom: 60px;
+        width: 36px;
+        height: 36px;
+        font-size: 1.2rem;
+      }
+    .RPS-img{
+      height: 170px;
     }
-
-    section {
-      background-color: #989;
+    .tagline {
+     font-size: 1.06rem;
+     letter-spacing: .1em;
+     opacity:.9;
+     margin-top:0.2rem;
+     color: #e5e6fb;
+     font-family: 'Segoe UI', Arial, sans-serif;;
     }
-
-    #aboutme {
-      border-top-right-radius: 0px;
-      border-top-left-radius: 0px;
+ 
+  
+    .icon {
+      font-size: 40px;
+      margin: 0 15px;
+      cursor: pointer;
+      color: #007acc;
+      transition: color 0.3s;
+      position: relative;
+      display: inline-block;
+      margin-top: 20px;
+      
     }
+    .icon:hover {
+      color: #007acc;
+    }
+    .tooltip {
+      position: absolute;
+      bottom: 130%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: white;
+      padding: 5px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .icon:hover .tooltip {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    
+    #html-icon{
+      color: orchid;
+    }
+    #css-icon{
+      color: black;
+    }
+    #js-icon{
+      color: orange;
+    }
+  
+  
   </style>
 </head>
-
-<body>
+<bodyn>
   <!-- Loader -->
-  <div id="loader" aria-label="Loading content" role="alert" aria-busy="true"><h2>Loading</h2>
-    <div class="spinner"></div>
+  <div id="loader" aria-label="Loading content" role="alert" aria-busy="true">
+    <div>
+      <div class="spinner" aria-hidden="true"></div>
+      <h2 style="margin-top: 18px; color: #356;"></h2>
+    </div>
   </div>
 
   <!-- Back to top button -->
@@ -353,117 +383,172 @@
 
   <!-- Header -->
   <header>
-    <h1>Welcome to my Portfolio</h1>
+    <h1>Welcome to My Portfolio</h1>
+      <div class="tagline">Front-End Developer | User-Friendly Interfaces | Accessibility Advocate</div>
   </header>
 
   <!-- Navigation -->
   <nav class="navbar" role="navigation" aria-label="Primary navigation">
-    <a href="#aboutme" target="_self">About Me</a>
-    <a href="#Portfolio" target="_self">Portfolio</a>
-    <a href="#Contact" target="_self">Contact</a>
+    <a href="#aboutme">About Me</a>
+    <a href="#Portfolio">Portfolio</a>
+    <a href="#Contact">Contact</a>
   </nav>
 
   <!-- Main Content -->
-  <main id="content" style="display: none;">
+  <main id="content" style="display:none;">
     <!-- About Me Section -->
     <section id="aboutme" tabindex="-1" aria-labelledby="aboutme-title">
       <h2 id="aboutme-title">About Me</h2>
-
-      <div class="image-container" onclick="toggleShape()" role="button" tabindex="0" aria-pressed="false" aria-label="Toggle profile image shape">
-        <img id="myImage" src="IMG_20250615_174631_853.jpg" alt="Photo of Ezenwa Chidera Emmanuel" class="round-image" />
+      <div class="aboutme-flex">
+        <div class="image-container" role="button" tabindex="0" aria-pressed="false" aria-label="Toggle profile image shape"
+          onclick="toggleShape()" onkeydown="if(event.key==='Enter' || event.key===' ') {event.preventDefault(); toggleShape();}">
+          <img id="myImage" src="IMG_20250615_174631_853.jpg" alt="Photo of Ezenwa Chidera Emmanuel" loading="lazy" />
+        </div>
+        <div class="aboutme-text">
+          <p>
+            Hi I'm <strong>Ezenwa Chidera Emmanuel</strong> a dedicated front-end developer passionate about building user-friendly, responsive web interfaces. I transform ideas into interactive, visually appealing digital designs using <strong> HTML, CSS , JavaScript</strong> and modern frameworks.
+            I continuously advance my skills through building real projects, following current design standards, and collaborating within the developer community. I'm eager to bring in creative, accessible, and responsive websites and web applications.
+          </p>
+          <p id="moreText" style="display: none;">
+            Over the past years, I've implemented a range of interesting projects — including this portfolio — as listed below. Each showcases not only my growth as a developer, but also real-world application of software concepts and design trends.<br />
+            <strong>Let's work together! I am open to programming, collaboration, and building modern web solutions.</strong>
+        <i class="fab fa-html5 icon" id="html-icon">
+        <span class="tooltip">HTML5</span>
+      </i>
+      <i class="fab fa-css3-alt icon" id="css-icon">
+        <span class="tooltip">CSS3</span>
+      </i>
+      <i class="fab fa-js-square icon" id="js-icon">
+        <span class="tooltip">JavaScript</span>
+      </i>
+             
+         
+          </p>
+          <button class="read-more-btn" id="readMoreBtn" aria-expanded="false" aria-controls="moreText" onclick="showMore()">Read more</button>
+        </div>
       </div>
-
-      <p>
-        Hello! My name is <strong>Ezenwa Chidera Emmanuel.</strong> I’m a passionate front-end developer,with a strong interest in building user-friendly, responsive websites and web applications.
-        I love turning ideas into visually appealing interfaces using <strong>HTML, CSS, and JavaScript.</strong>
-      </p>
-
-      <p>
-        I'm constantly learning and improving through personal projects, online courses, and collaboration with other developers. I'm excited to grow in this field and build creative, meaningful web experiences.
-      </p>
-
-      <p id="moreText" style="display:none;">
-        I have been in this field constantly learning and improving my skills for a couple of years now and have implemented some of these projects including the <strong>portfolio</strong> which you are currently navigating. These projects are listed in my portfolio section.
-        <strong>I would love to collaborate with you to program, build, and deploy web designs.</strong>
-      </p>
-
-      <button class="read-more-btn" id="readMoreBtn" aria-expanded="false" aria-controls="moreText" onclick="showMore()">Read more</button>
     </section>
 
     <!-- Portfolio Section -->
     <section id="Portfolio" tabindex="-1" aria-labelledby="portfolio-title">
-      <h2 id="portfolio-title">Portfolio</h2>
-      <p>Here are some of the projects I've worked on:</p>
+      <h2 id="portfolio-title">Portfolio Projects</h2>
+      <p style="text-align:center; max-width: 700px; margin: 0 auto 1.5rem;">
+      Highlights of my personal projects in front–end development, UX and Web accessibility
+      </p>
       <ul>
         <li>
-          <strong>Above the sky-learnings:</strong> Is a smart and simple educational website for students focused on Physics.<br />
-          <a href="https://emezch93.github.io/Above-the-sky-learnings" target="_blank" rel="noopener noreferrer">See Project</a>
+          <img src="scholars-clasrity-point-img.png" alt="Above the sky-learnings Screenshot" loading="lazy"   />
+          <div class="proj-content">
+            <strong>Above the Sky-Learnings (Physics Education):</strong>
+            Smart, simple educational site with quizzes and resource sections built for Physics and created using 
+              DOM manipulation, Accessible navigation, Modular JavaScript, Semantic HTML.
+            <a href="https://emezch93.github.io/Above-the-sky-learnings" target="_blank" rel="noopener noreferrer">View Project</a>
+          </div>
         </li>
         <li>
-          <strong>A simple digital clock:</strong> Continuously reading the real world time in seconds, minutes, and hours.<br />
-          <a href="https://emezch93.github.io/Digital-clock-/" target="_blank" rel="noopener noreferrer">See Project</a>
+          
+          <div class="proj-content">
+            <strong>Digital Clock Web App:</strong>
+            Real-time clock reading seconds/minutes/hours from system time.
+            <a href="https://emezch93.github.io/Digital-clock-/" target="_blank" rel="noopener noreferrer">View Project</a>
+          </div>
+        </li>
+           <li>
+             <img src="stopwatch.png" alt="stopwatch img" loading="lazy">
+          <div class="proj-content">
+            <strong>Minimalist Stopwatch:</strong>
+            Timer with start, pause, reset.
+            <a href="https://emezch93.github.io/Stop-Watch-/" target="_blank" rel="noopener noreferrer">View Project</a>
+          </div>
         </li>
         <li>
-          <strong>A simulated community introducing the new version of the world uncovering hidden trends and patterns from Data.</strong>
-          <a href="https://emezch93.github.io/Data-Nova-Network-/" target="_blank" rel="noopener noreferrer">See Project</a>
+          <img src="DNN.png" alt="Data Nova Network Screenshot" loading="lazy" />
+          <div class="proj-content">
+            <strong>Data Nova Network (Community Simulation):</strong>
+            Interactive environment modeling hidden patterns in data.
+            <a href="https://emezch93.github.io/Data-Nova-Network-/" target="_blank" rel="noopener noreferrer">View Project</a>
+          </div>
         </li>
         <li>
-          <strong>Simple interactive Randolph AI assistant:</strong> For the aforementioned community, Data Nova Network (DNN).<br />
-          <a href="https://emezch93.github.io/Updated-Randolph-AI-/" target="_blank" rel="noopener noreferrer">See Project</a>
+          
+          <img class="RPS-img" src="RPS.png" alt="Rock Paper Scissors img" loading="lazy">
+          <div class="proj-content">
+            <strong>Rock Paper Scissors Game:</strong>
+            Interactive JS game with score tracking.
+            <a href="https://emezch93.github.io/Rock-Paper-Scissors-/" target="_blank" rel="noopener noreferrer">View Project</a>
+          </div>
         </li>
         <li>
-          <strong>An intensive web calculator:</strong> With exclusive features for solid calculations.<br />
-          <a href="https://emezch93.github.io/Calculator-Web-App/" target="_blank" rel="noopener noreferrer">See Project</a>
+          <img src="Randolph-ai-img.png" alt="Randolph AI Assistant Screenshot" loading="lazy" />
+          <div class="proj-content">
+            <strong>Randolph AI Assistant:</strong>
+            Interactive bot for the Data Nova Network platform.
+            <a href="https://emezch93.github.io/Updated-Randolph-AI-/" target="_blank" rel="noopener noreferrer">View Project</a>
+          </div>
         </li>
         <li>
-          <strong>A clean, minimal stopwatch:</strong> With start, pause, and reset features.<br />
-          <a href="https://emezch93.github.io/Stop-Watch-/" target="_blank" rel="noopener noreferrer">See Project</a>
+          <img src="calc.png" alt="calculator-img" loading="lazy">
+          <div class="proj-content">
+            <strong>Web Calculator:</strong>
+            Multi-feature calculator with keyboard support using Event handling, JavaScript math functions, input validation, CSS grid layout.
+            <a href="https://emezch93.github.io/Calculator-Web-App/" target="_blank" rel="noopener noreferrer">View Project</a>
+          </div>
+        </li>
+     
+        <li>
+        <img  src="transition-element.png" alt="transition-element-img" loading="lazy">
+          <div class="proj-content" >
+            <strong>Chemistry Student Portal:</strong>
+            Education site for Chemistry (login required)
+            code [5215].<br />
+            <a href="https://emezch93.github.io/Transition-elements/" target="_blank" rel="noopener noreferrer">View Project</a>
+          </div>
+        </li>
+        
+        <li>
+          <img src="code-editor.png" alt="Code Editor Screenshot" loading="lazy" />
+          <div class="proj-content">
+            <strong>Portable Code Editor:</strong>
+            Run HTML, CSS, JS live in-browser.
+            <a href="https://emezch93.github.io/Code-Editor-/" target="_blank" rel="noopener noreferrer">View Project</a>
+          </div>
         </li>
         <li>
-          <strong>Simple educational website for Chemistry students:</strong> (Login code: 5215).<br />
-          <a href="https://emezch93.github.io/Transition-elements/" target="_blank" rel="noopener noreferrer">See Project </a>
-        </li>
-        <li>
-          <strong>
-            A cool Rock Paper Scissors game.
-          </strong>
-          <a href="https://emezch93.github.io/Rock-Paper-Scissors-/" target="_blank" rel="noopener noreferrer">See Project</a>
-        </li>
-        <li>
-          <strong>A portable Code Editor for running HTML , CSS and JavaScript codes.</strong>
-          <a href="https://emezch93.github.io/Code-Editor-/" target="_blank" rel="noopener noreferrer">See Project</a>
-        </li>
-        <li>
-          <strong>A simple Business website to showcase digital services (Cyber cafe). </strong>
-          <a href="https://emezch93.github.io/Business-website-/" target="_blank" rel="noopener noreferrer">See Project</a>
+          <img src="business-web-img.png" alt="Business Website Screenshot" loading="lazy" />
+          <div class="proj-content">
+            <strong>Business Website (Cyber Cafe):</strong>
+            Modern, clean responsive landing site for digital services.
+            <a href="https://emezch93.github.io/Business-website-/" target="_blank" rel="noopener noreferrer">Visit Site</a>
+          </div>
         </li>
       </ul>
     </section>
+
     <!-- Contact Section -->
     <section id="Contact" tabindex="-1" aria-labelledby="contact-title">
       <h2 id="contact-title">Contact</h2>
       <div class="container">
-        <strong class="contstrong">I'd love to connect! 📱</strong>
-        <p>You can reach me via email at: <a href="mailto:emezch93@gmail.com" target="_blank" rel="noopener noreferrer">emezch93@gmail.com</a></p>
+        <blockquote>
+          Reach me via email: 
+          <a href="mailto:emezch93@gmail.com" target="_blank" rel="noopener noreferrer">emezch93@gmail.com</a><br />
+          You can also contact me via Facebook, WhatsApp, or call using the icons below!
+        </blockquote>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="ftr" role="contentinfo" style="display: none;">
+  <footer class="ftr" role="contentinfo" style="display:none;">
     <div class="footer-icons">
-      <a href="https://www.facebook.com/emmanuel.ezenwa.177708" class="facebook-icon" target="_blank" rel="noopener noreferrer" aria-label="Facebook profile">f</a>
-
-      <a href="https://wa.me/+2348185947780" target="_blank" class="whatsapp-icon" rel="noopener noreferrer" aria-label="WhatsApp chat">
-        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-          <path
-            d="M16 .2C7.2.2 0 7.4 0 16c0 2.8.7 5.5 2.1 7.9L0 32l8.4-2.2c2.3 1.3 4.9 2 7.6 2 8.8 0 16-7.2 16-16S24.8.2 16 .2zm0 29.4c-2.4 0-4.7-.7-6.7-2L6.2 28l1.4-3.7c-1.4-2-2.2-4.4-2.2-6.9C5.4 8.8 10.7 3.6 16 3.6S26.6 8.8 26.6 16 21.3 29.6 16 29.6zm7.5-10.3c-.4-.2-2.4-1.2-2.8-1.3-.4-.2-.8-.2-1.1.2-.3.4-1.3 1.3-1.6 1.5-.3.2-.6.2-.9 0-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.3-2.1-2.7-.2-.4 0-.6.1-.8.2-.2.4-.5.6-.7.2-.3.3-.5.5-.8.2-.3.1-.6 0-.9-.1-.2-1-2.4-1.3-3.2-.3-.8-.7-.7-1-.7-.2 0-.5 0-.8 0-.3 0-.8.1-1.2.6-.4.4-1.6 1.6-1.6 3.8s1.6 4.4 1.9 4.7c.2.2 3.1 4.8 7.5 6.3 1 .4 1.7.7 2.3.8.9.3 1.7.2 2.3.1.7-.1 2.4-1 2.7-1.9.3-.9.3-1.6.2-1.9-.1-.3-.3-.4-.7-.6z" />
+      <a href="https://www.facebook.com/emmanuel.ezenwa.177708" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">f</a>
+      <a href="https://wa.me/+2348185947780" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp">
+        <svg viewBox="0 0 32 32" width="23" height="23" fill="white" aria-hidden="true">
+          <path d="M16 .2C7.2.2 0 7.4 0 16c0 2.8.7 5.5 2.1 7.9L0 32l8.4-2.2c2.3 1.3 4.9 2 7.6 2 8.8 0 16-7.2 16-16S24.8.2 16 .2zm0 29.4c-2.4 0-4.7-.7-6.7-2L6.2 28l1.4-3.7c-1.4-2-2.2-4.4-2.2-6.9C5.4 8.8 10.7 3.6 16 3.6S26.6 8.8 26.6 16 21.3 29.6 16 29.6zm7.5-10.3c-.4-.2-2.4-1.2-2.8-1.3-.4-.2-.8-.2-1.1.2-.3.4-1.3 1.3-1.6 1.5-.3.2-.6.2-.9 0-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.3-2.1-2.7-.2-.4 0-.6.1-.8.2-.2.4-.5.6-.7.2-.3.3-.5.5-.8.2-.3.1-.6 0-.9-.1-.2-1-2.4-1.3-3.2-.3-.8-.7-.7-1-.7-.2 0-.5 0-.8 0-.3 0-.8.1-1.2.6-.4.4-1.6 1.6-1.6 3.8s1.6 4.4 1.9 4.7c.2.2 3.1 4.8 7.5 6.3 1 .4 1.7.7 2.3.8.9.3 1.7.2 2.3.1.7-.1 2.4-1 2.7-1.9.3-.9.3-1.6.2-1.9-.1-.3-.3-.4-.7-.6z"/>
         </svg>
       </a>
-
-      <a href="tel:+2348185947780" target="_blank" class="app-icon" rel="noopener noreferrer" aria-label="Phone call">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4 -4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+      <a href="tel:+2348185947780" target="_blank" rel="noopener noreferrer" aria-label="Phone" title="Phone">
+        <svg width="22" height="22" fill="white" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4 -4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
         </svg>
       </a>
     </div>
@@ -471,71 +556,51 @@
   </footer>
 
   <script>
-    // Loader fade out and show content and footer
-    window.addEventListener("load", function () {
+    // Loader fade out, show content & footer
+    window.addEventListener("load", () => {
       setTimeout(() => {
         const loader = document.getElementById("loader");
         loader.style.opacity = "0";
-        loader.style.transition = "opacity 0.5s ease";
-
         setTimeout(() => {
           loader.style.display = "none";
           document.getElementById("content").style.display = "block";
-          document.querySelector("footer.ftr").style.display = "block"; // Show footer after loader
+          document.querySelector("footer.ftr").style.display = "block";
         }, 500);
       }, 6000);
     });
 
-    // Back to top button functionality
+    // Back to top button toggle
     const backBtn = document.querySelector(".back-btn");
-    window.addEventListener("scroll", function () {
-      if (window.pageYOffset > 100) {
-        backBtn.classList.add("active");
-      } else {
-        backBtn.classList.remove("active");
-      }
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset > 100) backBtn.classList.add("active");
+      else backBtn.classList.remove("active");
     });
-    backBtn.addEventListener("click", function () {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
+    backBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    // Show more text in About Me
+    // Read more toggle
     function showMore() {
       const moreText = document.getElementById("moreText");
       const btn = document.getElementById("readMoreBtn");
-
       moreText.style.display = "block";
       btn.style.display = "none";
       btn.setAttribute("aria-expanded", "true");
     }
 
-    // Toggle image shape on click or keyboard
+    // Toggle profile image shape
     function toggleShape() {
       const img = document.getElementById("myImage");
       const container = document.querySelector(".image-container");
-      if (img.classList.contains("round-image")) {
-        img.classList.remove("round-image");
+      if (img.classList.contains("block-image")) {
+        img.classList.remove("block-image");
+        container.setAttribute("aria-pressed", "false");
+      } else {
         img.classList.add("block-image");
         container.setAttribute("aria-pressed", "true");
-      } else {
-        img.classList.remove("block-image");
-        img.classList.add("round-image");
-        container.setAttribute("aria-pressed", "false");
       }
     }
-
-    // Allow keyboard toggle for image container
-    document.querySelector(".image-container").addEventListener("keydown", function (e) {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        toggleShape();
-      }
-    });
+    
   </script>
-
 </body>
-
 </html>
