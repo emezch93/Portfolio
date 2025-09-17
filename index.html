@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio | Ezenwa Chidera Emmanuel</title>
+  <title>PORTFOLIO | EZENWA CHIDERA EMMANUEL</title>
     <meta name="description" content="Portfolio of Ezenwa Chidera Emmanuel showcasing frontend skills, projects, and contact."/>
       <link
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -111,8 +111,8 @@
     }
     #myImage.block-image {
       border-radius: 18px;
-      width: 250px;
-      height: 250px;
+      width: 300px;
+      height: 320px;
     }
     .aboutme-text {
       flex: 1 1 340px;
@@ -264,24 +264,55 @@
     }
     @keyframes spin { to { transform: rotate(360deg); } }
     /* Back to top button */
-    .back-btn {
-      position: fixed;
-      bottom: 70px;         /* space above footer icons */
-      right: -120px;
-      width: 40px;          /* smaller size */
-      height: 40px;
-      background: #2d2d2d;
-      color: #fff;
-      border-radius: 50%;
-      font-size: 1.4rem;    /* smaller arrow */
-      border: none;
-      box-shadow: 2px 3px 7px rgba(0,0,0,0.13);
-      cursor: pointer;
-      z-index: 1002;
-      transition: right 0.5s ease, bottom 0.3s ease;
-    }
-    .back-btn.active { right: 30px; }
-    /* Responsive */
+    /* Scroll to top button with circular progress */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background: #2d2d2d;
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  z-index: 1002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#scrollTopBtn.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1.05);
+}
+
+/* Circle progress */
+.progress-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+}
+
+.progress-ring__circle {
+  stroke: #4caf50;
+  stroke-dasharray: 163; /* circumference (2πr = 2*π*26) ≈ 163 */
+  stroke-dashoffset: 163;
+  transition: stroke-dashoffset 0.2s ease;
+}
+
+#scrollTopBtn .arrow {
+  position: relative;
+  z-index: 2;
+  font-size: 20px;
+}
+
     @media (max-width: 700px) {
       .aboutme-flex {
         flex-direction: column;
@@ -371,7 +402,7 @@
   
   </style>
 </head>
-<bodyn>
+<body>
   <!-- Loader -->
   <div id="loader" aria-label="Loading content" role="alert" aria-busy="true">
     <div>
@@ -381,11 +412,16 @@
   </div>
 
   <!-- Back to top button -->
-  <button class="back-btn" aria-label="Back to top">↑</button>
-
+<!-- Scroll to top button with progress -->
+<button id="scrollTopBtn" aria-label="Back to top">
+  <svg class="progress-ring" width="60" height="60">
+    <circle class="progress-ring__circle" stroke-width="4" fill="transparent" r="26" cx="30" cy="30"/>
+  </svg>
+  <span class="arrow">↑</span>
+</button>
   <!-- Header -->
   <header>
-    <h1>Welcome to My Portfolio</h1>
+    <h1>Turning Ideas Into Seamless Web Solutions</h1>
       <div class="tagline">Front-End Developer | User-Friendly Interfaces | Accessibility Advocate</div>
   </header>
 
@@ -404,11 +440,11 @@
       <div class="aboutme-flex">
         <div class="image-container" role="button" tabindex="0" aria-pressed="false" aria-label="Toggle profile image shape"
           onclick="toggleShape()" onkeydown="if(event.key==='Enter' || event.key===' ') {event.preventDefault(); toggleShape();}">
-          <img id="myImage" src="IMG_20250615_174631_853.jpg" alt="Photo of Ezenwa Chidera Emmanuel"/>
+          <img id="myImage" src="IMG_20250810_093813_451.jpg" alt="Photo of Ezenwa Chidera Emmanuel"/>
         </div>
         <div class="aboutme-text">
           <p>
-            Hi I'm <strong>Ezenwa Chidera Emmanuel</strong> a dedicated <strong>Web-Developer</strong> passionate about building user-friendly, responsive web interfaces. I'm specialize in <strong>Front-end Development</strong>, by transforming ideas into interactive, visually appealing digital designs using <strong> HTML5, CSS3 , JavaScript</strong> and modern frameworks like <strong>WordPress</strong>.
+            Hi I'm <strong>EZENWA CHIDERA EMMANUEL</strong> a dedicated <strong>Web-Developer</strong> passionate about building user-friendly, responsive web interfaces. I'm specialize in <strong>Front-end Development</strong>, by transforming ideas into interactive, visually appealing digital designs using <strong> HTML5, CSS3 , JavaScript</strong> and modern frameworks like <strong>WordPress</strong>.
             I continuously advance my skills through building real projects, following current design standards, and collaborating within the developer community. I'm eager to bring in creative, accessible, and responsive websites and web applications.
           </p>
           <p id="moreText" style="display: none;">
@@ -444,14 +480,14 @@
             <strong>Above the Sky-Learnings (Physics Education):</strong>
             Smart, simple educational site with quizzes and resource sections built for Physics and created using 
               DOM manipulation, Accessible navigation, Modular JavaScript, Semantic HTML.
-            <a href="https://emezch93.github.io/Above-the-sky-learnings" target="_blank" rel="noopener noreferrer">View Project</a>
+            <a href="https://emezch93.github.io/Above-the-sky-learnings" target="_blank" rel="noopener noreferrer">Visit Site</a>
           </div>
         </li>
         <li>
           <div class="proj-content">
             <strong>Digital Clock Web App:</strong>
             Real-time clock reading seconds/minutes/hours from system time.
-            <a href="https://emezch93.github.io/Digital-clock-/" target="_blank" rel="noopener noreferrer">View Project</a>
+            <a href="https://emezch93.github.io/Digital-clock-/" target="_self" rel="noopener noreferrer">View Project</a>
           </div>
         </li>
            <li>
@@ -459,7 +495,7 @@
           <div class="proj-content">
             <strong>Minimalist Stopwatch:</strong>
             Timer with start, pause, reset.
-            <a href="https://emezch93.github.io/Stop-Watch-/" target="_blank" rel="noopener noreferrer">View Project</a>
+            <a href="https://emezch93.github.io/Stop-Watch-/" target="_self" rel="noopener noreferrer">View Project</a>
           </div>
         </li>
         <li>
@@ -467,7 +503,7 @@
           <div class="proj-content">
             <strong>Data Nova Network (Community Simulation):</strong>
             Interactive environment modeling hidden patterns in data.
-            <a href="https://emezch93.github.io/Data-Nova-Network-/" target="_blank" rel="noopener noreferrer">View Project</a>
+            <a href="https://emezch93.github.io/Data-Nova-Network-/" target="_self" rel="noopener noreferrer">View Project</a>
           </div>
         </li>
         <li>
@@ -476,7 +512,7 @@
           <div class="proj-content">
             <strong>Rock Paper Scissors Game:</strong>
             Interactive JS game with score tracking.
-            <a href="https://emezch93.github.io/Rock-Paper-Scissors-/" target="_blank" rel="noopener noreferrer">View Project</a>
+            <a href="https://emezch93.github.io/Rock-Paper-Scissors-/" target="_self" rel="noopener noreferrer">View Project</a>
           </div>
         </li>
         <li>
@@ -484,7 +520,7 @@
           <div class="proj-content">
             <strong>Randolph AI Assistant:</strong>
             Interactive bot for the Data Nova Network platform.
-            <a href="https://emezch93.github.io/Updated-Randolph-AI-/" target="_blank" rel="noopener noreferrer">View Project</a>
+            <a href="https://emezch93.github.io/Updated-Randolph-AI-/" target="_self" rel="noopener noreferrer">View Project</a>
           </div>
         </li>
         <li>
@@ -492,7 +528,7 @@
           <div class="proj-content">
             <strong>Web Calculator:</strong>
             Multi-feature calculator with keyboard support using Event handling, JavaScript math functions, input validation, CSS grid layout.
-            <a href="https://emezch93.github.io/Calculator-Web-App/" target="_blank" rel="noopener noreferrer">View Project</a>
+            <a href="https://emezch93.github.io/Calculator-Web-App/" target="_self" rel="noopener noreferrer">View Project</a>
           </div>
         </li>
      
@@ -502,7 +538,7 @@
             <strong>Chemistry Student Portal:</strong>
             Education site for Chemistry (login required)
             code [5215].<br />
-            <a href="https://emezch93.github.io/Transition-elements/" target="_blank" rel="noopener noreferrer">View Project</a>
+            <a href="https://emezch93.github.io/Transition-elements/" target="_self" rel="noopener noreferrer">View Project</a>
           </div>
         </li>
         
@@ -511,7 +547,7 @@
           <div class="proj-content">
             <strong>Portable Code Editor:</strong>
             Run HTML, CSS, JS live in-browser.
-            <a href="https://emezch93.github.io/Code-Editor-/" target="_blank" rel="noopener noreferrer">View Project</a>
+            <a href="https://emezch93.github.io/Code-Editor-/" target="_self" rel="noopener noreferrer">View Project</a>
           </div>
         </li>
         <li>
@@ -530,42 +566,59 @@
             <a href="https://emezch93.github.io/Samuel-Chukwuemeka-Fashion-Designs/" target="_blank" rel="noopener noreferrer">Visit Site</a>
           </div>
         </li>
+         <li>
+          <img src="EDUCOMMEX.png" alt="EDUCOMMEX_img"/>
+          <div class="proj-content">
+            <strong>EDUCOMMEX Website:</strong> Is a platform for
+          <strong>EDUCATION COMMERCE & EXCHANGE.</strong>
+            <a href="https://emezch93.github.io/EDUCOMMEX/" target="_blank" rel="noopener noreferrer">Visit Site</a>
+          </div>
+          </li>
+          
+          <li>
+          <img src="HTML5_Course.png" alt="HTML5_Course_img"/>
+          <div class="proj-content">
+            <strong>Web-Development-Course: </strong>
+            Swift Web Design Course from  <strong>Beginner-Pro.</strong>
+            <a href="https://emezch93.github.io/Swift-Web-Design-Course/" target="_blank" rel="noopener noreferrer">Visit Site</a>
+          </div>
+        </li>
       </ul>
+      
     </section>
     
-
     <!-- Contact Section -->
     <section id="Contact" tabindex="-1" aria-labelledby="contact-title">
       <h2 id="contact-title">Contact</h2>
       <div class="container">
         <blockquote>
           Reach me via email: 
-          <a href="mailto:emezch93@gmail.com" target="_blank" rel="noopener noreferrer">emezch93@gmail.com</a><br />
+          <a href="mailto:emezch93@gmail.com" target="_blank" rel="noopener noreferrer">emezch93@gmail.com</a><br>
           You can also contact me via Facebook, WhatsApp, or call using the icons below!
         </blockquote>
       </div>
     </section>
   </main>
-
-  <!-- Footer -->
-  <footer class="ftr" role="contentinfo" style="display:none;">
-    <div class="footer-icons">
-      <a href="https://www.facebook.com/emmanuel.ezenwa.177708" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">f</a>
-      <a href="https://wa.me/+2348185947780" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp">
-        <svg viewBox="0 0 32 32" width="23" height="23" fill="white" aria-hidden="true">
-          <path d="M16 .2C7.2.2 0 7.4 0 16c0 2.8.7 5.5 2.1 7.9L0 32l8.4-2.2c2.3 1.3 4.9 2 7.6 2 8.8 0 16-7.2 16-16S24.8.2 16 .2zm0 29.4c-2.4 0-4.7-.7-6.7-2L6.2 28l1.4-3.7c-1.4-2-2.2-4.4-2.2-6.9C5.4 8.8 10.7 3.6 16 3.6S26.6 8.8 26.6 16 21.3 29.6 16 29.6zm7.5-10.3c-.4-.2-2.4-1.2-2.8-1.3-.4-.2-.8-.2-1.1.2-.3.4-1.3 1.3-1.6 1.5-.3.2-.6.2-.9 0-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.3-2.1-2.7-.2-.4 0-.6.1-.8.2-.2.4-.5.6-.7.2-.3.3-.5.5-.8.2-.3.1-.6 0-.9-.1-.2-1-2.4-1.3-3.2-.3-.8-.7-.7-1-.7-.2 0-.5 0-.8 0-.3 0-.8.1-1.2.6-.4.4-1.6 1.6-1.6 3.8s1.6 4.4 1.9 4.7c.2.2 3.1 4.8 7.5 6.3 1 .4 1.7.7 2.3.8.9.3 1.7.2 2.3.1.7-.1 2.4-1 2.7-1.9.3-.9.3-1.6.2-1.9-.1-.3-.3-.4-.7-.6z"/>
-        </svg>
-      </a>
-      <a href="tel:+2348185947780" target="_blank" rel="noopener noreferrer" aria-label="Phone" title="Phone">
-        <svg width="22" height="22" fill="white" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4 -4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-        </svg>
-      </a>
-    </div>
-    &copy; 2025 All Rights Reserved.
-  </footer>
-
+<!-- Footer -->
+<footer class="ftr" role="contentinfo" style="display:none;">
+  <div class="footer-icons">
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/emmanuel.ezenwa.177708" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <!-- WhatsApp -->
+    <a href="https://wa.me/+2348185947780" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <!-- Phone -->
+    <a href="tel:+2348185947780" aria-label="Phone" title="Phone" target="_blank">
+      <i class="fas fa-phone-alt"></i>
+    </a>
+  </div>
+  &copy; 2025 All Rights Reserved.
+</footer>
   <script>
+  
     // Loader fade out, show content & footer
     window.addEventListener("load", () => {
       setTimeout(() => {
@@ -573,21 +626,39 @@
         loader.style.opacity = "0";
         setTimeout(() => {
           loader.style.display = "none";
-          document.getElementById("content").style.display = "block";
-          document.querySelector("footer.ftr").style.display = "block";
-        }, 500);
-      }, 6000);
+        document.getElementById("content").style.display = "block";
+        document.querySelector("footer.ftr").style.display = "block";
+        },500);
+      },6000);
     });
 
     // Back to top button toggle
-    const backBtn = document.querySelector(".back-btn");
-    window.addEventListener("scroll", () => {
-      if (window.pageYOffset > 100) backBtn.classList.add("active");
-      else backBtn.classList.remove("active");
-    });
-    backBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+// Scroll progress + back to top
+const scrollBtn = document.getElementById("scrollTopBtn");
+const circle = document.querySelector(".progress-ring__circle");
+const circumference = 2 * Math.PI * 26; // r=26
+
+circle.style.strokeDasharray = circumference;
+circle.style.strokeDashoffset = circumference;
+
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollFraction = scrollTop / docHeight;
+  const offset = circumference - scrollFraction * circumference;
+
+  circle.style.strokeDashoffset = offset;
+
+  if (scrollTop > 200) {
+    scrollBtn.classList.add("active");
+  } else {
+    scrollBtn.classList.remove("active");
+  }
+});
+
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
 
     // Read more toggle
     function showMore() {
@@ -610,7 +681,6 @@
         container.setAttribute("aria-pressed", "true");
       }
     }
-    
   </script>
 </body>
 </html>
