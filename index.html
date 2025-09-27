@@ -4,88 +4,160 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PORTFOLIO | EZENWA CHIDERA EMMANUEL</title>
-    <meta name="description" content="Portfolio of Ezenwa Chidera Emmanuel showcasing frontend skills, projects, and contact."/>
-      <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    rel="stylesheet"
-  />
+  <meta name="description" content="Portfolio of Ezenwa Chidera Emmanuel showcasing frontend skills, projects, and contact."/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Reset */
+    /* Reset & Base */
     *, *::before, *::after { box-sizing: border-box; }
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #0f172a;
+      --accent: #10b981;
+      --light: #f8fafc;
+      --gray: #64748b;
+      --dark-gray: #334155;
+      --card-bg: #ffffff;
+      --header-bg: #0f172a;
+      --nav-bg: #1e293b;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
     body {
-      font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+      font-family: 'Inter', system-ui, sans-serif;
       margin: 0;
       padding: 0;
-      background: #e0e0fa;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      color: #35365a;
-      line-height: 1.5;
+      color: var(--secondary);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
     a {
-      color: #2240d0;
+      color: var(--primary);
       text-decoration: none;
-      transition: color 0.3s ease;
+      transition: var(--transition);
     }
     a:hover, a:focus {
-      color: #095;
-      outline: none;
-    }
-    header {
-      background-color: #23234d;
-      color: #fff;
-      text-align: center;
-      padding: 2rem 1rem 1rem;
-      font-family: 'Merriweather', serif;
-      letter-spacing: 2px;
-      user-select: none;
-    }
-    nav.navbar {
-      background: #364173;
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      padding: 1rem 0;
-      font-size: 1.1rem;
-    }
-    nav.navbar a {
-      color: #fff;
-      padding: 0.4rem 1rem;
-      border-radius: 5px;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.13);
-      transition: background-color 0.3s ease;
-    }
-    nav.navbar a:hover, nav.navbar a:focus {
-      background-color: #5585c1;
-      color: #fff;
+      color: var(--primary-dark);
+      outline: 2px solid var(--primary);
       outline-offset: 2px;
     }
+    
+    /* Header */
+    header {
+      background: var(--header-bg);
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.1) 0%, transparent 50%);
+      z-index: 0;
+    }
+    header > * {
+      position: relative;
+      z-index: 1;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .tagline {
+      font-size: 1.2rem;
+      font-weight: 400;
+      opacity: 0.9;
+      color: #cbd5e1;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+    
+    /* Navigation */
+    nav.navbar {
+      background: var(--nav-bg);
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1.25rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    nav.navbar a {
+      color: white;
+      padding: 0.5rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 1.1rem;
+      background: transparent;
+      transition: var(--transition);
+    }
+    nav.navbar a:hover, nav.navbar a:focus {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+    
+    /* Main Content */
     main {
       flex: 1 0 auto;
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
     }
     section {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 18px rgba(34, 49, 161, 0.07);
-      margin-bottom: 2rem;
-      padding: 2rem;
+      background: var(--card-bg);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      margin-bottom: 3rem;
+      padding: 2.5rem;
+      transition: var(--transition);
+    }
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -6px rgba(0, 0, 0, 0.05);
     }
     section h2 {
       text-align: center;
-      color: #264169;
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
+      color: var(--secondary);
+      font-size: 2.25rem;
+      margin-bottom: 2rem;
       font-family: 'Merriweather', serif;
+      font-weight: 700;
+      position: relative;
     }
-    /* About Me flex layout */
+    section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 2px;
+    }
+    
+    /* About Me */
     .aboutme-flex {
       display: flex;
       align-items: center;
-      gap: 2rem;
+      gap: 3rem;
       justify-content: center;
       flex-wrap: wrap;
     }
@@ -96,156 +168,234 @@
       user-select: none;
       display: flex;
       justify-content: center;
+      position: relative;
     }
-    .image-container:focus-visible {
-      outline: 3px solid #5585c1;
+    .image-container::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
       border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      z-index: -1;
+      opacity: 0.3;
+      transition: var(--transition);
+    }
+    .image-container:hover::before {
+      opacity: 0.6;
+      transform: scale(1.05);
     }
     #myImage {
-      width: 140px;
-      height: 140px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
-      border: 3px solid #5585c1;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.13);
-      transition: border-radius 0.4s, width 0.3s, height 0.3s;
+      border: 4px solid white;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      transition: var(--transition);
+      object-fit: cover;
     }
     #myImage.block-image {
-      border-radius: 18px;
-      width: 300px;
-      height: 320px;
+      border-radius: 50%;
+      width: 320px;
+      height: 360px;
     }
     .aboutme-text {
-      flex: 1 1 340px;
-      min-width: 240px;
-      max-width: 500px;
-      font-size: 18px;
-      color: #35365a;
+      flex: 1 1 400px;
+      min-width: 300px;
+      max-width: 600px;
+      font-size: 1.1rem;
+      color: var(--dark-gray);
     }
     .aboutme-text p {
       margin-top: 0;
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
     }
     .read-more-btn {
-      background-color: #3b65c4;
-      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
       border: none;
-      border-radius: 7px;
-      padding: 10px 24px;
-      font-size: 1rem;
+      border-radius: 8px;
+      padding: 12px 28px;
+      font-size: 1.1rem;
+      font-weight: 600;
       cursor: pointer;
-      margin-top: 0.5rem;
-      transition: background-color 0.3s ease;
-      display: inline-block;
+      margin-top: 1rem;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
     }
     .read-more-btn:hover, .read-more-btn:focus {
-      background-color: #0b7e13;
-      outline-offset: 3px;
+      background: linear-gradient(135deg, var(--primary-dark), #1e40af);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+      outline: 2px solid white;
+      outline-offset: 2px;
     }
+    .tech-icons {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .tech-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 2.5rem;
+      transition: var(--transition);
+      color: var(--primary);
+    }
+    .tech-icon:hover {
+      transform: translateY(-5px) scale(1.1);
+      color: var(--primary-dark);
+    }
+    .tech-icon span {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--secondary);
+    }
+    
     /* Portfolio */
     #Portfolio ul {
       list-style: none;
       padding: 0;
       margin: 0 auto;
-      max-width: 700px;
-      
+      max-width: 1000px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
     }
     #Portfolio li {
-      background: #eef2fc;
-      margin-bottom: 40px;
-      padding: 1rem 1.2rem;
-      border-radius: 8px;
-      box-shadow: 0 1px 5px rgba(212, 210, 241, 0.3);
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      gap: 1rem;
+      flex-direction: column;
+      transition: var(--transition);
+      border: 1px solid #e2e8f0;
+    }
+    #Portfolio li:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      border-color: var(--primary);
     }
     #Portfolio li img {
-      width: 100px;
-      height: 85px;
+      width: 100%;
+      height: 160px;
       border-radius: 8px;
-      background: #cfd2e7;
-      box-shadow: 0 1px 3px rgba(187, 183, 183, 0.5);
-      flex-shrink: 0;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      background: #e2e8f0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
     #Portfolio .proj-content {
-      flex: 1 1 350px;
-      color: #20317b;
+      flex: 1;
+      color: var(--dark-gray);
     }
     #Portfolio strong {
-      font-size: 1.12rem;
-      color: #20317b;
+      font-size: 1.15rem;
+      color: var(--secondary);
+      display: block;
+      margin-bottom: 0.5rem;
     }
     #Portfolio em {
       font-style: italic;
-      color: #2a2a6f;
+      color: var(--gray);
+      display: block;
+      margin: 0.5rem 0;
     }
     #Portfolio a {
       display: inline-block;
-      margin-top: 0.3rem;
-      color: #2240d0;
+      margin-top: auto;
+      padding: 8px 16px;
+      background: var(--primary);
+      color: white;
+      border-radius: 6px;
+      font-weight: 500;
+      text-align: center;
+      transition: var(--transition);
     }
     #Portfolio a:hover, #Portfolio a:focus {
-      color: #095;
+      background: var(--primary-dark);
+      transform: translateY(-2px);
     }
-    /* Contact Section */
+    
+    /* Contact */
     #Contact .container {
-      color: #233;
+      color: var(--secondary);
       text-align: center;
-      font-size: 1.1rem;
-      max-width: 380px;
+      font-size: 1.15rem;
+      max-width: 600px;
       margin: 0 auto;
     }
     #Contact blockquote {
-      color: #264169;
+      color: var(--secondary);
       font-style: italic;
-      background: #f6faee;
-      border-left: 4px solid #76d8a1;
-      padding: 1rem 1.5rem;
-      border-radius: 4px;
+      background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+      border-left: 4px solid var(--primary);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      font-size: 1.1rem;
     }
+    #Contact a {
+      font-weight: 600;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+    
     /* Footer */
     footer.ftr {
-      background: #222d3a;
-      color: #fff;
+      background: var(--secondary);
+      color: white;
       text-align: center;
-      padding: 1.5rem 1rem 0.5rem;
-      font-size: 1.08rem;
+      padding: 2rem 1rem 1.5rem;
+      font-size: 1.1rem;
     }
     .footer-icons {
       display: flex;
       justify-content: center;
-      gap: 24px;
-      margin-bottom: 0.8rem;
+      gap: 28px;
+      margin-bottom: 1.5rem;
     }
     .footer-icons a {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 42px;
-      height: 42px;
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
-      background: #3b5998;
-      font-size: 23px;
-      color: #fff;
+      font-size: 1.5rem;
+      color: white;
       margin: 0 5px;
-      transition: transform 0.3s ease, background 0.4s ease;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       text-decoration: none;
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
     }
-    .footer-icons a[href*="facebook"] { background: #1877f2; }
-    .footer-icons a[href*="wa.me"] { background: #25d366; }
-    .footer-icons a[href*="tel:"] { background: #2980b9; }
+    .footer-icons a[href*="facebook"] { background: linear-gradient(135deg, #1877f2, #0d5cb6); }
+    .footer-icons a[href*="wa.me"] { background: linear-gradient(135deg, #25d366, #128c7e); }
+    .footer-icons a[href*="tel:"] { background: linear-gradient(135deg, #2980b9, #1a5a8c); }
     .footer-icons a:hover, .footer-icons a:focus {
-      transform: scale(1.08);
-      outline-offset: 3px;
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      outline: 2px solid white;
+      outline-offset: 4px;
     }
+    
     /* Loader */
     #loader {
       position: fixed;
       width: 100vw;
       height: 100vh;
-      background: #fff;
+      background: white;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -253,176 +403,92 @@
       transition: opacity 0.5s ease;
     }
     .spinner {
-      width: 60px;
-      height: 60px;
-      border: 8px solid #e9effe;
-      border-top: 8px solid #409e55;
+      width: 80px;
+      height: 80px;
+      border: 8px solid #e0f2fe;
+      border-top: 8px solid var(--primary);
       border-radius: 50%;
       animation: spin 0.8s linear infinite;
-      
-      
     }
     @keyframes spin { to { transform: rotate(360deg); } }
-    /* Back to top button */
-    /* Scroll to top button with circular progress */
-#scrollTopBtn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 60px;
-  height: 60px;
-  border: none;
-  border-radius: 50%;
-  background: #2d2d2d;
-  color: #fff;
-  font-size: 1.4rem;
-  cursor: pointer;
-  z-index: 1002;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  opacity: 0;
-  pointer-events: none;
-}
-
-#scrollTopBtn.active {
-  opacity: 1;
-  pointer-events: auto;
-  transform: scale(1.05);
-}
-
-/* Circle progress */
-.progress-ring {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: rotate(-90deg);
-}
-
-.progress-ring__circle {
-  stroke: #4caf50;
-  stroke-dasharray: 163; /* circumference (2πr = 2*π*26) ≈ 163 */
-  stroke-dashoffset: 163;
-  transition: stroke-dashoffset 0.2s ease;
-}
-
-#scrollTopBtn .arrow {
-  position: relative;
-  z-index: 2;
-  font-size: 20px;
-}
-
-    @media (max-width: 700px) {
-      .aboutme-flex {
-        flex-direction: column;
-        gap: 0.5rem;
-        align-items: center;
-      }
-      .aboutme-text {
-        max-width: 100%;
-        min-width: unset;
-      }
-      section, #Portfolio li {
-        padding: 1rem 0.7rem;
-      }
-      #Portfolio li img {
-        width: 200px;
-        height: 180px;
-        margin-right: 10px;
-      }
-      nav.navbar {
-        gap: 12px;
-      }
-      .back-btn {
-        bottom: 60px;
-        width: 36px;
-        height: 36px;
-        font-size: 1.2rem;
-      }
-    .RPS-img{
-      height: 170px;
-    }
-    .tagline {
-     font-size: 1.06rem;
-     letter-spacing: .1em;
-     opacity:.9;
-     margin-top:0.2rem;
-     color: #e5e6fb;
-     font-family: 'Segoe UI', Arial, sans-serif;;
-    }
- 
-  
-    .icon {
-      font-size: 40px;
-      margin: 0 15px;
-      cursor: pointer;
-      color: #007acc;
-      transition: color 0.5s;
-      position: relative;
-      display: inline-block;
-      margin-top: 20px;
-      
-    }
-    .icon:hover {
-      color: #007acc;
-    }
-    .tooltip {
-      position: absolute;
-      bottom: 130%;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #333;
+    
+    /* Scroll to top */
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      border: none;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: white;
-      padding: 5px 8px;
-      border-radius: 4px;
-      font-size: 14px;
-      white-space: nowrap;
+      font-size: 1.4rem;
+      cursor: pointer;
+      z-index: 1002;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
       opacity: 0;
       pointer-events: none;
-      transition: opacity 1s;
+      box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
     }
-    .icon:hover .tooltip {
+    #scrollTopBtn.active {
       opacity: 1;
       pointer-events: auto;
+      transform: scale(1);
+    }
+    #scrollTopBtn:hover {
+      transform: scale(1.1) translateY(-3px);
+      box-shadow: 0 6px 25px rgba(37, 99, 235, 0.6);
     }
     
-    #html-icon{
-      color: orchid;
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      .tagline { font-size: 1rem; }
+      nav.navbar { gap: 1rem; padding: 1rem 0; }
+      nav.navbar a { padding: 0.4rem 0.8rem; font-size: 1rem; }
+      main { margin: 2rem auto; }
+      section { padding: 1.5rem; margin-bottom: 2rem; }
+      section h2 { font-size: 1.8rem; }
+      .aboutme-flex { flex-direction: column; gap: 1.5rem; }
+      #myImage { width: 140px; height: 140px; }
+      #myImage.block-image { width: 280px; height: 320px; }
+      #Portfolio ul { grid-template-columns: 1fr; }
+      #Portfolio li img { height: 140px; }
     }
-    #css-icon{
-      color: black;
+    
+    @media (max-width: 480px) {
+      header { padding: 2rem 1rem 1.5rem; }
+      header h1 { font-size: 1.75rem; }
+      .tagline { font-size: 0.95rem; }
+      nav.navbar { flex-wrap: wrap; gap: 0.5rem; }
+      nav.navbar a { padding: 0.3rem 0.6rem; font-size: 0.95rem; }
+      section { padding: 1.25rem; }
+      section h2 { font-size: 1.6rem; }
+      .tech-icons { gap: 1rem; }
+      .tech-icon { font-size: 2rem; }
+      #scrollTopBtn { width: 50px; height: 50px; font-size: 1.2rem; }
     }
-    #js-icon{
-      color: orange;
-    }
-  .img{
-    object-fit: contain;
-  }
-  
   </style>
 </head>
 <body>
   <!-- Loader -->
   <div id="loader" aria-label="Loading content" role="alert" aria-busy="true">
-    <div>
-      <div class="spinner" aria-hidden="true"></div>
-      <h2 style="margin-top: 18px; color: #356;"></h2>
-    </div>
+    <div class="spinner" aria-hidden="true"></div>
   </div>
 
-  <!-- Back to top button -->
-<!-- Scroll to top button with progress -->
-<button id="scrollTopBtn" aria-label="Back to top">
-  <svg class="progress-ring" width="60" height="60">
-    <circle class="progress-ring__circle" stroke-width="4" fill="transparent" r="26" cx="30" cy="30"/>
-  </svg>
-  <span class="arrow">↑</span>
-</button>
+  <!-- Scroll to top button -->
+  <button id="scrollTopBtn" aria-label="Back to top">
+    <span class="arrow">↑</span>
+  </button>
+
   <!-- Header -->
   <header>
     <h1>Turning Ideas Into Seamless Web Solutions</h1>
-      <div class="tagline">Front-End Developer | User-Friendly Interfaces | Accessibility Advocate</div>
+    <div class="tagline">Front-End Developer | User-Friendly Interfaces | Accessibility Advocate</div>
   </header>
 
   <!-- Navigation -->
@@ -444,25 +510,30 @@
         </div>
         <div class="aboutme-text">
           <p>
-            Hi I'm <strong>EZENWA CHIDERA EMMANUEL</strong> a dedicated <strong>Web-Developer</strong> passionate about building user-friendly, responsive web interfaces. I'm specialize in <strong>Front-end Development</strong>, by transforming ideas into interactive, visually appealing digital designs using <strong> HTML5, CSS3 , JavaScript</strong> and modern frameworks like <strong>WordPress</strong>.
-            I continuously advance my skills through building real projects, following current design standards, and collaborating within the developer community. I'm eager to bring in creative, accessible, and responsive websites and web applications.
+            Hi, I'm <strong>EZENWA CHIDERA EMMANUEL</strong>, a dedicated <strong>Web Developer</strong> passionate about building user-friendly, responsive web interfaces. I specialize in <strong>Front-end Development</strong>, transforming ideas into interactive, visually appealing digital experiences using <strong>HTML5, CSS3, JavaScript</strong> and modern frameworks.
           </p>
           <p id="moreText" style="display: none;">
-            Over the past years, I've implemented a range of interesting projects — including this portfolio — as listed below. Each showcases not only my growth as a developer, but also real-world application of software concepts and design trends.<br />
+            Over the past years, I have implemented a range of interesting projects, including this portfolio as listed below. Each showcases not only my growth as a developer, but also real-world application of software concepts and design trends.<br />
             <strong>Let's work together! I am open to programming, collaboration, and building modern web solutions.</strong>
-        <i class="fab fa-html5 icon" id="html-icon">
-        <span class="tooltip">HTML5</span>
-      </i>
-      <i class="fab fa-css3-alt icon" id="css-icon">
-        <span class="tooltip">CSS3</span>
-      </i>
-      <i class="fab fa-js-square icon" id="js-icon">
-        <span class="tooltip">JavaScript</span>
-      </i>
-             
-         
           </p>
-          <button class="read-more-btn" id="readMoreBtn" aria-expanded="false" aria-controls="moreText" onclick="showMore()">Read more</button>
+          <div class="tech-icons" id="techIcons" style="display: none;">
+            <div class="tech-icon">
+              <i class="fab fa-html5"></i>
+              <span>HTML5</span>
+            </div>
+            <div class="tech-icon">
+              <i class="fab fa-css3-alt"></i>
+              <span>CSS3</span>
+            </div>
+            <div class="tech-icon">
+              <i class="fab fa-js-square"></i>
+              <span>JavaScript</span>
+            </div>
+          </div>
+          <button class="read-more-btn" id="readMoreBtn" aria-expanded="false" aria-controls="moreText" onclick="showMore()">
+            <span id="readMoreText">Read more</span>
+            <i class="fas fa-arrow-right"></i>
+          </button>
         </div>
       </div>
     </section>
@@ -470,121 +541,115 @@
     <!-- Portfolio Section -->
     <section id="Portfolio" tabindex="-1" aria-labelledby="portfolio-title">
       <h2 id="portfolio-title">Portfolio Projects</h2>
-      <p style="text-align:center; max-width: 700px; margin: 0 auto 1.5rem;">
-      Highlights of my personal projects in front–end development, UX and Web accessibility
+      <p style="text-align:center; max-width: 700px; margin: 0 auto 2rem; color: var(--gray);">
+        Highlights of my personal projects in front-end development, UX and Web accessibility.
       </p>
       <ul>
         <li>
-          <img src="scholars-clasrity-point-img.png" alt="Above the sky-learnings Screenshot"/>
+          <img src="https://placehold.co/600x400/2563eb/white?text=Physics+Education" alt="Above the sky-learnings Screenshot"/>
           <div class="proj-content">
-            <strong>Above the Sky-Learnings (Physics Education):</strong>
-            Smart, simple educational site with quizzes and resource sections built for Physics and created using 
-              DOM manipulation, Accessible navigation, Modular JavaScript, Semantic HTML.
+            <strong>Above the Sky-Learnings (Physics Education)</strong>
+            <em>Smart, simple educational site for Physics.</em>
             <a href="https://emezch93.github.io/Above-the-sky-learnings" target="_blank" rel="noopener noreferrer">Visit Site</a>
           </div>
         </li>
         <li>
+          <img src="https://placehold.co/600x400/0f172a/white?text=Digital+Clock" alt="Digital Clock Web App"/>
           <div class="proj-content">
-            <strong>Digital Clock Web App:</strong>
-            Real-time clock reading seconds/minutes/hours from system time.
+            <strong>Digital Clock Web App</strong>
+            <em>Real-time clock reading seconds/minutes/hours from system time.</em>
             <a href="https://emezch93.github.io/Digital-clock-/" target="_self" rel="noopener noreferrer">View Project</a>
           </div>
         </li>
-           <li>
-             <img src="stopwatch.png" alt="stopwatch img"/>
+        <li>
+          <img src="https://placehold.co/600x400/10b981/white?text=Stopwatch" alt="stopwatch img"/>
           <div class="proj-content">
-            <strong>Minimalist Stopwatch:</strong>
-            Timer with start, pause, reset.
+            <strong>Minimalist Stopwatch</strong>
+            <em>Timer with start, pause, reset functionality.</em>
             <a href="https://emezch93.github.io/Stop-Watch-/" target="_self" rel="noopener noreferrer">View Project</a>
           </div>
         </li>
         <li>
-          <img src="DNN.png" alt="Data Nova Network Screenshot"/>
+          <img src="https://placehold.co/600x400/7c3aed/white?text=Data+Nova+Network" alt="Data Nova Network Screenshot"/>
           <div class="proj-content">
-            <strong>Data Nova Network (Community Simulation):</strong>
-            Interactive environment modeling hidden patterns in data.
+            <strong>Data Nova Network (Community Simulation)</strong>
+            <em>Interactive environment modeling hidden patterns in data.</em>
             <a href="https://emezch93.github.io/Data-Nova-Network-/" target="_self" rel="noopener noreferrer">View Project</a>
           </div>
         </li>
         <li>
-          
-          <img class="RPS-img" src="RPS.png" alt="Rock Paper Scissors img"/>
+          <img src="https://placehold.co/600x400/f59e0b/white?text=RPS+Game" alt="Rock Paper Scissors img"/>
           <div class="proj-content">
-            <strong>Rock Paper Scissors Game:</strong>
-            Interactive JS game with score tracking.
+            <strong>Rock Paper Scissors Game</strong>
+            <em>Interactive JS game with score tracking.</em>
             <a href="https://emezch93.github.io/Rock-Paper-Scissors-/" target="_self" rel="noopener noreferrer">View Project</a>
           </div>
         </li>
         <li>
-          <img src="Randolph-ai-img.png" alt="Randolph AI Assistant Screenshot"/>
+          <img src="https://placehold.co/600x400/ef4444/white?text=AI+Assistant" alt="Randolph AI Assistant Screenshot"/>
           <div class="proj-content">
-            <strong>Randolph AI Assistant:</strong>
-            Interactive bot for the Data Nova Network platform.
+            <strong>Randolph AI Assistant</strong>
+            <em>Interactive bot for the Data Nova Network platform.</em>
             <a href="https://emezch93.github.io/Updated-Randolph-AI-/" target="_self" rel="noopener noreferrer">View Project</a>
           </div>
         </li>
         <li>
-          <img src="calc.png" alt="calculator-img"/>
+          <img src="https://placehold.co/600x400/8b5cf6/white?text=Calculator" alt="calculator-img"/>
           <div class="proj-content">
-            <strong>Web Calculator:</strong>
-            Multi-feature calculator with keyboard support using Event handling, JavaScript math functions, input validation, CSS grid layout.
+            <strong>Web Calculator</strong>
+            <em>Multi-feature calculator with keyboard support using Event handling, JavaScript math functions, input validation, CSS grid layout.</em>
             <a href="https://emezch93.github.io/Calculator-Web-App/" target="_self" rel="noopener noreferrer">View Project</a>
           </div>
         </li>
-     
         <li>
-        <img  src="transition-element.png" alt="transition-element-img"/>
-          <div class="proj-content" >
-            <strong>Chemistry Student Portal:</strong>
-            Education site for Chemistry (login required)
-            code [5215].<br />
+          <img src="https://placehold.co/600x400/06b6d4/white?text=Chemistry" alt="transition-element-img"/>
+          <div class="proj-content">
+            <strong>Chemistry Student Portal</strong>
+            <em>Education site for Chemistry (login required) code [5215].</em>
             <a href="https://emezch93.github.io/Transition-elements/" target="_self" rel="noopener noreferrer">View Project</a>
           </div>
-        </li>
-        
+   </li>
         <li>
-          <img src="code-editor.png" alt="Code Editor Screenshot"/>
+          <img src="https://placehold.co/600x400/84cc16/white?text=Code+Editor" alt="Code Editor Screenshot"/>
           <div class="proj-content">
-            <strong>Portable Code Editor:</strong>
-            Run HTML, CSS, JS live in-browser.
+            <strong>Portable Code Editor</strong>
+            <em>Run HTML, CSS, JS live in-browser.</em>
             <a href="https://emezch93.github.io/Code-Editor-/" target="_self" rel="noopener noreferrer">View Project</a>
           </div>
         </li>
         <li>
-          <img src="business-web-img.png" alt="Business Website Screenshot"/>
+          <img src="https://placehold.co/600x400/f97316/white?text=Cyber+Cafe" alt="Business Website Screenshot"/>
           <div class="proj-content">
-            <strong>Business Website (Cyber Cafe):</strong>
-            Modern, clean responsive landing site for digital services.
+            <strong>Business Website (Cyber Cafe)</strong>
+            <em>Modern, clean responsive landing site for digital services.</em>
             <a href="https://emezch93.github.io/Business-website-/" target="_blank" rel="noopener noreferrer">Visit Site</a>
           </div>
         </li>
-           <li>
-          <img src="Fashion-Design-img.png" alt="Fashion-Designs business website"/>
+        <li>
+          <img src="https://placehold.co/600x400/ec4899/white?text=Fashion" alt="Fashion-Designs business website"/>
           <div class="proj-content">
-            <strong>Fashion Designs website:</strong>
-            Portable, responsive fashion designs website buit with master class <strong>HTML5 CSS3 and JavaScript. To showcase handsome menswear designs.</strong>
+            <strong>Fashion Designs website</strong>
+            <em>Portable, responsive fashion designs website built with master class HTML5 CSS3 and JavaScript to showcase handsome menswear designs.</em>
             <a href="https://emezch93.github.io/Samuel-Chukwuemeka-Fashion-Designs/" target="_blank" rel="noopener noreferrer">Visit Site</a>
           </div>
         </li>
-         <li>
-          <img src="EDUCOMMEX.png" alt="EDUCOMMEX_img"/>
+        <li>
+          <img src="https://placehold.co/600x400/14b8a6/white?text=EDUCOMMEX" alt="EDUCOMMEX_img"/>
           <div class="proj-content">
-            <strong>EDUCOMMEX Website:</strong> Is a platform for
-          <strong>EDUCATION COMMERCE & EXCHANGE.</strong>
+            <strong>EDUCOMMEX Website</strong>
+            <em>Platform for Education Commerce & Exchange.</em>
             <a href="https://emezch93.github.io/EDUCOMMEX/" target="_blank" rel="noopener noreferrer">Visit Site</a>
           </div>
-          </li>
-          
-          <li>
-          <img src="Course_img.png" alt="Course_img"/>
-          <div class="proj-content">
-            <strong>Web-Development-Course: </strong>
-            Swift Web Design Course from  <strong>Beginner-Pro | Deployment.</strong>
-            <a href="https://emezch93.github.io/Swift-Web-Design-Course/" target="_blank" rel="noopener noreferrer">Visit Site</a>
-          </div>
         </li>
+        <li>
+  <img src="https://placehold.co/600x400/8b5cf6/white?text=ML+Course" alt="Machine Learning AlgoNation Course"/>
+  <div class="proj-content">
+    <strong>Machine Learning | AlgoNation Course</strong>
+    <em>Practical ML course with hands-on projects — from beginner to pro.</em>
+    <a href="https://emezch93.github.io/Machine-Learning-AlgoNation-Course/" target="_blank" rel="noopener noreferrer">Visit Site</a>
+  </div>
+</li>
       </ul>
-      
     </section>
     
     <!-- Contact Section -->
@@ -599,88 +664,102 @@
       </div>
     </section>
   </main>
-<!-- Footer -->
-<footer class="ftr" role="contentinfo" style="display:none;">
-  <div class="footer-icons">
-    <!-- Facebook -->
-    <a href="https://www.facebook.com/emmanuel.ezenwa.177708" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
-      <i class="fab fa-facebook-f"></i>
-    </a>
-    <!-- WhatsApp -->
-    <a href="https://wa.me/+2348185947780" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp">
-      <i class="fab fa-whatsapp"></i>
-    </a>
-    <!-- Phone -->
-    <a href="tel:+2348185947780" aria-label="Phone" title="Phone" target="_blank">
-      <i class="fas fa-phone-alt"></i>
-    </a>
-  </div>
-  &copy; 2025 All Rights Reserved.
-</footer>
+
+  <!-- Footer -->
+  <footer class="ftr" role="contentinfo" style="display:none;">
+    <div class="footer-icons">
+      <a href="https://www.facebook.com/emmanuel.ezenwa.177708" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://wa.me/+2348185947780" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="tel:+2348185947780" aria-label="Phone" title="Phone" target="_blank">
+        <i class="fas fa-phone-alt"></i>
+      </a>
+    </div>
+    &copy; 2025 All Rights Reserved.
+  </footer>
+
   <script>
-  
-    // Loader fade out, show content & footer
-    window.addEventListener("load", () => {
+    // Loader
+    window.addEventListener('load', function() {
       setTimeout(() => {
-        const loader = document.getElementById("loader");
-        loader.style.opacity = "0";
+        document.getElementById('loader').style.opacity = '0';
         setTimeout(() => {
-          loader.style.display = "none";
-        document.getElementById("content").style.display = "block";
-        document.querySelector("footer.ftr").style.display = "block";
-        },500);
-      },6000);
+          document.getElementById('loader').style.display = 'none';
+          document.getElementById('content').style.display = 'block';
+          document.querySelector('footer.ftr').style.display = 'block';
+        }, 500);
+      }, 3000);
     });
 
-    // Back to top button toggle
-// Scroll progress + back to top
-const scrollBtn = document.getElementById("scrollTopBtn");
-const circle = document.querySelector(".progress-ring__circle");
-const circumference = 2 * Math.PI * 26; // r=26
-
-circle.style.strokeDasharray = circumference;
-circle.style.strokeDashoffset = circumference;
-
-window.addEventListener("scroll", () => {
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const scrollFraction = scrollTop / docHeight;
-  const offset = circumference - scrollFraction * circumference;
-
-  circle.style.strokeDashoffset = offset;
-
-  if (scrollTop > 200) {
-    scrollBtn.classList.add("active");
-  } else {
-    scrollBtn.classList.remove("active");
-  }
-});
-
-scrollBtn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
-    // Read more toggle
+    // Read More functionality
     function showMore() {
-      const moreText = document.getElementById("moreText");
-      const btn = document.getElementById("readMoreBtn");
-      moreText.style.display = "block";
-      btn.style.display = "none";
-      btn.setAttribute("aria-expanded", "true");
-    }
-
-    // Toggle profile image shape
-    function toggleShape() {
-      const img = document.getElementById("myImage");
-      const container = document.querySelector(".image-container");
-      if (img.classList.contains("block-image")) {
-        img.classList.remove("block-image");
-        container.setAttribute("aria-pressed", "false");
+      const moreText = document.getElementById('moreText');
+      const techIcons = document.getElementById('techIcons');
+      const readMoreBtn = document.getElementById('readMoreBtn');
+      const readMoreText = document.getElementById('readMoreText');
+      
+      if (moreText.style.display === 'none' || moreText.style.display === '') {
+        moreText.style.display = 'block';
+        techIcons.style.display = 'flex';
+        readMoreText.textContent = 'Read less';
+        readMoreBtn.setAttribute('aria-expanded', 'true');
       } else {
-        img.classList.add("block-image");
-        container.setAttribute("aria-pressed", "true")
+        moreText.style.display = 'none';
+        techIcons.style.display = 'none';
+        readMoreText.textContent = 'Read more';
+        readMoreBtn.setAttribute('aria-expanded', 'false');
       }
     }
+
+    // Toggle image shape
+    function toggleShape() {
+      const img = document.getElementById('myImage');
+      const container = document.querySelector('.image-container');
+      const isPressed = container.getAttribute('aria-pressed') === 'true';
+      
+      if (isPressed) {
+        img.classList.remove('block-image');
+        container.setAttribute('aria-pressed', 'false');
+      } else {
+        img.classList.add('block-image');
+        container.setAttribute('aria-pressed', 'true');
+      }
+    }
+
+    // Scroll to top button
+    window.addEventListener('scroll', function() {
+      const scrollTopBtn = document.getElementById('scrollTopBtn');
+      if (window.pageYOffset > 300) {
+        scrollTopBtn.classList.add('active');
+      } else {
+        scrollTopBtn.classList.remove('active');
+      }
+    });
+
+    document.getElementById('scrollTopBtn').addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav.navbar a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
   </script>
 </body>
 </html>
