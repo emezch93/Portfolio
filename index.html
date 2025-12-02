@@ -1,782 +1,383 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PORTFOLIO | EZENWA CHIDERA EMMANUEL</title>
-  <meta name="description" content="Portfolio of Ezenwa Chidera Emmanuel showcasing frontend skills, projects, and contact."/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ezenwa Chidera Emmanuel | Front-End Developer & UI Craftsman</title>
+  <meta name="description" content="Passionate Front-End Developer building fast, accessible, and visually stunning web experiences." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ezenwa Chidera Emmanuel — Front-End Developer" />
+  <meta property="og:description" content="Pixel-perfect code • Lightning-fast performance • Beautiful design" />
+  <meta property="og:image" content="https://emezch93.github.io/og-preview.jpg" />
+  <meta property="og:url" content="https://emezch93.github.io" />
+
+  <!-- Tailwind + Font Awesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Space Grotesk"', 'sans-serif'],
+            body: ['Inter', 'sans-serif']
+          },
+          animation: {
+            marquee: 'marquee 40s linear infinite',
+            float: 'float 6s ease-in-out infinite',
+            glow: 'glow 3s ease-in-out infinite alternate'
+          },
+          keyframes: {
+            marquee: { '0%': { transform: 'translateX(0%)' }, '100%': { transform: 'translateX(-50%)' } },
+            float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-20px)' } },
+            glow: { from: { filter: 'brightness(1)' }, to: { filter: 'brightness(1.3)' } }
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
-    /* Reset & Base */
-    *, *::before, *::after { box-sizing: border-box; }
     :root {
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --secondary: #0f172a;
-      --accent: #10b981;
-      --light: #f8fafc;
-      --gray: #64748b;
-      --dark-gray: #334155;
-      --card-bg: #ffffff;
-      --header-bg: #0f172a;
-      --nav-bg: #1e293b;
-      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --bg-primary: #000000;
+      --text-primary: #ffffff;
+      --text-secondary: #a0a0a0;
+      --border: rgba(255,255,255,0.1);
     }
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-      min-height: 100vh;
-      color: var(--secondary);
-      line-height: 1.6;
-      overflow-x: hidden;
+    .light {
+      --bg-primary: #ffffff;
+      --text-primary: #000000;
+      --text-secondary: #606060;
+      --border: rgba(0,0,0,0.1);
     }
-    a {
-      color: var(--primary);
-      text-decoration: none;
-      transition: var(--transition);
-    }
-    a:hover, a:focus {
-      color: var(--primary-dark);
-      outline: 2px solid var(--primary);
-      outline-offset: 2px;
-    }
-    
-    /* Header */
-    header {
-      background: var(--header-bg);
-      color: white;
-      text-align: center;
-      padding: 3rem 1rem 2rem;
-      position: relative;
-      overflow: hidden;
-    }
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.1) 0%, transparent 50%);
-      z-index: 0;
-    }
-    header > * {
-      position: relative;
-      z-index: 1;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+    body { background: var(--bg-primary); color: var(--text-primary); }
+    .text-gray-300 { color: var(--text-secondary); }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #00f5ff, #ff0ff5, #00f5ff);
+      background-size: 300%;
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradient 8s ease infinite;
     }
-    .tagline {
-      font-size: 1.2rem;
-      font-weight: 400;
-      opacity: 0.9;
-      color: #cbd5e1;
-      max-width: 600px;
-      margin: 0 auto;
-      line-height: 1.5;
-    }
-    
-    /* Navigation */
-    nav.navbar {
-      background: var(--nav-bg);
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1.25rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: var(--shadow);
-    }
-    nav.navbar a {
-      color: white;
-      padding: 0.5rem 1.25rem;
-      border-radius: 8px;
-      font-weight: 500;
-      font-size: 1.1rem;
-      background: transparent;
-      transition: var(--transition);
-    }
-    nav.navbar a:hover, nav.navbar a:focus {
-      background: rgba(255, 255, 255, 0.1);
-      transform: translateY(-2px);
-    }
-    
-    /* Main Content */
-    main {
-      flex: 1 0 auto;
-      max-width: 1200px;
-      margin: 3rem auto;
-      padding: 0 1.5rem;
-    }
-    section {
-      background: var(--card-bg);
-      border-radius: 16px;
-      box-shadow: var(--shadow);
-      margin-bottom: 3rem;
-      padding: 2.5rem;
-      transition: var(--transition);
-    }
-    section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -6px rgba(0, 0, 0, 0.05);
-    }
-    section h2 {
-      text-align: center;
-      color: var(--secondary);
-      font-size: 2.25rem;
-      margin-bottom: 2rem;
-      font-family: 'Merriweather', serif;
-      font-weight: 700;
-      position: relative;
-    }
-    section h2::after {
-      content: '';
-      position: absolute;
-      bottom: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      border-radius: 2px;
-    }
-    
-    /* About Me */
-    .aboutme-flex {
-      display: flex;
-      align-items: center;
-      gap: 3rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .image-container {
-      cursor: pointer;
-      outline-offset: 3px;
-      flex-shrink: 0;
-      user-select: none;
-      display: flex;
-      justify-content: center;
-      position: relative;
-    }
-    .image-container::before {
-      content: '';
-      position: absolute;
-      top: -10px;
-      left: -10px;
-      right: -10px;
-      bottom: -10px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      z-index: -1;
-      opacity: 0.3;
-      transition: var(--transition);
-    }
-    .image-container:hover::before {
-      opacity: 0.6;
-      transform: scale(1.05);
-    }
-    #myImage {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      border: 4px solid white;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-      transition: var(--transition);
-      object-fit: cover;
-    }
-    #myImage.block-image {
-      border-radius: 50%;
-      width: 320px;
-      height: 360px;
-    }
-    .aboutme-text {
-      flex: 1 1 400px;
-      min-width: 300px;
-      max-width: 600px;
-      font-size: 1.1rem;
-      color: var(--dark-gray);
-    }
-    .aboutme-text p {
-      margin-top: 0;
-      margin-bottom: 1.25rem;
-      line-height: 1.7;
-    }
-    .read-more-btn {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: white;
-      border: none;
-      border-radius: 8px;
-      padding: 12px 28px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      margin-top: 1rem;
-      transition: var(--transition);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-    }
-    .read-more-btn:hover, .read-more-btn:focus {
-      background: linear-gradient(135deg, var(--primary-dark), #1e40af);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
-      outline: 2px solid white;
-      outline-offset: 2px;
-    }
-    .tech-icons {
-      display: flex;
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-      flex-wrap: wrap;
-    }
-    .tech-icon {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 2.5rem;
-      transition: var(--transition);
-      color: var(--primary);
-    }
-    .tech-icon:hover {
-      transform: translateY(-5px) scale(1.1);
-      color: var(--primary-dark);
-    }
-    .tech-icon span {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: var(--secondary);
-    }
-    
-    /* Portfolio */
-    #Portfolio ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 auto;
-      max-width: 1000px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-    #Portfolio li {
-      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      display: flex;
-      flex-direction: column;
-      transition: var(--transition);
-      border: 1px solid #e2e8f0;
-    }
-    #Portfolio li:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-      border-color: var(--primary);
-    }
-    #Portfolio li img {
-      width: 100%;
-      height: 160px;
-      border-radius: 8px;
-      object-fit: cover;
-      margin-bottom: 1rem;
-      background: #e2e8f0;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-    #Portfolio .proj-content {
-      flex: 1;
-      color: var(--dark-gray);
-    }
-    #Portfolio strong {
-      font-size: 1.15rem;
-      color: var(--secondary);
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-    #Portfolio em {
-      font-style: italic;
-      color: var(--gray);
-      display: block;
-      margin: 0.5rem 0;
-    }
-    #Portfolio a {
-      display: inline-block;
-      margin-top: auto;
-      padding: 8px 16px;
-      background: var(--primary);
-      color: white;
-      border-radius: 6px;
-      font-weight: 500;
-      text-align: center;
-      transition: var(--transition);
-    }
-    #Portfolio a:hover, #Portfolio a:focus {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-    }
-    
-    /* Contact */
-    #Contact .container {
-      color: var(--secondary);
-      text-align: center;
-      font-size: 1.15rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    #Contact blockquote {
-      color: var(--secondary);
-      font-style: italic;
-      background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-      border-left: 4px solid var(--primary);
-      padding: 1.5rem;
-      border-radius: 8px;
-      margin: 1.5rem 0;
-      font-size: 1.1rem;
-    }
-    #Contact a {
-      font-weight: 600;
-      display: inline-block;
-      margin-top: 0.5rem;
-    }
-    
-    /* Footer */
-    footer.ftr {
-      background: var(--secondary);
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem 1.5rem;
-      font-size: 1.1rem;
-    }
-    .footer-icons {
-      display: flex;
-      justify-content: center;
-      gap: 28px;
-      margin-bottom: 1.5rem;
-    }
-    .footer-icons a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      font-size: 1.5rem;
-      color: white;
-      margin: 0 5px;
-      transition: var(--transition);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      text-decoration: none;
-      background: linear-gradient(135deg, #4f46e5, #7c3aed);
-    }
-    .footer-icons a[href*="facebook"] { background: linear-gradient(135deg, #1877f2, #0d5cb6); }
-    .footer-icons a[href*="wa.me"] { background: linear-gradient(135deg, #25d366, #128c7e); }
-    .footer-icons a[href*="tel:"] { background: linear-gradient(135deg, #2980b9, #1a5a8c); }
-    .footer-icons a:hover, .footer-icons a:focus {
-      transform: translateY(-5px) scale(1.1);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-      outline: 2px solid white;
-      outline-offset: 4px;
-    }
-    
-    /* Loader */
-    #loader {
+    @keyframes gradient { 0%,100% { background-position: 0% } 50% { background-position: 100% } }
+
+    .cursor-glow {
       position: fixed;
-      width: 100vw;
-      height: 100vh;
-      background: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      transition: opacity 0.5s ease;
-    }
-    .spinner {
-      width: 80px;
-      height: 80px;
-      border: 8px solid #e0f2fe;
-      border-top: 8px solid var(--primary);
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    
-    /* Scroll to top */
-    #scrollTopBtn {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 60px;
-      height: 60px;
-      border: none;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: white;
-      font-size: 1.4rem;
-      cursor: pointer;
-      z-index: 1002;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: var(--transition);
-      opacity: 0;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(0,245,255,0.2) 0%, transparent 70%);
       pointer-events: none;
-      box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      opacity: 0;
+      transition: opacity 0.5s;
     }
-    #scrollTopBtn.active {
-      opacity: 1;
-      pointer-events: auto;
-      transform: scale(1);
+
+    .project-card {
+      transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
     }
-    #scrollTopBtn:hover {
-      transform: scale(1.1) translateY(-3px);
-      box-shadow: 0 6px 25px rgba(37, 99, 235, 0.6);
-    }
-    
-    /* Responsive */
-    @media (max-width: 768px) {
-      header h1 { font-size: 2rem; }
-      .tagline { font-size: 1rem; }
-      nav.navbar { gap: 1rem; padding: 1rem 0; }
-      nav.navbar a { padding: 0.4rem 0.8rem; font-size: 1rem; }
-      main { margin: 2rem auto; }
-      section { padding: 1.5rem; margin-bottom: 2rem; }
-      section h2 { font-size: 1.8rem; }
-      .aboutme-flex { flex-direction: column; gap: 1.5rem; }
-      #myImage { width: 140px; height: 140px; }
-      #myImage.block-image { width: 280px; height: 320px; }
-      #Portfolio ul { grid-template-columns: 1fr; }
-      #Portfolio li img { height: 140px; }
-    }
-    
-    @media (max-width: 480px) {
-      header { padding: 2rem 1rem 1.5rem; }
-      header h1 { font-size: 1.75rem; }
-      .tagline { font-size: 0.95rem; }
-      nav.navbar { flex-wrap: wrap; gap: 0.5rem; }
-      nav.navbar a { padding: 0.3rem 0.6rem; font-size: 0.95rem; }
-      section { padding: 1.25rem; }
-      section h2 { font-size: 1.6rem; }
-      .tech-icons { gap: 1rem; }
-      .tech-icon { font-size: 2rem; }
-      #scrollTopBtn { width: 50px; height: 50px; font-size: 1.2rem; }
+    .project-card:hover {
+      transform: translateY(-24px) scale(1.03);
+      box-shadow: 0 40px 80px rgba(0,245,255,0.25);
     }
   </style>
 </head>
-<body>
-  <!-- Loader -->
-  <div id="loader" aria-label="Loading content" role="alert" aria-busy="true">
-    <div class="spinner" aria-hidden="true"></div>
-  </div>
 
-  <!-- Scroll to top button -->
-  <button id="scrollTopBtn" aria-label="Back to top">
-    <span class="arrow">↑</span>
+<body class="min-h-screen overflow-x-hidden">
+
+  <!-- Cursor Glow -->
+  <div id="glow" class="cursor-glow"></div>
+
+  <!-- Theme Toggle -->
+  <button id="themeToggle" aria-label="Toggle light/dark mode"
+    class="fixed top-6 right-6 z-50 p-4 bg-white/10 backdrop-blur-xl rounded-full border border-white/20 hover:scale-110 transition-all shadow-2xl">
+    <i class="fas fa-moon text-2xl"></i>
   </button>
 
-  <!-- Header -->
-  <header>
-    <h1>Turning Ideas Into Seamless Web Solutions</h1>
-    <div class="tagline">Front-End Developer | User-Friendly Interfaces | Accessibility Advocate</div>
+  <!-- Hero -->
+  <header class="min-h-screen flex items-center justify-center px-6 relative">
+    <div class="text-center z-10 max-w-6xl mx-auto">
+      <h1 class="text-6xl md:text-8xl lg:text-9xl font-bold leading-tight mb-6">
+        <span class="gradient-text block">Ezenwa Chidera</span>
+        <span class="text-5xl md:text-7xl block mt-2">Emmanuel</span>
+      </h1>
+      <p class="text-2xl md:text-3xl mb-12 text-cyan-300 font-light tracking-wide">
+        Front-End Developer • Accessibility Advocate • UI/UX Enthusiast
+      </p>
+      <div class="flex flex-col sm:flex-row gap-6 justify-center">
+        <a href="#projects" class="px-12 py-6 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-full font-bold text-black text-xl hover:scale-105 transition transform shadow-2xl">
+          Explore My Work
+        </a>
+        <a href="#contact" class="px-12 py-6 border-2 border-cyan-400 rounded-full text-cyan-400 text-xl hover:bg-cyan-400/10 transition backdrop-blur">
+          Let's Talk
+        </a>
+      </div>
+    </div>
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+      <i class="fas fa-chevron-down text-5xl opacity-60"></i>
+    </div>
   </header>
 
-  <!-- Navigation -->
-  <nav class="navbar" role="navigation" aria-label="Primary navigation">
-    <a href="#aboutme">About Me</a>
-    <a href="#Portfolio">Portfolio</a>
-    <a href="#Contact">Contact</a>
-  </nav>
+  <!-- ALL 14 PROJECTS -->
+  <section id="projects" class="py-32 px-6 max-w-7xl mx-auto">
+    <h2 class="text-5xl md:text-7xl font-bold text-center mb-24 gradient-text">Featured Projects</h2>
 
-  <!-- Main Content -->
-  <main id="content" style="display:none;">
-    <!-- About Me Section -->
-    <section id="aboutme" tabindex="-1" aria-labelledby="aboutme-title">
-      <h2 id="aboutme-title">About Me</h2>
-      <div class="aboutme-flex">
-        <div class="image-container" role="button" tabindex="0" aria-pressed="false" aria-label="Toggle profile image shape"
-          onclick="toggleShape()" onkeydown="if(event.key==='Enter' || event.key===' ') {event.preventDefault(); toggleShape();}">
-          <img id="myImage" src="IMG_20250810_093813_451.jpg" alt="Photo of Ezenwa Chidera Emmanuel"/>
-        </div>
-        <div class="aboutme-text">
-          <p>
-            Hi, I'm <strong>EZENWA CHIDERA EMMANUEL</strong>, a dedicated <strong>Web Developer</strong> passionate about building user-friendly, responsive web interfaces. I specialize in <strong>Front-end Development</strong>, transforming ideas into interactive, visually appealing digital experiences using <strong>HTML5, CSS3, JavaScript</strong> and modern frameworks.
-          </p>
-          <p id="moreText" style="display: none;">
-            Over the past years, I have implemented a range of interesting projects, including this portfolio as listed below. Each showcases not only my growth as a developer, but also real-world application of software concepts and design trends.<br />
-            <strong>Let's work together! I am open to programming, collaboration, and building modern web solutions.</strong>
-          </p>
-          <div class="tech-icons" id="techIcons" style="display: none;">
-            <div class="tech-icon">
-              <i class="fab fa-html5"></i>
-              <span>HTML5</span>
-            </div>
-            <div class="tech-icon">
-              <i class="fab fa-css3-alt"></i>
-              <span>CSS3</span>
-            </div>
-            <div class="tech-icon">
-              <i class="fab fa-js-square"></i>
-              <span>JavaScript</span>
-            </div>
-          </div>
-          <button class="read-more-btn" id="readMoreBtn" aria-expanded="false" aria-controls="moreText" onclick="showMore()">
-            <span id="readMoreText">Read more</span>
-            <i class="fas fa-arrow-right"></i>
-          </button>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+
+      <!-- 1 -->
+      <div class="project-card bg-gradient-to-br from-blue-900/40 to-purple-900/40 rounded-3xl overflow-hidden">
+        <img src="https://placehold.co/800x500/2563eb/white?text=Physics+Education" alt="Physics Education Platform" class="w-full h-64 object-cover" loading="lazy">
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3">Above the Sky Learnings</h3>
+          <p class="text-gray-300 mb-6">Modern physics education platform with interactive diagrams and quizzes.</p>
+          <a href="https://emezch93.github.io/Above-the-sky-learnings" target="_blank" class="text-cyan-400 font-bold hover:underline">Live Demo →</a>
         </div>
       </div>
-    </section>
 
-    <!-- Portfolio Section -->
-    <section id="Portfolio" tabindex="-1" aria-labelledby="portfolio-title">
-      <h2 id="portfolio-title">Portfolio Projects</h2>
-      <p style="text-align:center; max-width: 700px; margin: 0 auto 2rem; color: var(--gray);">
-        Highlights of my personal projects in front-end development, UX and Web accessibility.
-      </p>
-      <ul>
-        <li>
-          <img src="https://placehold.co/600x400/2563eb/white?text=Physics+Education" alt="Above the sky-learnings Screenshot"/>
-          <div class="proj-content">
-            <strong>Above the Sky-Learnings (Physics Education)</strong>
-            <em>Smart, simple educational site for Physics.</em>
-            <a href="https://emezch93.github.io/Above-the-sky-learnings" target="_blank" rel="noopener noreferrer">Visit Site</a>
-          </div>
-        </li>
-        <li>
-          <img src="https://placehold.co/600x400/0f172a/white?text=Digital+Clock" alt="Digital Clock Web App"/>
-          <div class="proj-content">
-            <strong>Digital Clock Web App</strong>
-            <em>Real-time clock reading seconds/minutes/hours from system time.</em>
-            <a href="https://emezch93.github.io/Digital-clock-/" target="_self" rel="noopener noreferrer">View Project</a>
-          </div>
-        </li>
-        <li>
-          <img src="https://placehold.co/600x400/10b981/white?text=Stopwatch" alt="stopwatch img"/>
-          <div class="proj-content">
-            <strong>Minimalist Stopwatch</strong>
-            <em>Timer with start, pause, reset functionality.</em>
-            <a href="https://emezch93.github.io/Stop-Watch-/" target="_self" rel="noopener noreferrer">View Project</a>
-          </div>
-        </li>
-        <li>
-          <img src="https://placehold.co/600x400/7c3aed/white?text=Data+Nova+Network" alt="Data Nova Network Screenshot"/>
-          <div class="proj-content">
-            <strong>Data Nova Network (Community Simulation)</strong>
-            <em>Interactive environment modeling hidden patterns in data.</em>
-            <a href="https://emezch93.github.io/Data-Nova-Network-/" target="_self" rel="noopener noreferrer">View Project</a>
-          </div>
-        </li>
-        <li>
-          <img src="https://placehold.co/600x400/f59e0b/white?text=RPS+Game" alt="Rock Paper Scissors img"/>
-          <div class="proj-content">
-            <strong>Rock Paper Scissors Game</strong>
-            <em>Interactive JS game with score tracking.</em>
-            <a href="https://emezch93.github.io/Rock-Paper-Scissors-/" target="_self" rel="noopener noreferrer">View Project</a>
-          </div>
-        </li>
-        <li>
-          <img src="https://placehold.co/600x400/ef4444/white?text=AI+Assistant" alt="Randolph AI Assistant Screenshot"/>
-          <div class="proj-content">
-            <strong>Randolph AI Assistant</strong>
-            <em>Interactive bot for the Data Nova Network platform.</em>
-            <a href="https://emezch93.github.io/Updated-Randolph-AI-/" target="_self" rel="noopener noreferrer">View Project</a>
-          </div>
-        </li>
-        <li>
-          <img src="https://placehold.co/600x400/8b5cf6/white?text=Calculator" alt="calculator-img"/>
-          <div class="proj-content">
-            <strong>Web Calculator</strong>
-            <em>Multi-feature calculator with keyboard support using Event handling, JavaScript math functions, input validation, CSS grid layout.</em>
-            <a href="https://emezch93.github.io/Calculator-Web-App/" target="_self" rel="noopener noreferrer">View Project</a>
-          </div>
-        </li>
-        <!--li>
-          <img src="https://placehold.co/600x400/06b6d4/white?text=Chemistry" alt="transition-element-img"/>
-          <div class="proj-content">
-            <strong>Chemistry Student Portal</strong>
-            <em>Education site for Chemistry (login required) code [5215].</em>
-            <a href="https://emezch93.github.io/Transition-elements/" target="_self" rel="noopener noreferrer">View Project</a>
-          </div>
-   </li-->
-        <li>
-          <img src="https://placehold.co/600x400/84cc16/white?text=Code+Editor" alt="Code Editor Screenshot"/>
-          <div class="proj-content">
-            <strong>Portable Code Editor</strong>
-            <em>Run HTML, CSS, JS live in-browser.</em>
-            <a href="https://emezch93.github.io/Code-Editor-/" target="_self" rel="noopener noreferrer">View Project</a>
-          </div>
-        </li>
-        <li>
-          <img src="https://placehold.co/600x400/f97316/white?text=Cyber+Cafe" alt="Business Website Screenshot"/>
-          <div class="proj-content">
-            <strong>Business Website (Cyber Cafe)</strong>
-            <em>Modern, clean responsive landing site for digital services.</em>
-            <a href="https://emezch93.github.io/Business-website-/" target="_blank" rel="noopener noreferrer">Visit Site</a>
-          </div>
-        </li>
-        <li>
-          <img src="https://placehold.co/600x400/ec4899/white?text=Fashion" alt="Fashion-Designs business website"/>
-          <div class="proj-content">
-            <strong>Fashion Designs website</strong>
-            <em>Portable, responsive fashion designs website built with master class HTML5 CSS3 and JavaScript to showcase handsome menswear designs.</em>
-            <a href="https://emezch93.github.io/Samuel-Chukwuemeka-Fashion-Designs/" target="_blank" rel="noopener noreferrer">Visit Site</a>
-          </div>
-        </li>
-        <li>
-          <img src="https://placehold.co/600x400/14b8a6/white?text=EDUCOMMEX+Website" alt="EDUCOMMEX_img"/>
-          <div class="proj-content">
-            <strong>EDUCOMMEX Website</strong>
-            <em>Platform for Education Commerce & Exchange.</em>
-            <a href="https://emezch93.github.io/EDUCOMMEX/" target="_blank" rel="noopener noreferrer">Visit Site</a>
-          </div>
-        </li>
-          <li>
-  <img src="https://placehold.co/600x400/5D6FBF/white?text=EDUCOMMEX+Quiz+App" alt="EDUCOMMEX Quiz App"/>
-  <div class="proj-content">
-    <strong>EDUCOMMEX–Quiz App</strong>
-    <em>Advanced interactive quiz platform for university-level subjects.</em>
-    <a href="https://emezch93.github.io/EDUCOMMEX-QUIZ-APP/" target="_self" rel="noopener noreferrer">View Project</a>
-  </div>
-</li>
-     <li>
-  <img src="https://placehold.co/600x400/5F9EA0/white?text=Swift+Web+Design+Course" alt="Web Design Course"/>
-  <div class="proj-content">
-    <strong>Web-Development-Course</strong>
-    <em>Swift Web Design Course from Beginner-Pro | Deployment.</em>
-    <a href="https://emezch93.github.io/CodeVent-Swift-Web-Development-Course/" target="_blank" rel="noopener noreferrer">Visit Site</a>
-  </div>
-</li>   
-        <li>
-  <img src="https://placehold.co/600x400/8b5cf6/white?text=ML+Course" alt="Machine Learning AlgoNation Course"/>
-  <div class="proj-content">
-    <strong>Machine Learning | AlgoNation Course</strong>
-    <em>Practical ML course with hands-on projects — from beginner to pro.</em>
-    <a href="https://emezch93.github.io/Machine-Learning-AlgoNation-Course/" target="_blank" rel="noopener noreferrer">Visit Site</a>
-  </div>
-</li>
-      </ul>
-    </section>
-    
-    <!-- Contact Section -->
-    <section id="Contact" tabindex="-1" aria-labelledby="contact-title">
-      <h2 id="contact-title">Contact</h2>
-      <div class="container">
-        <blockquote>
-          Reach me via email: 
-          <a href="mailto:emezch93@gmail.com" target="_blank" rel="noopener noreferrer">emezch93@gmail.com</a><br>
-          You can also contact me Via Facebook, WhatsApp or call using the icons below!.
-      
-        </blockquote>
+      <!-- 2 -->
+      <div class="project-card bg-gradient-to-br from-emerald-900/40 to-teal-900/40 rounded-3xl overflow-hidden">
+        <img src="https://placehold.co/800x500/10b981/white?text=Digital+Clock" alt="Digital Clock" class="w-full h-64 object-cover" loading="lazy">
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3">Real-Time Digital Clock</h3>
+          <p class="text-gray-300 mb-6">Elegant real-time clock with 12/24hr format toggle.</p>
+          <a href="https://emezch93.github.io/Digital-clock-/" target="_blank" class="text-emerald-400 font-bold hover:underline">View →</a>
+        </div>
       </div>
-    </section>
-  </main>
 
-  <!-- Footer -->
-  <footer class="ftr" role="contentinfo" style="display:none;">
-    <div class="footer-icons">
-      <a href="https://www.facebook.com/emmanuel.ezenwa.177708" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
-        <i class="fab fa-facebook-f"></i>
+      <!-- 3 -->
+      <div class="project-card bg-gradient-to-br from-green-900/40 to-cyan-900/40 rounded-3xl overflow-hidden">
+        <img src="https://placehold.co/800x500/10b981/white?text=Stopwatch" alt="Stopwatch" class="w-full h-64 object-cover" loading="lazy">
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3">Minimalist Stopwatch</h3>
+          <p class="text-gray-300 mb-6">Precision timer with lap recording and clean UI.</p>
+          <a href="https://emezch93.github.io/Stop-Watch-/" target="_blank" class="text-cyan-400 font-bold hover:underline">Open →</a>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="project-card bg-gradient-to-br from-purple-900/40 to-pink-900/40 rounded-3xl overflow-hidden">
+        <img src="https://placehold.co/800x500/ff3e6c/white?text=AI+Assistant" alt="AI Assistant" class="w-full h-64 object-cover" loading="lazy">
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3">Randolph AI Assistant</h3>
+          <p class="text-gray-300 mb-6">Voice & text AI chatbot with animated responses.</p>
+          <a href="https://emezch93.github.io/Updated-Randolph-AI-/" target="_blank" class="text-pink-400 font-bold hover:underline">Try It →</a>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="project-card bg-gradient-to-br from-orange-900/40 to-red-900/40 rounded-3xl overflow-hidden">
+        <img src="https://placehold.co/800x500/f97316/white?text=RPS+Game" alt="Rock Paper Scissors" class="w-full h-64 object-cover" loading="lazy">
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3">Rock Paper Scissors</h3>
+          <p class="text-gray-300 mb-6">Classic game with score tracking and animations.</p>
+          <a href="https://emezch93.github.io/Rock-Paper-Scissors-/" target="_blank" class="text-orange-400 font-bold hover:underline">Play →</a>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="project-card bg-gradient-to-br from-indigo-900/40 to-blue-900/40 rounded-3xl overflow-hidden">
+        <img src="https://placehold.co/800x500/6366f1/white?text=Calculator" alt="Web Calculator" class="w-full h-64 object-cover" loading="lazy">
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3">Advanced Web Calculator</h3>
+          <p class="text-gray-300 mb-6">Keyboard support, history, dark mode, and smooth animations.</p>
+          <a href="https://emezch93.github.io/Calculator-Web-App/" target="_blank" class="text-indigo-400 font-bold hover:underline">Use It →</a>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="project-card bg-gradient-to-br from-teal-900/40 to-cyan-900/40 rounded-3xl overflow-hidden">
+        <img src="https://placehold.co/800x500/14b8a6/white?text=Code+Editor" alt="Live Code Editor" class="w-full h-64 object-cover" loading="lazy">
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3">Portable Code Editor</h3>
+          <p class="text-gray-300 mb-6">Run HTML/CSS/JS live in browser — instant preview.</p>
+          <a href="https://emezch93.github.io/Code-Editor-/" target="_blank" class="text-teal-400 font-bold hover:underline">Open Editor →</a>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="project-card bg-gradient-to-br from-pink-900/40 to-rose-900/40 rounded-3xl overflow-hidden">
+        <img src="https://placehold.co/800x500/ec4899/white?text=Fashion" alt="Fashion Website" class="w-full h-64 object-cover" loading="lazy">
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3">Samuel Chukwuemeka Fashion</h3>
+          <p class="text-gray-300 mb-6">Luxury menswear showcase with smooth scroll & gallery.</p>
+          <a href="https://emezch93.github.io/Samuel-Chukwuemeka-Fashion-Designs/" target="_blank" class="text-pink-400 font-bold hover:underline">Visit Site →</a>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="project-card bg-gradient-to-br from-cyan-900/40 to-blue-900/40 rounded-3xl overflow-hidden">
+        <img src="https://placehold.co/800x500/06b6d4/white?text=EDUCOMMEX" alt="EDUCOMMEX Platform" class="w-full h-64 object-cover" loading="lazy">
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3">EDUCOMMEX — Education Marketplace</h3>
+          <p class="text-gray-300 mb-6">Full-featured education commerce platform.</p>
+          <a href="https://emezch93.github.io/EDUCOMMEX/" target="_blank" class="text-cyan-400 font-bold hover:underline">Explore →</a>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="project-card bg-gradient-to-br from-purple-900/40 to-violet-900/40 rounded-3xl overflow-hidden">
+        <img src="https://placehold.co/800x500/8b5cf6/white?text=Quiz+App" alt="Quiz App" class="w-full h-64 object-cover" loading="lazy">
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3">EDUCOMMEX Quiz Platform</h3>
+          <p class="text-gray-300 mb-6">Advanced quiz engine with scoring and timer.</p>
+          <a href="https://emezch93.github.io/EDUCOMMEX-QUIZ-APP/" target="_blank" class="text-violet-400 font-bold hover:underline">Take Quiz →</a>
+        </div>
+      </div>
+
+      <!-- 11 -->
+      <div class="project-card bg-gradient-to-br from-amber-900/40 to-orange-900/40 rounded-3xl overflow-hidden">
+        <img src="https://placehold.co/800x500/f59e0b/white?text=Cyber+Cafe" alt="Business Site" class="w-full h-64 object-cover" loading="lazy">
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3">Cyber Cafe Business Site</h3>
+          <p class="text-gray-300 mb-6">Professional landing page for digital services.</p>
+          <a href="https://emezch93.github.io/Business-website-/" target="_blank" class="text-amber-400 font-bold hover:underline">View Site →</a>
+        </div>
+      </div>
+
+      <!-- 12 -->
+      <div class="project-card bg-gradient-to-br from-lime-900/40 to-green-900/40 rounded-3xl overflow-hidden">
+        <img src="https://placehold.co/800x500/84cc16/white?text=Web+Course" alt="Web Dev Course" class="w-full h-64 object-cover" loading="lazy">
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3">Swift Web Development Course</h3>
+          <p class="text-gray-300 mb-6">From zero to pro — complete curriculum site.</p>
+          <a href="https://emezch93.github.io/CodeVent-Swift-Web-Development-Course/" target="_blank" class="text-lime-400 font-bold hover:underline">Start Learning →</a>
+        </div>
+      </div>
+
+      <!-- 13 -->
+      <div class="project-card bg-gradient-to-br from-indigo-900/40 to-purple-900/40 rounded-3xl overflow-hidden">
+        <img src="https://placehold.co/800x500/8b5cf6/white?text=ML+Course" alt="Machine Learning Course" class="w-full h-64 object-cover" loading="lazy">
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3">Machine Learning AlgoNation Course</h3>
+          <p class="text-gray-300 mb-6">Hands-on ML course with projects from beginner to pro.</p>
+          <a href="https://emezch93.github.io/Machine-Learning-AlgoNation-Course/" target="_blank" class="text-indigo-400 font-bold hover:underline">Enroll Now →</a>
+        </div>
+      </div>
+
+      <!-- 14 -->
+      <div class="project-card bg-gradient-to-br from-red-900/40 to-orange-900/40 rounded-3xl overflow-hidden">
+        <img src="https://placehold.co/800x500/ef4444/white?text=Data+Nova" alt="Data Nova Network" class="w-full h-64 object-cover" loading="lazy">
+        <div class="p-8">
+          <h3 class="text-2xl font-bold mb-3">Data Nova Network</h3>
+          <p class="text-gray-300 mb-6">Interactive data visualization and simulation platform.</p>
+          <a href="https://emezch93.github.io/Data-Nova-Network-/" target="_blank" class="text-red-400 font-bold hover:underline">Launch →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Skills Marquee -->
+  <div class="py-16 bg-gradient-to-r from-cyan-900/20 to-purple-900/20 backdrop-blur">
+    <div class="overflow-hidden">
+      <div class="marquee-content inline-block text-3xl font-bold whitespace-nowrap">
+        <span class="mx-8 text-cyan-400">HTML5</span>
+        <span class="mx-8 text-purple-400">CSS3</span>
+        <span class="mx-8 text-pink-400">JavaScript</span>
+        <span class="mx-8 text-emerald-400">Responsive Design</span>
+        <span class="mx-8 text-cyan-400">Tailwind CSS</span>
+        <span class="mx-8 text-violet-400">Accessibility</span>
+        <span class="mx-8 text-amber-400">Performance</span>
+        <span class="mx-8 text-rose-400">UI/UX</span>
+        <span class="mx-8 text-lime-400">Git & GitHub</span>
+        <!-- Duplicate for loop -->
+        <span class="mx-8 text-cyan-400">HTML5</span>
+        <span class="mx-8 text-purple-400">CSS3</span>
+        ...
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <section id="contact" class="py-32 px-6 text-center bg-gradient-to-b from-transparent to-black/50">
+    <h2 class="text-5xl md:text-7xl font-bold mb-20 gradient-text">Let's Build Together</h2>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-10 max-w-5xl mx-auto">
+      <a href="mailto:emezch93@gmail.com" class="group" target="_blank">
+        <div class="bg-gradient-to-br from-blue-600 to-purple-700 p-12 rounded-3xl hover:scale-110 transition transform shadow-2xl">
+          <i class="fas fa-envelope text-6xl mb-4"></i>
+          <p class="font-bold text-lg">Email</p>
+        </div>
       </a>
-      <a href="https://wa.me/+2348185947780" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+      <a href="https://wa.me/+2348185947780" target="_blank" class="group">
+        <div class="bg-gradient-to-br from-green-500 to-emerald-700 p-12 rounded-3xl hover:scale-110 transition">
+          <i class="fab fa-whatsapp text-6xl mb-4"></i>
+          <p class="font-bold text-lg">WhatsApp</p>
+        </div>
       </a>
-      <a href="tel:+2348185947780" aria-label="Phone" title="Phone" target="_blank">
-        <i class="fas fa-phone-alt"></i>
+      <a href="tel:+2348185947780" class="group" target="_blank">
+        <div class="bg-gradient-to-br from-purple-600 to-pink-700 p-12 rounded-3xl hover:scale-110 transition">
+          <i class="fas fa-phone text-6xl mb-4"></i>
+          <p class="font-bold text-lg">Call</p>
+        </div>
+      </a>
+      <a href="https://facebook.com/emmanuel.ezenwa.177708" target="_blank" class="group">
+        <div class="bg-gradient-to-br from-blue-700 to-indigo-900 p-12 rounded-3xl hover:scale-110 transition">
+          <i class="fab fa-facebook text-6xl mb-4"></i>
+          <p class="font-bold text-lg">Facebook</p>
+        </div>
+      </a>
+      <a href="https://github.com/emezch93" target="_blank" class="group">
+        <div class="bg-gradient-to-br from-gray-800 to-black p-12 rounded-3xl hover:scale-110 transition">
+          <i class="fab fa-github text-6xl mb-4"></i>
+          <p class="font-bold text-lg">GitHub</p>
+        </div>
       </a>
     </div>
-    &copy; 2025 All Rights Reserved.
-  </footer>
+    <p class="mt-16 text-2xl opacity-80">emezch93@gmail.com • Always open to exciting projects</p>
+  </section>
+
+  <!-- Scroll to Top -->
+  <button id="scrollTop" class="fixed bottom-10 right-10 z-50 p-5 bg-gradient-to-r from-cyan-400 to-purple-600 text-black rounded-full shadow-2xl opacity-0 pointer-events-none transition-all hover:scale-110">
+    <i class="fas fa-arrow-up text-3xl"></i>
+  </button>
 
   <script>
-    // Loader
-    window.addEventListener('load', function() {
-      setTimeout(() => {
-        document.getElementById('loader').style.opacity = '0';
-        setTimeout(() => {
-          document.getElementById('loader').style.display = 'none';
-          document.getElementById('content').style.display = 'block';
-          document.querySelector('footer.ftr').style.display = 'block';
-        }, 500);
-      }, 3000);
-    });
+    // Theme Toggle - FULLY WORKING LIGHT MODE
+    const themeBtn = document.getElementById('themeToggle');
+    const root = document.documentElement;
 
-    // Read More functionality
-    function showMore() {
-      const moreText = document.getElementById('moreText');
-      const techIcons = document.getElementById('techIcons');
-      const readMoreBtn = document.getElementById('readMoreBtn');
-      const readMoreText = document.getElementById('readMoreText');
-      
-      if (moreText.style.display === 'none' || moreText.style.display === '') {
-        moreText.style.display = 'block';
-        techIcons.style.display = 'flex';
-        readMoreText.textContent = 'Read less';
-        readMoreBtn.setAttribute('aria-expanded', 'true');
-      } else {
-        moreText.style.display = 'none';
-        techIcons.style.display = 'none';
-        readMoreText.textContent = 'Read more';
-        readMoreBtn.setAttribute('aria-expanded', 'false');
-      }
+    if (localStorage.theme === 'light' || 
+        (!localStorage.theme && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+      root.classList.add('light');
+      themeBtn.innerHTML = '<i class="fas fa-sun text-yellow-400 text-2xl"></i>';
     }
 
-    // Toggle image shape
-    function toggleShape() {
-      const img = document.getElementById('myImage');
-      const container = document.querySelector('.image-container');
-      const isPressed = container.getAttribute('aria-pressed') === 'true';
-      
-      if (isPressed) {
-        img.classList.remove('block-image');
-        container.setAttribute('aria-pressed', 'false');
-      } else {
-        img.classList.add('block-image');
-        container.setAttribute('aria-pressed', 'true');
-      }
-    }
-
-    // Scroll to top button
-    window.addEventListener('scroll', function() {
-      const scrollTopBtn = document.getElementById('scrollTopBtn');
-      if (window.pageYOffset > 300) {
-        scrollTopBtn.classList.add('active');
-      } else {
-        scrollTopBtn.classList.remove('active');
-      }
+    themeBtn.addEventListener('click', () => {
+      root.classList.toggle('light');
+      const isLight = root.classList.contains('light');
+      localStorage.theme = isLight ? 'light' : 'dark';
+      themeBtn.innerHTML = isLight 
+        ? '<i class="fas fa-sun text-yellow-400 text-2xl"></i>' 
+        : '<i class="fas fa-moon text-2xl"></i>';
     });
 
-    document.getElementById('scrollTopBtn').addEventListener('click', function() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+    // Cursor Glow
+    const glow = document.getElementById('glow');
+    document.addEventListener('mousemove', e => {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+      glow.style.opacity = '0.8';
     });
+    document.addEventListener('mouseleave', () => glow.style.opacity = '0');
 
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('nav.navbar a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-          });
-        }
-      });
+    // Scroll to Top
+    const scrollBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      scrollBtn.style.opacity = window.scrollY > 800 ? '1' : '0';
+      scrollBtn.style.pointerEvents = window.scrollY > 800 ? 'auto' : 'none';
     });
+    scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    console.log('%cEzenwa Chidera Emmanuel — Portfolio Loaded ⚡', 'color:cyan;font-size:2rem');
   </script>
 </body>
 </html>
