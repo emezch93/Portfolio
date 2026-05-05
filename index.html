@@ -3,449 +3,475 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ezenwa Chidera Emmanuel | Front-End Developer</title>
-  <meta name="description" content="Passionate Front-End Developer from Nigeria crafting pixel-perfect, accessible, and lightning-fast web experiences." />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Ezenwa Chidera Emmanuel — Front-End Developer" />
-  <meta property="og:description" content="Clean code • Beautiful design • Real results" />
+  <title>Ezenwa Emmanuel — Frontend Developer for Hire</title>
+  <meta name="description" content="I build fast, beautiful websites for businesses, startups, and personal brands. Based in Nigeria. Available for freelance work." />
+  <meta property="og:title" content="Ezenwa Emmanuel — Frontend Developer" />
+  <meta property="og:description" content="I build websites that look great and get results. Hire me for your next project." />
   <meta property="og:image" content="https://emezch93.github.io/me.jpg" />
-  <meta property="og:url" content="https://emezch93.github.io" />
-
-  <!-- Tailwind + Icons -->
+  <meta property="og:url" content="https://emezch93.github.io/Portfolio/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
-          fontFamily: {
-            display: ['"Space Grotesk"', 'sans-serif'],
-            body: ['Inter', 'sans-serif']
+          fontFamily: { display: ['Syne','sans-serif'], body: ['"DM Sans"','sans-serif'] },
+          colors: {
+            ink:'#0A0A0F','ink-2':'#13131A','ink-3':'#1E1E2A','ink-4':'#2A2A3A',
+            jade:'#00E5A0','jade-dim':'#00e5a018','jade-mid':'#00e5a040',
+            lav:'#7B61FF','lav-dim':'#7B61FF18',chalk:'#F0EEE9',mist:'#9999AA'
           },
           animation: {
-            marquee: 'marquee 40s linear infinite',
-            float: 'float 6s ease-in-out infinite'
+            'slide-up':'slideUp 0.7s cubic-bezier(0.16,1,0.3,1) both',
+            'fade-in':'fadeIn 0.6s ease both',
+            'marquee':'marquee 35s linear infinite'
           },
           keyframes: {
-            marquee: { '0%': { transform: 'translateX(0%)' }, '100%': { transform: 'translateX(-50%)' } },
-            float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-20px)' } }
+            slideUp:{from:{opacity:0,transform:'translateY(30px)'},to:{opacity:1,transform:'translateY(0)'}},
+            fadeIn:{from:{opacity:0},to:{opacity:1}},
+            marquee:{'0%':{transform:'translateX(0%)'},'100%':{transform:'translateX(-50%)'}}
           }
         }
       }
     }
   </script>
-
   <style>
-    :root { --bg: #000000; --text: #ffffff; --muted: #a0a0a0; --card: rgba(20,20,20,0.7); --border: rgba(255,255,255,0.1); }
-    .light { --bg: #ffffff; --text: #000000; --muted: #666666; --card: rgba(255,255,255,0.9); --border: rgba(0,0,0,0.1); }
-    
-    body { background: var(--bg); color: var(--text); transition: all 0.6s; }
-    .card-bg { background: var(--card); backdrop-filter: blur(16px); border: 1px solid var(--border); }
-
-    .gradient-text {
-      background: linear-gradient(90deg, #00f5ff, #ff00f5, #00f5ff);
-      background-size: 300%;
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: gradient 8s ease infinite;
-    }
-    @keyframes gradient { 0%,100% { background-position: 0% } 50% { background-position: 100% } }
-
-    .cursor-glow {
-      position: fixed;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(0,245,255,0.25) 0%, transparent 70%);
-      pointer-events: none;
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 9999;
-      opacity: 0;
-      transition: opacity 0.5s;
-    }
-
-    .nav-scrolled {
-      background: rgba(0,0,0,0.85);
-      backdrop-filter: blur(20px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    }
-    .light .nav-scrolled {
-      background: rgba(255,255,255,0.95);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
-
-    .project-card {
-      transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-      border: 1px solid var(--border);
-    }
-    .project-card:hover {
-      transform: translateY(-20px) scale(1.03);
-      box-shadow: 0 40px 80px rgba(0,245,255,0.3);
-    }
-
-    /* Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 99999;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.95);
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    .modal img {
-      max-width: 90%;
-      max-height: 90vh;
-      border-radius: 1rem;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.8);
-    }
-    .modal-close {
-      position: absolute;
-      top: 30px;
-      right: 40px;
-      font-size: 3rem;
-      color: white;
-      cursor: pointer;
-      opacity: 0.8;
-    }
-    .modal-close:hover { opacity: 1; }
-
-    @media (max-width: 768px) {
-      .cursor-glow { display: none; }
-      .modal-close { top: 20px; right: 20px; font-size: 2.5rem; }
-    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{background:#0A0A0F}
+    body{background:#0A0A0F;color:#F0EEE9;font-family:'DM Sans',sans-serif;-webkit-font-smoothing:antialiased}
+    body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.35}
+    .grad{background:linear-gradient(135deg,#00E5A0 0%,#7B61FF 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .grad-lav{background:linear-gradient(135deg,#7B61FF 0%,#C084FC 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0}
+    .nav-blur{background:rgba(10,10,15,.9);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .badge{display:inline-flex;align-items:center;gap:6px;padding:4px 14px;border-radius:999px;font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+    .badge-jade{background:rgba(0,229,160,.12);color:#00E5A0;border:1px solid rgba(0,229,160,.25)}
+    .badge-lav{background:rgba(123,97,255,.12);color:#A78BFA;border:1px solid rgba(123,97,255,.25)}
+    .btn-primary{display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:linear-gradient(135deg,#00E5A0 0%,#7B61FF 100%);color:#0A0A0F;font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;letter-spacing:.02em;border-radius:10px;transition:all .3s cubic-bezier(.16,1,.3,1);box-shadow:0 0 30px rgba(0,229,160,.25);text-decoration:none}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 50px rgba(0,229,160,.4)}
+    .btn-ghost{display:inline-flex;align-items:center;gap:10px;padding:13px 32px;border:1.5px solid rgba(240,238,233,.2);color:#F0EEE9;font-family:'Syne',sans-serif;font-weight:600;font-size:.95rem;border-radius:10px;transition:all .3s ease;text-decoration:none}
+    .btn-ghost:hover{border-color:rgba(0,229,160,.5);color:#00E5A0;background:rgba(0,229,160,.05)}
+    .card{background:#13131A;border:1px solid rgba(255,255,255,.07);border-radius:20px;transition:all .4s cubic-bezier(.16,1,.3,1);overflow:hidden}
+    .card:hover{border-color:rgba(0,229,160,.2);transform:translateY(-6px);box-shadow:0 30px 60px rgba(0,0,0,.5),0 0 0 1px rgba(0,229,160,.1)}
+    .card-lav:hover{border-color:rgba(123,97,255,.25);box-shadow:0 30px 60px rgba(0,0,0,.5),0 0 0 1px rgba(123,97,255,.15)}
+    .proj-img{width:100%;height:220px;object-fit:cover;transition:transform .5s ease}
+    .card:hover .proj-img{transform:scale(1.03)}
+    .service-card{background:#13131A;border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:32px;transition:all .35s ease}
+    .service-card:hover{border-color:rgba(123,97,255,.3);background:#1a1a24}
+    .contact-link{display:flex;align-items:center;gap:16px;padding:20px 28px;background:#13131A;border:1px solid rgba(255,255,255,.07);border-radius:14px;transition:all .3s ease;text-decoration:none;color:#F0EEE9}
+    .contact-link:hover{border-color:rgba(0,229,160,.3);background:#1a1a22;transform:translateX(4px)}
+    .marquee-track{display:flex;gap:40px;animation:marquee 35s linear infinite}
+    .proof-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:999px;font-size:.8rem;color:#9999AA;white-space:nowrap}
+    .proof-pill strong{color:#F0EEE9;font-weight:600}
+    .section-label{display:inline-flex;align-items:center;gap:10px;font-family:'Syne',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#9999AA;margin-bottom:20px}
+    .section-label::before{content:'';display:block;width:24px;height:1px;background:#9999AA}
+    .hero-headline{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.6rem,6.5vw,5.2rem);line-height:1.05;letter-spacing:-.03em}
+    .nav-link{position:relative;font-size:.875rem;font-weight:500;color:#9999AA;transition:color .2s;letter-spacing:.02em;text-decoration:none}
+    .nav-link:hover{color:#F0EEE9}
+    .nav-link.active{color:#00E5A0}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s cubic-bezier(.16,1,.3,1)}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    .cs-tag{font-family:'Syne',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:4px}
+    ::-webkit-scrollbar{width:6px}
+    ::-webkit-scrollbar-track{background:#0A0A0F}
+    ::-webkit-scrollbar-thumb{background:#2A2A3A;border-radius:3px}
   </style>
 </head>
-
 <body class="min-h-screen overflow-x-hidden">
 
-  <!-- Cursor Glow (Desktop Only) -->
-  <div id="glow" class="cursor-glow hidden md:block"></div>
+<!-- ═══════════ NAVBAR ═══════════ -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+  <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+    <a href="index.html" class="font-display font-bold text-lg tracking-tight text-chalk" style="font-family:'Syne',sans-serif">
+      eze<span style="color:#00E5A0">.</span>dev
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="projects.html" class="nav-link">Work</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="index.html#about" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="https://wa.me/+2348185947780?text=Hi%20Emmanuel%2C%20I%27d%20like%20to%20hire%20you" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm py-2.5 px-5 hidden sm:inline-flex">
+        <i class="fas fa-bolt text-xs"></i> Hire Me Now
+      </a>
+      <button id="mobileMenuBtn" class="md:hidden p-2 text-mist hover:text-chalk transition" aria-label="Open menu">
+        <i class="fas fa-bars text-lg" style="color:#9999AA"></i>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="md:hidden hidden px-6 pb-6 border-t border-white/[0.06]" style="background:rgba(10,10,15,.97)">
+    <div class="flex flex-col gap-4 pt-5">
+      <a href="projects.html" class="nav-link text-base" onclick="closeMobileMenu()">Work</a>
+      <a href="services.html" class="nav-link text-base" onclick="closeMobileMenu()">Services</a>
+      <a href="index.html#about" class="nav-link text-base" onclick="closeMobileMenu()">About</a>
+      <a href="contact.html" class="nav-link text-base" onclick="closeMobileMenu()">Contact</a>
+      <a href="https://wa.me/+2348185947780?text=Hi%20Emmanuel%2C%20I%27d%20like%20to%20hire%20you" target="_blank" rel="noopener noreferrer" class="btn-primary mt-2 justify-center">
+        <i class="fas fa-bolt text-xs"></i> Hire Me Now
+      </a>
+    </div>
+  </div>
+</nav>
 
-  <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-5 transition-all duration-500" id="navbar">
-    <div class="max-w-7xl mx-auto flex justify-end items-center">
-      <div class="flex items-center gap-8 text-lg">
-        <a href="#about" class="hover:text-cyan-400 transition">About</a>
-        <a href="#projects" class="hover:text-cyan-400 transition">Projects</a>
-        <a href="#contact" class="hover:text-cyan-400 transition">Contact</a>
-        <button id="themeToggle" aria-label="Toggle theme"
-          class="p-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 hover:scale-110 transition">
-          <i class="fas fa-moon text-xl"></i>
-        </button>
+<!-- ═══════════ HERO ═══════════ -->
+<header class="relative min-h-screen flex items-center pt-24 pb-16 px-6 overflow-hidden">
+  <div class="orb w-[600px] h-[600px] top-[-200px] right-[-200px]" style="background:#00E5A0;opacity:.07"></div>
+  <div class="orb w-[500px] h-[500px] bottom-[-150px] left-[-100px]" style="background:#7B61FF;opacity:.06"></div>
+  <div class="absolute inset-0 z-0" style="background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:60px 60px"></div>
+  <div class="relative z-10 max-w-6xl mx-auto w-full">
+    <div class="mb-8 animate-slide-up" style="animation-delay:.1s">
+      <span class="badge badge-jade">
+        <span style="width:6px;height:6px;border-radius:50%;background:#00E5A0;animation:pulse 2s infinite"></span>
+        Available for freelance projects
+      </span>
+    </div>
+    <h1 class="hero-headline mb-6 max-w-4xl animate-slide-up" style="animation-delay:.2s">
+      I Build Websites That<br>
+      <span class="grad">Win Clients</span> and<br>
+      Drive Real Growth.
+    </h1>
+    <p class="text-lg md:text-xl max-w-2xl leading-relaxed mb-10 animate-slide-up" style="color:#9999AA;animation-delay:.35s">
+      Frontend developer with <strong style="color:#F0EEE9;font-weight:500">4+ years of experience</strong> crafting fast, conversion-focused websites for businesses, brands, and education platforms.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 mb-14 animate-slide-up" style="animation-delay:.45s">
+      <a href="https://wa.me/+2348185947780?text=Hi%20Emmanuel%2C%20I%27d%20like%20to%20work%20with%20you" target="_blank" rel="noopener noreferrer" class="btn-primary">
+        <i class="fab fa-whatsapp"></i> Let's Work Together
+      </a>
+      <a href="projects.html" class="btn-ghost">See My Work <i class="fas fa-arrow-right text-sm"></i></a>
+    </div>
+    <div class="flex flex-wrap gap-3 animate-fade-in" style="animation-delay:.6s">
+      <span class="proof-pill"><strong>14+</strong> Projects Shipped</span>
+      <span class="proof-pill"><strong>4+</strong> Years Experience</span>
+      <span class="proof-pill"><strong>HTML · CSS · JS · Tailwind</strong></span>
+      <span class="proof-pill"><i class="fas fa-map-marker-alt text-xs" style="color:#00E5A0"></i> Nigeria · Remote-Ready</span>
+    </div>
+  </div>
+  <!--div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-xs animate-fade-in" style="color:#9999AA;animation-delay:1s">
+    <span style="letter-spacing:.12em;font-size:.65rem;text-transform:uppercase;font-family:'Syne',sans-serif"></span>
+    <div class="w-px h-10" style="background:linear-gradient(to bottom,#9999AA,transparent)"></div-->
+  </div>
+</header>
+
+<!-- ═══════════ FEATURED PROJECTS ═══════════ -->
+<section class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="reveal mb-16">
+      <div class="section-label">Selected Work</div>
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <h2 style="font-family:'Syne',sans-serif;font-size:clamp(2rem,5vw,3rem);font-weight:700;letter-spacing:-.02em">
+          Projects That <span class="grad">Delivered.</span>
+        </h2>
+        <a href="projects.html" class="btn-ghost text-sm py-2.5 px-5 self-start sm:self-auto">
+          View All Work <i class="fas fa-arrow-right text-xs"></i>
+        </a>
       </div>
     </div>
-  </nav>
+    <div class="grid md:grid-cols-2 gap-6">
 
-  <!-- Hero -->
-  <header class="min-h-screen flex items-center justify-center px-6 relative pt-20">
-    <div class="text-center z-10 max-w-6xl mx-auto">
-      <h1 class="text-6xl md:text-8xl lg:text-9xl font-bold leading-tight mb-6">
-        <span class="gradient-text block">Ezenwa Chidera</span>
-        <span class="text-5xl md:text-7xl block mt-2">Emmanuel</span>
-      </h1>
-      <p class="text-2xl md:text-3xl mb-12 text-cyan-300 font-light tracking-wide">
-        Front-End Developer • Accessibility Advocate • UI/UX Enthusiast
-      </p>
-      <div class="flex flex-col sm:flex-row gap-6 justify-center">
-        <a href="#projects" class="px-12 py-6 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-full font-bold text-black text-xl hover:scale-105 transition shadow-2xl">
-          View My Work
-        </a>
-        <a href="#contact" class="px-12 py-6 border-2 border-cyan-400 rounded-full text-cyan-400 text-xl hover:bg-cyan-400/10 transition">
-          Hire Me
+      <!-- Project 1: Code Editor -->
+      <article class="card reveal group">
+        <div class="overflow-hidden">
+          <img src="https://placehold.co/800x440/0D1117/00E5A0?text=Portable+Code+Editor&font=syne" alt="Portable Code Editor" class="proj-img">
+        </div>
+        <div class="p-7">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="cs-tag" style="background:rgba(0,229,160,.1);color:#00E5A0">Developer Tool</span>
+            <span class="cs-tag" style="background:rgba(123,97,255,.1);color:#A78BFA">Open Source</span>
+          </div>
+          <h3 style="font-family:'Syne',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:.75rem">Portable Code Editor</h3>
+          <p style="color:#9999AA;font-size:.9rem;line-height:1.65;margin-bottom:1.5rem">A fully self-contained in-browser IDE with live split-pane preview, no install needed, runs on any device.</p>
+          <div class="flex items-center gap-3">
+            <a href="projects/code-editor.html" class="btn-primary text-sm py-2.5 px-5">
+              Case Study <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+            <a href="https://emezch93.github.io/Code-Editor-/" target="_blank" rel="noopener noreferrer" class="btn-ghost text-sm py-2.5 px-4">
+              Live <i class="fas fa-external-link-alt text-xs"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2: Fashion Website -->
+      <article class="card card-lav reveal group">
+        <div class="overflow-hidden">
+          <img src="https://placehold.co/800x440/180D24/C084FC?text=Samuel+Fashion+Website&font=syne" alt="Samuel Chukwuemeka Fashion" class="proj-img">
+        </div>
+        <div class="p-7">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="cs-tag" style="background:rgba(123,97,255,.1);color:#A78BFA">Client Work</span>
+            <span class="cs-tag" style="background:rgba(251,146,60,.1);color:#FB923C">Fashion & Lifestyle</span>
+          </div>
+          <h3 style="font-family:'Syne',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:.75rem">Samuel Chukwuemeka Fashion</h3>
+          <p style="color:#9999AA;font-size:.9rem;line-height:1.65;margin-bottom:1.5rem">Luxury menswear showcase, took a brand from zero online presence to a polished, credible digital storefront.</p>
+          <div class="flex items-center gap-3">
+            <a href="projects/fashion-website.html" class="btn-primary text-sm py-2.5 px-5" style="background:linear-gradient(135deg,#7B61FF,#C084FC)">
+              Case Study <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+            <a href="https://emezch93.github.io/Samuel-Chukwuemeka-Fashion-Designs/" target="_blank" rel="noopener noreferrer" class="btn-ghost text-sm py-2.5 px-4">
+              Live <i class="fas fa-external-link-alt text-xs"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3: EDUCOMMEX -->
+      <article class="card reveal group">
+        <div class="overflow-hidden">
+          <img src="https://placehold.co/800x440/0A1628/00E5A0?text=EDUCOMMEX+Platform&font=syne" alt="EDUCOMMEX Education Marketplace" class="proj-img">
+        </div>
+        <div class="p-7">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="cs-tag" style="background:rgba(0,229,160,.1);color:#00E5A0">EdTech Platform</span>
+            <span class="cs-tag" style="background:rgba(59,130,246,.1);color:#60A5FA">Marketplace</span>
+          </div>
+          <h3 style="font-family:'Syne',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:.75rem">EDUCOMMEX Platform</h3>
+          <p style="color:#9999AA;font-size:.9rem;line-height:1.65;margin-bottom:1.5rem">Full education marketplace with course catalog, purchasing flow, and an integrated quiz engine with scoring & timers.</p>
+          <div class="flex items-center gap-3">
+            <a href="projects/educommex.html" class="btn-primary text-sm py-2.5 px-5">
+              Case Study <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+            <a href="https://emezch93.github.io/EDUCOMMEX/" target="_blank" rel="noopener noreferrer" class="btn-ghost text-sm py-2.5 px-4">
+              Live <i class="fas fa-external-link-alt text-xs"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 4: Swift Course -->
+      <article class="card card-lav reveal group">
+        <div class="overflow-hidden">
+          <img src="https://placehold.co/800x440/0F1A10/84CC16?text=Swift+Web+Dev+Course&font=syne" alt="Swift Web Development Course" class="proj-img">
+        </div>
+        <div class="p-7">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="cs-tag" style="background:rgba(132,204,22,.1);color:#A3E635">Course Platform</span>
+            <span class="cs-tag" style="background:rgba(123,97,255,.1);color:#A78BFA">CodeVent Digital</span>
+          </div>
+          <h3 style="font-family:'Syne',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:.75rem">Swift Web Dev Course</h3>
+          <p style="color:#9999AA;font-size:.9rem;line-height:1.65;margin-bottom:1.5rem">Structured HTML/CSS/JS curriculum platform, CodeVent Digital's flagship free learning product for beginners.</p>
+          <div class="flex items-center gap-3">
+            <a href="projects/swift-course.html" class="btn-primary text-sm py-2.5 px-5" style="background:linear-gradient(135deg,#7B61FF,#C084FC)">
+              Case Study <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+            <a href="https://emezch93.github.io/CodeVent-Swift-Web-Development-Course/" target="_blank" rel="noopener noreferrer" class="btn-ghost text-sm py-2.5 px-4">
+              Live <i class="fas fa-external-link-alt text-xs"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /grid -->
+  </div>
+</section>
+
+<!-- ═══════════ SKILLS MARQUEE ═══════════ -->
+<div class="py-10 overflow-hidden" style="border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.015)">
+  <div class="marquee-track whitespace-nowrap">
+    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">HTML5</span>
+    <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
+    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">CSS3</span>
+    <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
+    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">JavaScript</span>
+    <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
+    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">Tailwind CSS</span>
+    <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
+    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">Responsive Design</span>
+    <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
+    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">UI/UX</span>
+    <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
+    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">Git & GitHub</span>
+    <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
+    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">Web Performance</span>
+    <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
+    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">Accessibility</span>
+    <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
+    <!-- Duplicate -->
+    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">HTML5</span>
+    <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
+    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">CSS3</span>
+    <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
+    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">JavaScript</span>
+    <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
+    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">Tailwind CSS</span>
+    <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
+    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">Responsive Design</span>
+    <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
+    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">UI/UX</span>
+    <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
+    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">Git & GitHub</span>
+    <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
+    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">Web Performance</span>
+    <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
+    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">Accessibility</span>
+    <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
+  </div>
+</div>
+
+<!-- ═══════════ SERVICES PREVIEW ═══════════ -->
+<section class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="reveal mb-12">
+      <div class="section-label">What I Offer</div>
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <h2 style="font-family:'Syne',sans-serif;font-size:clamp(2rem,5vw,3rem);font-weight:700;letter-spacing:-.02em">
+          How I Can <span class="grad-lav">Help You.</span>
+        </h2>
+        <a href="services.html" class="btn-ghost text-sm py-2.5 px-5 self-start sm:self-auto">
+          Full Services <i class="fas fa-arrow-right text-xs"></i>
         </a>
       </div>
     </div>
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-      <i class="fas fa-chevron-down text-5xl opacity-60"></i>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 reveal">
+      <div class="service-card group">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform" style="background:rgba(0,229,160,.1)">
+          <i class="fas fa-globe text-sm" style="color:#00E5A0"></i>
+        </div>
+        <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;margin-bottom:.5rem">Business Website</h3>
+        <p style="color:#9999AA;font-size:.85rem;line-height:1.6">Professional, multi-page sites that represent your brand and convert visitors.</p>
+        <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.06);font-size:.75rem;color:#9999AA">From scratch · Mobile-first · Fast</div>
+      </div>
+      <div class="service-card group">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform" style="background:rgba(123,97,255,.1)">
+          <i class="fas fa-rocket text-sm" style="color:#A78BFA"></i>
+        </div>
+        <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;margin-bottom:.5rem">Landing Pages</h3>
+        <p style="color:#9999AA;font-size:.85rem;line-height:1.6">High-converting single pages for products, campaigns, or services.</p>
+        <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.06);font-size:.75rem;color:#9999AA">CTA-focused · SEO-ready</div>
+      </div>
+      <div class="service-card group">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform" style="background:rgba(0,229,160,.1)">
+          <i class="fas fa-mobile-alt text-sm" style="color:#00E5A0"></i>
+        </div>
+        <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;margin-bottom:.5rem">Responsive UI</h3>
+        <p style="color:#9999AA;font-size:.85rem;line-height:1.6">Pixel-perfect interfaces across all screen sizes, phone, tablet, desktop.</p>
+        <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.06);font-size:.75rem;color:#9999AA">Tailwind · Accessible · Cross-browser</div>
+      </div>
+      <div class="service-card group">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform" style="background:rgba(123,97,255,.1)">
+          <i class="fas fa-wrench text-sm" style="color:#A78BFA"></i>
+        </div>
+        <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;margin-bottom:.5rem">Fixes & Redesigns</h3>
+        <p style="color:#9999AA;font-size:.85rem;line-height:1.6">Existing site broken, slow, or outdated? I'll audit, fix, and modernise it.</p>
+        <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.06);font-size:.75rem;color:#9999AA">Audit · Debug · Revamp</div>
+      </div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <!-- About -->
-  <section id="about" class="py-32 px-6 max-w-7xl mx-auto">
-    
+<!-- ═══════════ ABOUT (SHORT) ═══════════ -->
+<section id="about" class="py-24 px-6" style="border-top:1px solid rgba(255,255,255,.06)">
+  <div class="max-w-6xl mx-auto">
     <div class="grid md:grid-cols-2 gap-16 items-center">
-      <div class="flex justify-center">
-        <img src="IMG_20250810_093813_451.jpg" alt="Ezenwa Chidera Emmanuel" 
-             class="w-80 h-80 md:w-96 md:h-96 object-cover rounded-3xl shadow-2xl border-4 border-cyan-400/30 cursor-zoom-in animate-float"
-             onclick="openModal(this.src, 'Ezenwa Chidera Emmanuel')">
-      </div>
-      
-      <div>
-        <h2 class="text-5xl md:text-6xl font-bold mb-8 gradient-text">About Me</h2>
-        <p class="text-xl leading-relaxed mb-6 text-gray-300">
-          I'm a passionate <strong>Front-End Developer</strong> with a deep love for creating beautiful, fast, and accessible digital experiences.
-        </p>
-        <p class="text-xl leading-relaxed mb-8 text-gray-300">
-          I specialize in turning complex ideas into clean, elegant solutions using modern technologies — HTML5, CSS3, JavaScript, Tailwind, and a relentless focus on performance and accessibility.
-        </p>
-        <div class="grid grid-cols-2 gap-6 text-lg">
-          <div><strong class="text-cyan-400">Location:</strong> Nigeria<br><strong class="text-cyan-400">Experience:</strong> 4+ Years<br><strong class="text-cyan-400">Availability:</strong> Open to Work</div>
-          <div><strong class="text-cyan-400">Focus:</strong> Frontend & UI/UX<br><strong class="text-cyan-400">Passion:</strong> Clean Code & Design<br><strong class="text-cyan-400">Goal:</strong> Build things that matter</div>
+      <div class="reveal">
+        <div class="relative inline-block w-full max-w-sm mx-auto md:mx-0">
+          <div class="rounded-2xl overflow-hidden" style="border:1px solid rgba(0,229,160,.15)">
+            <img src="IMG_20250810_093813_451.jpg" alt="Ezenwa Chidera Emmanuel" class="w-full aspect-square object-cover">
+            <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(10,10,15,.6) 0%,transparent 50%)"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6">
+              <p style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:#F0EEE9">Ezenwa Emmanuel</p>
+              <p style="color:#00E5A0;font-size:.85rem;font-weight:500">Frontend Developer · Nigeria</p>
+            </div>
+          </div>
+          <div class="absolute -bottom-5 -right-5 px-5 py-4 text-center shadow-xl" style="background:#13131A;border:1px solid rgba(255,255,255,.1);border-radius:16px">
+            <p style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.5rem;color:#00E5A0">4+</p>
+            <p style="color:#9999AA;font-size:.75rem;margin-top:2px">Years Building</p>
+          </div>
         </div>
       </div>
-      <!--div class="flex justify-center">
-        <img src="IMG_20250810_093813_451.jpg" alt="Ezenwa Chidera Emmanuel" 
-             class="w-80 h-80 md:w-96 md:h-96 object-cover rounded-3xl shadow-2xl border-4 border-cyan-400/30 cursor-zoom-in animate-float"
-             onclick="openModal(this.src, 'Ezenwa Chidera Emmanuel')">
-      </div-->
-    </div>
-  </section>
-
-  <!-- ALL 14 PROJECTS -->
-  <section id="projects" class="py-32 px-6 max-w-7xl mx-auto">
-    <h2 class="text-5xl md:text-7xl font-bold text-center mb-24 gradient-text">Featured Projects</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-
-      <!-- 1 -->
-      <div class="project-card bg-gradient-to-br from-blue-900/40 to-purple-900/40 rounded-3xl overflow-hidden">
-        <img src="https://placehold.co/800x500/2563eb/white?text=Physics+Education" alt="Above the Sky Learnings" class="w-full h-64 object-cover cursor-zoom-in" onclick="openModal(this.src, 'Physics Education Platform')">
-        <div class="p-8">
-          <h3 class="text-2xl font-bold mb-3">Above the Sky Learnings</h3>
-          <p class="text-gray-300 mb-6">Modern physics education platform with interactive diagrams and quizzes.</p>
-          <a href="https://emezch93.github.io/Above-the-sky-learnings" target="_blank" class="text-cyan-400 font-bold hover:underline">Live Demo</a>
+      <div class="reveal">
+        <div class="section-label">About Me</div>
+        <h2 style="font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;letter-spacing:-.02em;margin-bottom:1.5rem;line-height:1.15">
+          I Turn Ideas Into <span class="grad">Working Websites.</span>
+        </h2>
+        <div style="color:#9999AA;font-size:.95rem;line-height:1.75;margin-bottom:2rem">
+          <p style="margin-bottom:1rem">I'm <strong style="color:#F0EEE9;font-weight:500">Ezenwa Chidera Emmanuel</strong>, a self-driven frontend developer from Nigeria with 4+ years of building real digital products for real people.</p>
+          <p style="margin-bottom:1rem">I've shipped luxury brand sites, education platforms, browser-based dev tools, and more. Alongside client work, I founded <a href="https://emezch93.github.io/CodeVent-Digital/" target="_blank" rel="noopener noreferrer" style="color:#00E5A0;font-weight:500;text-decoration:none;border-bottom:1px solid rgba(0,229,160,.3)">CodeVent Digital</a>, a platform teaching web development to beginners.</p>
+          <p>My focus: clean code, fast performance, and designs that actually <em>do something</em> for the business.</p>
         </div>
-      </div>
-
-      <!-- 2 -->
-      <div class="project-card bg-gradient-to-br from-emerald-900/40 to-teal-900/40 rounded-3xl overflow-hidden">
-        <img src="https://placehold.co/800x500/10b981/white?text=Digital+Clock" alt="Digital Clock" class="w-full h-64 object-cover cursor-zoom-in" onclick="openModal(this.src, 'Digital Clock')">
-        <div class="p-8">
-          <h3 class="text-2xl font-bold mb-3">Real-Time Digital Clock</h3>
-          <p class="text-gray-300 mb-6">Elegant real-time clock with 12/24hr format toggle.</p>
-          <a href="https://emezch93.github.io/Digital-clock-/" target="_blank" class="text-emerald-400 font-bold hover:underline">View</a>
+        <div class="flex flex-wrap gap-2 mb-8">
+          <span class="badge badge-jade">HTML5 / CSS3</span>
+          <span class="badge badge-lav">JavaScript</span>
+          <span class="badge badge-jade">Tailwind CSS</span>
+          <span class="badge badge-lav">Responsive Design</span>
+          <span class="badge badge-jade">Git & GitHub</span>
         </div>
-      </div>
-
-      <!-- 3 -->
-      <div class="project-card bg-gradient-to-br from-green-900/40 to-cyan-900/40 rounded-3xl overflow-hidden">
-        <img src="https://placehold.co/800x500/10b981/white?text=Stopwatch" alt="Stopwatch" class="w-full h-64 object-cover cursor-zoom-in" onclick="openModal(this.src, 'Stopwatch')">
-        <div class="p-8">
-          <h3 class="text-2xl font-bold mb-3">Minimalist Stopwatch</h3>
-          <p class="text-gray-300 mb-6">Precision timer with lap recording and clean UI.</p>
-          <a href="https://emezch93.github.io/Stop-Watch-/" target="_blank" class="text-cyan-400 font-bold hover:underline">Open</a>
+        <div class="flex flex-wrap gap-4">
+          <a href="https://wa.me/+2348185947780?text=Hi%20Emmanuel%2C%20I%27d%20like%20to%20work%20with%20you" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            <i class="fab fa-whatsapp"></i> Work With Me
+          </a>
+          <a href="https://github.com/emezch93" target="_blank" rel="noopener noreferrer" class="btn-ghost">
+            <i class="fab fa-github"></i> GitHub
+          </a>
         </div>
-      </div>
-
-      <!-- 4 -->
-      <div class="project-card bg-gradient-to-br from-purple-900/40 to-pink-900/40 rounded-3xl overflow-hidden">
-        <img src="https://placehold.co/800x500/ff3e6c/white?text=AI+Assistant" alt="AI Assistant" class="w-full h-64 object-cover cursor-zoom-in" onclick="openModal(this.src, 'Randolph AI')">
-        <div class="p-8">
-          <h3 class="text-2xl font-bold mb-3">Randolph AI Assistant</h3>
-          <p class="text-gray-300 mb-6">Voice & text AI chatbot with animated responses.</p>
-          <a href="https://emezch93.github.io/Updated-Randolph-AI-/" target="_blank" class="text-pink-400 font-bold hover:underline">Try It</a>
-        </div>
-      </div>
-
-      <!-- 5 -->
-      <div class="project-card bg-gradient-to-br from-orange-900/40 to-red-900/40 rounded-3xl overflow-hidden">
-        <img src="https://placehold.co/800x500/f97316/white?text=RPS+Game" alt="Rock Paper Scissors" class="w-full h-64 object-cover cursor-zoom-in" onclick="openModal(this.src, 'Rock Paper Scissors')">
-        <div class="p-8">
-          <h3 class="text-2xl font-bold mb-3">Rock Paper Scissors</h3>
-          <p class="text-gray-300 mb-6">Classic game with score tracking and animations.</p>
-          <a href="https://emezch93.github.io/Rock-Paper-Scissors-/" target="_blank" class="text-orange-400 font-bold hover:underline">Play</a>
-        </div>
-      </div>
-
-      <!-- 6 -->
-      <div class="project-card bg-gradient-to-br from-indigo-900/40 to-blue-900/40 rounded-3xl overflow-hidden">
-        <img src="https://placehold.co/800x500/6366f1/white?text=Calculator" alt="Calculator" class="w-full h-64 object-cover cursor-zoom-in" onclick="openModal(this.src, 'Web Calculator')">
-        <div class="p-8">
-          <h3 class="text-2xl font-bold mb-3">Advanced Web Calculator</h3>
-          <p class="text-gray-300 mb-6">Keyboard support, history, dark mode, and smooth animations.</p>
-          <a href="https://emezch93.github.io/Calculator-Web-App/" target="_blank" class="text-indigo-400 font-bold hover:underline">Use It</a>
-        </div>
-      </div>
-
-      <!-- 7 -->
-      <div class="project-card bg-gradient-to-br from-teal-900/40 to-cyan-900/40 rounded-3xl overflow-hidden">
-        <img src="https://placehold.co/800x500/14b8a6/white?text=Code+Editor" alt="Code Editor" class="w-full h-64 object-cover cursor-zoom-in" onclick="openModal(this.src, 'Portable Code Editor')">
-        <div class="p-8">
-          <h3 class="text-2xl font-bold mb-3">Portable Code Editor</h3>
-          <p class="text-gray-300 mb-6">Run HTML/CSS/JS live in browser — instant preview.</p>
-          <a href="https://emezch93.github.io/Code-Editor-/" target="_blank" class="text-teal-400 font-bold hover:underline">Open Editor</a>
-        </div>
-      </div>
-
-      <!-- 8 -->
-      <div class="project-card bg-gradient-to-br from-pink-900/40 to-rose-900/40 rounded-3xl overflow-hidden">
-        <img src="https://placehold.co/800x500/ec4899/white?text=Fashion" alt="Fashion Website" class="w-full h-64 object-cover cursor-zoom-in" onclick="openModal(this.src, 'Samuel Chukwuemeka Fashion')">
-        <div class="p-8">
-          <h3 class="text-2xl font-bold mb-3">Samuel Chukwuemeka Fashion</h3>
-          <p class="text-gray-300 mb-6">Luxury menswear showcase with smooth scroll & gallery.</p>
-          <a href="https://emezch93.github.io/Samuel-Chukwuemeka-Fashion-Designs/" target="_blank" class="text-pink-400 font-bold hover:underline">Visit Site</a>
-        </div>
-      </div>
-
-      <!-- 9 -->
-      <div class="project-card bg-gradient-to-br from-cyan-900/40 to-blue-900/40 rounded-3xl overflow-hidden">
-        <img src="https://placehold.co/800x500/06b6d4/white?text=EDUCOMMEX" alt="EDUCOMMEX" class="w-full h-64 object-cover cursor-zoom-in" onclick="openModal(this.src, 'EDUCOMMEX Platform')">
-        <div class="p-8">
-          <h3 class="text-2xl font-bold mb-3">EDUCOMMEX — Education Marketplace</h3>
-          <p class="text-gray-300 mb-6">Full-featured education commerce platform.</p>
-          <a href="https://emezch93.github.io/EDUCOMMEX/" target="_blank" class="text-cyan-400 font-bold hover:underline">Explore</a>
-        </div>
-      </div>
-
-      <!-- 10 -->
-      <div class="project-card bg-gradient-to-br from-purple-900/40 to-violet-900/40 rounded-3xl overflow-hidden">
-        <img src="https://placehold.co/800x500/8b5cf6/white?text=Quiz+App" alt="Quiz App" class="w-full h-64 object-cover cursor-zoom-in" onclick="openModal(this.src, 'EDUCOMMEX Quiz')">
-        <div class="p-8">
-          <h3 class="text-2xl font-bold mb-3">EDUCOMMEX Quiz Platform</h3>
-          <p class="text-gray-300 mb-6">Advanced quiz engine with scoring and timer.</p>
-          <a href="https://emezch93.github.io/EDUCOMMEX-QUIZ-APP/" target="_blank" class="text-violet-400 font-bold hover:underline">Take Quiz</a>
-        </div>
-      </div>
-
-      <!-- 11 -->
-      <div class="project-card bg-gradient-to-br from-amber-900/40 to-orange-900/40 rounded-3xl overflow-hidden">
-        <img src="https://placehold.co/800x500/f59e0b/white?text=Cyber+Cafe" alt="Cyber Cafe" class="w-full h-64 object-cover cursor-zoom-in" onclick="openModal(this.src, 'Cyber Cafe Site')">
-        <div class="p-8">
-          <h3 class="text-2xl font-bold mb-3">Cyber Cafe Business Site</h3>
-          <p class="text-gray-300 mb-6">Professional landing page for digital services.</p>
-          <a href="https://emezch93.github.io/Business-website-/" target="_blank" class="text-amber-400 font-bold hover:underline">View Site</a>
-        </div>
-      </div>
-
-      <!-- 12 -->
-      <div class="project-card bg-gradient-to-br from-lime-900/40 to-green-900/40 rounded-3xl overflow-hidden">
-        <img src="https://placehold.co/800x500/84cc16/white?text=Web+Course" alt="Web Dev Course" class="w-full h-64 object-cover cursor-zoom-in" onclick="openModal(this.src, 'Swift Web Dev Course')">
-        <div class="p-8">
-          <h3 class="text-2xl font-bold mb-3">Swift Web Development Course</h3>
-          <p class="text-gray-300 mb-6">From zero to pro — complete curriculum site.</p>
-          <a href="https://emezch93.github.io/CodeVent-Swift-Web-Development-Course/" target="_blank" class="text-lime-400 font-bold hover:underline">Start Learning</a>
-        </div>
-      </div>
-
-      <!-- 13 -->
-      <div class="project-card bg-gradient-to-br from-indigo-900/40 to-purple-900/40 rounded-3xl overflow-hidden">
-        <img src="https://placehold.co/800x500/8b5cf6/white?text=ML+Course" alt="Machine Learning Course" class="w-full h-64 object-cover cursor-zoom-in" onclick="openModal(this.src, 'Machine Learning Course')">
-        <div class="p-8">
-          <h3 class="text-2xl font-bold mb-3">Machine Learning AlgoNation Course</h3>
-          <p class="text-gray-300 mb-6">Hands-on ML course with projects from beginner to pro.</p>
-          <a href="https://emezch93.github.io/Machine-Learning-AlgoNation-Course/" target="_blank" class="text-indigo-400 font-bold hover:underline">Enroll Now</a>
-        </div>
-      </div>
-
-      <!-- 14 -->
-      <div class="project-card bg-gradient-to-br from-red-900/40 to-orange-900/40 rounded-3xl overflow-hidden">
-        <img src="https://placehold.co/800x500/ef4444/white?text=Data+Nova" alt="Data Nova Network" class="w-full h-64 object-cover cursor-zoom-in" onclick="openModal(this.src, 'Data Nova Network')">
-        <div class="p-8">
-          <h3 class="text-2xl font-bold mb-3">Data Nova Network</h3>
-          <p class="text-gray-300 mb-6">Interactive data visualization and simulation platform.</p>
-          <a href="https://emezch93.github.io/Data-Nova-Network-/" target="_blank" class="text-red-400 font-bold hover:underline">Launch</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Skills Marquee -->
-  <div class="py-20 bg-gradient-to-r from-cyan-900/20 to-purple-900/20 backdrop-blur">
-    <div class="overflow-hidden">
-      <div class="inline-block text-3xl font-bold whitespace-nowrap animate-marquee">
-        <span class="mx-10 text-cyan-400">HTML5</span>
-        <span class="mx-10 text-purple-400">CSS3</span>
-        <span class="mx-10 text-pink-400">JavaScript</span>
-        <span class="mx-10 text-emerald-400">Responsive Design</span>
-        <span class="mx-10 text-cyan-400">Tailwind CSS</span>
-        <span class="mx-10 text-violet-400">Accessibility</span>
-        <span class="mx-10 text-amber-400">Performance</span>
-        <span class="mx-10 text-rose-400">UI/UX</span>
-        <span class="mx-10 text-lime-400">Git & GitHub</span>
-        <span class="mx-10 text-cyan-400">HTML5</span>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- Contact -->
-  <section id="contact" class="py-32 px-6 text-center">
-    <h2 class="text-5xl md:text-7xl font-bold mb-20 gradient-text">Let's Build Together</h2>
-    <div class="grid grid-cols-2 md:grid-cols-5 gap-10 max-w-5xl mx-auto">
-      <a href="mailto:emezch93@gmail.com" target="_blank"><div class="bg-gradient-to-br from-blue-600 to-purple-700 p-12 rounded-3xl hover:scale-110 transition shadow-2xl"><i class="fas fa-envelope text-6xl mb-4"></i><p class="font-bold text-lg">Email</p></div></a>
-      <a href="https://wa.me/+2348185947780" target="_blank"><div class="bg-gradient-to-br from-green-500 to-emerald-700 p-12 rounded-3xl hover:scale-110 transition"><i class="fab fa-whatsapp text-6xl mb-4"></i><p class="font-bold text-lg">WhatsApp</p></div></a>
-      <a href="tel:+2348185947780" target="_blank"><div class="bg-gradient-to-br from-purple-600 to-pink-700 p-12 rounded-3xl hover:scale-110 transition"><i class="fas fa-phone text-6xl mb-4"></i><p class="font-bold text-lg">Call</p></div></a>
-      <a href="https://facebook.com/emmanuel.ezenwa.177708" target="_blank"><div class="bg-gradient-to-br from-blue-700 to-indigo-900 p-12 rounded-3xl hover:scale-110 transition"><i class="fab fa-facebook text-6xl mb-4"></i><p class="font-bold text-lg">Facebook</p></div></a>
-      <a href="https://github.com/emezch93" target="_blank"><div class="bg-gradient-to-br from-gray-800 to-black p-12 rounded-3xl hover:scale-110 transition"><i class="fab fa-github text-6xl mb-4"></i><p class="font-bold text-lg">GitHub</p></div></a>
+<!-- ═══════════ HOME CTA ═══════════ -->
+<section class="py-24 px-6">
+  <div class="max-w-4xl mx-auto">
+    <div class="reveal relative rounded-3xl overflow-hidden p-10 md:p-16 text-center" style="background:linear-gradient(135deg,rgba(123,97,255,.12) 0%,rgba(0,229,160,.08) 100%);border:1px solid rgba(255,255,255,.08)">
+      <div class="orb w-64 h-64 top-[-60px] right-[-60px]" style="background:#7B61FF;opacity:.12"></div>
+      <div class="orb w-64 h-64 bottom-[-60px] left-[-60px]" style="background:#00E5A0;opacity:.08"></div>
+      <div class="relative z-10">
+        <span class="badge badge-jade mb-6 inline-flex">
+          <span style="width:6px;height:6px;border-radius:50%;background:#00E5A0;animation:pulse 2s infinite"></span>
+          Open for New Projects
+        </span>
+        <h2 style="font-family:'Syne',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.03em;margin-bottom:1.25rem;line-height:1.1">
+          Have a project in mind?<br><span class="grad">Let's build it.</span>
+        </h2>
+        <p style="color:#9999AA;font-size:1.1rem;max-width:520px;margin:0 auto 2.5rem;line-height:1.7">Whether you need a brand-new website, a landing page, or a frontend fix, reach out and let's talk.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="contact.html" class="btn-primary"><i class="fas fa-paper-plane"></i> Get In Touch</a>
+          <a href="https://wa.me/+2348185947780?text=Hi%20Emmanuel%2C%20I%27d%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener noreferrer" class="btn-ghost"><i class="fab fa-whatsapp"></i> WhatsApp Me</a>
+        </div>
+      </div>
     </div>
-    <p class="mt-16 text-2xl opacity-80">emezch93@gmail.com • Always open to exciting projects.</p>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-12 text-center border-t border-white/10">
-    <p class="text-lg opacity-70">&copy; 2025 Ezenwa Chidera Emmanuel. Crafted with passion & code.</p>
-  </footer>
-
-  <!-- Image Modal -->
-  <div id="imageModal" class="modal" onclick="closeModal()">
-    <span class="modal-close" onclick="closeModal()">×</span>
-    <img id="modalImage" src="" alt="">
   </div>
+</section>
 
-  <!-- Scroll to Top -->
-  <button id="scrollTop" class="fixed bottom-10 right-10 z-50 p-5 bg-gradient-to-r from-cyan-400 to-purple-600 text-black rounded-full shadow-2xl opacity-0 pointer-events-none transition-all hover:scale-110">
-    <i class="fas fa-arrow-up text-3xl"></i>
-  </button>
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="py-8 px-6" style="border-top:1px solid rgba(255,255,255,.06)">
+  <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+    <a href="index.html" style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:#F0EEE9;text-decoration:none">eze<span style="color:#00E5A0">.</span>dev</a>
+    <p style="color:#9999AA;font-size:.85rem">&copy; 2025 Ezenwa Chidera Emmanuel. All rights reserved.</p>
+    <div class="flex items-center gap-6">
+      <a href="projects.html" style="color:#9999AA;font-size:.85rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#F0EEE9'" onmouseout="this.style.color='#9999AA'">Work</a>
+      <a href="services.html" style="color:#9999AA;font-size:.85rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#F0EEE9'" onmouseout="this.style.color='#9999AA'">Services</a>
+      <a href="contact.html" style="color:#9999AA;font-size:.85rem;text-decoration:none;transition:color .2s" onmouseover="this.style.color='#F0EEE9'" onmouseout="this.style.color='#9999AA'">Contact</a>
+    </div>
+  </div>
+</footer>
 
-  <script>
-    // Theme Toggle
-    const themeBtn = document.getElementById('themeToggle');
-    const root = document.documentElement;
-    if (localStorage.theme === 'light' || (!localStorage.theme && window.matchMedia('(prefers-color-scheme: light)').matches)) {
-      root.classList.add('light');
-      themeBtn.innerHTML = '<i class="fas fa-sun text-yellow-400 text-2xl"></i>';
-    }
-    themeBtn.addEventListener('click', () => {
-      root.classList.toggle('light');
-      const isLight = root.classList.contains('light');
-      localStorage.theme = isLight ? 'light' : 'dark';
-      themeBtn.innerHTML = isLight ? '<i class="fas fa-sun text-yellow-400 text-2xl"></i>' : '<i class="fas fa-moon text-2xl"></i>';
-    });
+<!-- Scroll Top -->
+<button id="scrollTop" class="fixed bottom-8 right-8 z-50 w-11 h-11 rounded-full flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 shadow-xl" style="background:linear-gradient(135deg,#00E5A0,#7B61FF)" aria-label="Back to top">
+  <i class="fas fa-arrow-up text-sm" style="color:#0A0A0F;font-weight:700"></i>
+</button>
 
-    // Navbar scroll
-    const nav = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('nav-scrolled', window.scrollY > 100);
-    });
-
-    // Cursor glow
-    const glow = document.getElementById('glow');
-    document.addEventListener('mousemove', e => {
-      if (window.innerWidth > 768) {
-        glow.style.left = e.clientX + 'px';
-        glow.style.top = e.clientY + 'px';
-        glow.style.opacity = '0.8';
-      }
-    });
-
-    // Scroll to top
-    const scrollBtn = document.getElementById('scrollTop');
-    window.addEventListener('scroll', () => {
-      scrollBtn.style.opacity = window.scrollY > 800 ? '1' : '0';
-      scrollBtn.style.pointerEvents = window.scrollY > 800 ? 'auto' : 'none';
-    });
-    scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-    // Modal
-    function openModal(src, alt) {
-      const modal = document.getElementById('imageModal');
-      document.getElementById('modalImage').src = src;
-      modal.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-    }
-    function closeModal() {
-      document.getElementById('imageModal').style.display = 'none';
-      document.body.style.overflow = 'auto';
-    }
-    window.openModal = openModal;
-    window.closeModal = closeModal;
-  </script>
+<script>
+  // Navbar
+  const navbar=document.getElementById('navbar');
+  window.addEventListener('scroll',()=>{ navbar.classList.toggle('nav-blur',window.scrollY>80) });
+  // Mobile menu
+  document.getElementById('mobileMenuBtn').addEventListener('click',()=>{ document.getElementById('mobileMenu').classList.toggle('hidden') });
+  function closeMobileMenu(){ document.getElementById('mobileMenu').classList.add('hidden') }
+  // Scroll reveal
+  const revealEls=document.querySelectorAll('.reveal');
+  new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('visible')} }) },{threshold:.1,rootMargin:'0px 0px -40px 0px'}).observe ? (() => {
+    const obs = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('visible')} }) },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+    revealEls.forEach(el=>obs.observe(el));
+  })() : revealEls.forEach(el=>el.classList.add('visible'));
+  // Scroll top
+  const stb=document.getElementById('scrollTop');
+  window.addEventListener('scroll',()=>{ const s=window.scrollY>600;stb.style.opacity=s?'1':'0';stb.style.pointerEvents=s?'auto':'none' });
+  stb.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  // Active nav
+  document.querySelectorAll('.nav-link').forEach(l=>{ if(l.getAttribute('href')===window.location.pathname.split('/').pop()||window.location.pathname==='/'&&l.getAttribute('href')==='index.html'){ l.classList.add('active') } });
+</script>
 </body>
 </html>
