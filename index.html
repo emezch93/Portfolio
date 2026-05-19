@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ezenwa Emmanuel — Frontend Developer for Hire</title>
-  <meta name="description" content="I build fast, beautiful websites for businesses, startups, and personal brands. Based in Nigeria. Available for freelance work." />
-  <meta property="og:title" content="Ezenwa Emmanuel — Frontend Developer" />
-  <meta property="og:description" content="I build websites that look great and get results. Hire me for your next project." />
+  <title>Ezenwa Emmanuel — Frontend Developer & Digital Product Builder</title>
+  <meta name="description" content="Frontend developer and digital product builder. I build platforms, AI systems, and interactive web experiences. Based in Nigeria. Available for freelance work." />
+  <meta property="og:title" content="Ezenwa Emmanuel — Frontend Developer & Product Builder" />
+  <meta property="og:description" content="Frontend systems, AI-powered platforms, and interactive digital products. Hire me for your next project." />
   <meta property="og:image" content="https://emezch93.github.io/me.jpg" />
   <meta property="og:url" content="https://emezch93.github.io/Portfolio/" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,6 +75,23 @@
     .reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s cubic-bezier(.16,1,.3,1)}
     .reveal.visible{opacity:1;transform:translateY(0)}
     .cs-tag{font-family:'Syne',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:4px}
+    /* Featured card upgrade */
+    .feat-card{background:#13131A;border:1px solid rgba(255,255,255,.08);border-radius:22px;overflow:hidden;transition:all .4s cubic-bezier(.16,1,.3,1)}
+    .feat-card:hover{transform:translateY(-8px);box-shadow:0 40px 70px rgba(0,0,0,.55)}
+    .feat-card.jade-hover:hover{border-color:rgba(0,229,160,.25);box-shadow:0 40px 70px rgba(0,0,0,.55),0 0 0 1px rgba(0,229,160,.12)}
+    .feat-card.lav-hover:hover{border-color:rgba(123,97,255,.3);box-shadow:0 40px 70px rgba(0,0,0,.55),0 0 0 1px rgba(123,97,255,.18)}
+    .feat-card.green-hover:hover{border-color:rgba(163,230,53,.25);box-shadow:0 40px 70px rgba(0,0,0,.55),0 0 0 1px rgba(163,230,53,.1)}
+    .feat-card.blue-hover:hover{border-color:rgba(96,165,250,.25);box-shadow:0 40px 70px rgba(0,0,0,.55),0 0 0 1px rgba(96,165,250,.12)}
+    .feat-img{width:100%;height:230px;object-fit:cover;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+    .feat-card:hover .feat-img{transform:scale(1.04)}
+    .feat-img-placeholder{width:100%;height:230px;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.08em;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+    .feat-card:hover .feat-img-placeholder{transform:scale(1.04)}
+    /* Feature dot list */
+    .feat-dot{display:flex;align-items:center;gap:8px;font-size:.8rem;color:#9999AA}
+    .feat-dot::before{content:'';display:block;width:5px;height:5px;border-radius:50%;background:currentColor;flex-shrink:0}
+    /* Other projects mini-card */
+    .mini-card{display:flex;align-items:center;gap:16px;padding:18px 22px;background:#13131A;border:1px solid rgba(255,255,255,.06);border-radius:14px;transition:all .3s ease;text-decoration:none;color:#F0EEE9}
+    .mini-card:hover{border-color:rgba(255,255,255,.15);background:#1a1a22;transform:translateX(4px)}
     ::-webkit-scrollbar{width:6px}
     ::-webkit-scrollbar-track{background:#0A0A0F}
     ::-webkit-scrollbar-thumb{background:#2A2A3A;border-radius:3px}
@@ -85,7 +102,7 @@
 <!-- ═══════════ NAVBAR ═══════════ -->
 <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
   <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-    <a href="index.html" class="font-display font-bold text-lg tracking-tight text-chalk" style="font-family:'Syne',sans-serif">
+    <a href="index.html" style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:#F0EEE9;text-decoration:none">
       eze<span style="color:#00E5A0">.</span>dev
     </a>
     <div class="hidden md:flex items-center gap-8">
@@ -129,12 +146,12 @@
       </span>
     </div>
     <h1 class="hero-headline mb-6 max-w-4xl animate-slide-up" style="animation-delay:.2s">
-      I Build Websites That<br>
-      <span class="grad">Win Clients</span> and<br>
-      Drive Real Growth.
+      I Build Platforms,<br>
+      <span class="grad">AI Systems</span> &amp;<br>
+      Digital Products.
     </h1>
     <p class="text-lg md:text-xl max-w-2xl leading-relaxed mb-10 animate-slide-up" style="color:#9999AA;animation-delay:.35s">
-      Frontend developer with <strong style="color:#F0EEE9;font-weight:500">4+ years of experience</strong> crafting fast, conversion-focused websites for businesses, brands, and education platforms.
+      Frontend developer &amp; digital product builder with <strong style="color:#F0EEE9;font-weight:500">4+ years</strong> crafting interactive platforms, AI-powered experiences, and conversion-focused web systems.
     </p>
     <div class="flex flex-col sm:flex-row gap-4 mb-14 animate-slide-up" style="animation-delay:.45s">
       <a href="https://wa.me/+2348185947780?text=Hi%20Emmanuel%2C%20I%27d%20like%20to%20work%20with%20you" target="_blank" rel="noopener noreferrer" class="btn-primary">
@@ -145,125 +162,162 @@
     <div class="flex flex-wrap gap-3 animate-fade-in" style="animation-delay:.6s">
       <span class="proof-pill"><strong>14+</strong> Projects Shipped</span>
       <span class="proof-pill"><strong>4+</strong> Years Experience</span>
-      <span class="proof-pill"><strong>HTML · CSS · JS · Tailwind</strong></span>
+      <span class="proof-pill"><strong>AI · PWA · Platforms</strong></span>
       <span class="proof-pill"><i class="fas fa-map-marker-alt text-xs" style="color:#00E5A0"></i> Nigeria · Remote-Ready</span>
     </div>
-  </div>
-  <!--div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-xs animate-fade-in" style="color:#9999AA;animation-delay:1s">
-    <span style="letter-spacing:.12em;font-size:.65rem;text-transform:uppercase;font-family:'Syne',sans-serif"></span>
-    <div class="w-px h-10" style="background:linear-gradient(to bottom,#9999AA,transparent)"></div-->
   </div>
 </header>
 
 <!-- ═══════════ FEATURED PROJECTS ═══════════ -->
-<section class="py-24 px-6">
+<section id="work" class="py-24 px-6">
   <div class="max-w-6xl mx-auto">
+
     <div class="reveal mb-16">
-      <div class="section-label">Selected Work</div>
+      <div class="section-label">Flagship Work</div>
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <h2 style="font-family:'Syne',sans-serif;font-size:clamp(2rem,5vw,3rem);font-weight:700;letter-spacing:-.02em">
-          Projects That <span class="grad">Delivered.</span>
+          Systems That <span class="grad">Ship.</span>
         </h2>
         <a href="projects.html" class="btn-ghost text-sm py-2.5 px-5 self-start sm:self-auto">
           View All Work <i class="fas fa-arrow-right text-xs"></i>
         </a>
       </div>
+      <p style="color:#9999AA;font-size:.9rem;margin-top:.75rem;max-width:500px;line-height:1.65">Platforms, AI integrations, and interactive digital products — built to deliver real user value.</p>
     </div>
+
+    <!-- TOP ROW — 2 columns -->
+    <div class="grid md:grid-cols-2 gap-6 mb-6">
+
+      <!-- 1. Anambra Green Festival -->
+      <article class="feat-card jade-hover reveal group">
+        <div class="overflow-hidden">
+          <div class="feat-img-placeholder" style="background:linear-gradient(135deg,#0A1F0F,#0F2A14)">
+            <div style="text-align:center">
+              <div style="font-size:2.5rem;margin-bottom:8px">🌿</div>
+              <span style="color:#00E5A0;opacity:.6">Event Platform</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-8">
+          <div class="flex items-center gap-2 mb-4 flex-wrap">
+            <span class="cs-tag" style="background:rgba(0,229,160,.1);color:#00E5A0">Event Platform</span>
+            <span class="cs-tag" style="background:rgba(163,230,53,.1);color:#A3E635">Registration System</span>
+            <span class="cs-tag" style="background:rgba(251,191,36,.1);color:#FBBF24">Community</span>
+          </div>
+          <h3 style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:.6rem;letter-spacing:-.01em">Anambra Green Festival 2026</h3>
+          <p style="color:#9999AA;font-size:.875rem;line-height:1.7;margin-bottom:1.25rem">Large-scale cultural and sustainability event platform — driving community engagement through immersive visual design, structured registration flows, and subscription systems.</p>
+          <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:1.75rem">
+            <span class="feat-dot" style="color:#00E5A0">Registration &amp; Google Form integration</span>
+            <span class="feat-dot" style="color:#00E5A0">Subscription &amp; community engagement system</span>
+            <span class="feat-dot" style="color:#00E5A0">Multi-section campaign architecture</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <a href="./projects/event-site.html" class="btn-primary text-sm py-2.5 px-5">
+              View Project <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. CodeVent AI Chat -->
+      <article class="feat-card lav-hover reveal group">
+        <div class="overflow-hidden">
+          <div class="feat-img-placeholder" style="background:linear-gradient(135deg,#0D0A24,#140D30)">
+            <div style="text-align:center">
+              <div style="font-size:2.5rem;margin-bottom:8px">🤖</div>
+              <span style="color:#A78BFA;opacity:.6">AI System</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-8">
+          <div class="flex items-center gap-2 mb-4 flex-wrap">
+            <span class="cs-tag" style="background:rgba(123,97,255,.1);color:#A78BFA">AI Integration</span>
+            <span class="cs-tag" style="background:rgba(192,132,252,.1);color:#C084FC">API-Powered</span>
+            <span class="cs-tag" style="background:rgba(99,102,241,.1);color:#818CF8">Interactive UI</span>
+          </div>
+          <h3 style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:.6rem;letter-spacing:-.01em">CodeVent AI Chat</h3>
+          <p style="color:#9999AA;font-size:.875rem;line-height:1.7;margin-bottom:1.25rem">AI-powered interactive frontend system with external API communication, dynamic conversational UI, and a responsive learning assistant experience for web development students.</p>
+          <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:1.75rem">
+            <span class="feat-dot" style="color:#A78BFA">External AI API integration</span>
+            <span class="feat-dot" style="color:#A78BFA">Dynamic conversational interface</span>
+            <span class="feat-dot" style="color:#A78BFA">Real-time responsive interaction system</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <a href="./projects/ai-chat.html" class="btn-primary text-sm py-2.5 px-5" style="background:linear-gradient(135deg,#7B61FF,#C084FC)">
+              View Project <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- BOTTOM ROW — 2 columns -->
     <div class="grid md:grid-cols-2 gap-6">
 
-      <!-- Project 1: Code Editor -->
-      <article class="card reveal group">
+      <!-- 3. Quote Identity PWA -->
+      <article class="feat-card green-hover reveal group">
         <div class="overflow-hidden">
-          <img src="https://placehold.co/800x440/0D1117/00E5A0?text=Portable+Code+Editor&font=syne" alt="Portable Code Editor" class="proj-img">
-        </div>
-        <div class="p-7">
-          <div class="flex items-center gap-2 mb-4">
-            <span class="cs-tag" style="background:rgba(0,229,160,.1);color:#00E5A0">Developer Tool</span>
-            <span class="cs-tag" style="background:rgba(123,97,255,.1);color:#A78BFA">Open Source</span>
+          <div class="feat-img-placeholder" style="background:linear-gradient(135deg,#0D1A0A,#0F1F0C)">
+            <div style="text-align:center">
+              <div style="font-size:2.5rem;margin-bottom:8px">💬</div>
+              <span style="color:#A3E635;opacity:.6">PWA</span>
+            </div>
           </div>
-          <h3 style="font-family:'Syne',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:.75rem">Portable Code Editor</h3>
-          <p style="color:#9999AA;font-size:.9rem;line-height:1.65;margin-bottom:1.5rem">A fully self-contained in-browser IDE with live split-pane preview, no install needed, runs on any device.</p>
+        </div>
+        <div class="p-8">
+          <div class="flex items-center gap-2 mb-4 flex-wrap">
+            <span class="cs-tag" style="background:rgba(163,230,53,.1);color:#A3E635">PWA</span>
+            <span class="cs-tag" style="background:rgba(0,229,160,.1);color:#00E5A0">Installable</span>
+            <span class="cs-tag" style="background:rgba(96,165,250,.1);color:#60A5FA">Personal Brand</span>
+          </div>
+          <h3 style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:.6rem;letter-spacing:-.01em">Quote Identity Platform</h3>
+          <p style="color:#9999AA;font-size:.875rem;line-height:1.7;margin-bottom:1.25rem">Installable Progressive Web App for structured philosophical publishing and searchable identity presentation — an accessible, offline-capable personal branding system.</p>
+          <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:1.75rem">
+            <span class="feat-dot" style="color:#A3E635">Progressive Web App — installable on any device</span>
+            <span class="feat-dot" style="color:#A3E635">Searchable content &amp; identity architecture</span>
+            <span class="feat-dot" style="color:#A3E635">Optimised accessibility &amp; offline support</span>
+          </div>
           <div class="flex items-center gap-3">
-            <a href="projects/code-editor.html" class="btn-primary text-sm py-2.5 px-5">
-              Case Study <i class="fas fa-arrow-right text-xs"></i>
-            </a>
-            <a href="https://emezch93.github.io/Code-Editor-/" target="_blank" rel="noopener noreferrer" class="btn-ghost text-sm py-2.5 px-4">
-              Live <i class="fas fa-external-link-alt text-xs"></i>
+            <a href="./projects/quote-site.html" class="btn-primary text-sm py-2.5 px-5" style="background:linear-gradient(135deg,#84CC16,#00E5A0)">
+              View Project <i class="fas fa-arrow-right text-xs"></i>
             </a>
           </div>
         </div>
       </article>
 
-      <!-- Project 2: Fashion Website -->
-      <article class="card card-lav reveal group">
+      <!-- 4. CodeVent Digital -->
+      <article class="feat-card blue-hover reveal group">
         <div class="overflow-hidden">
-          <img src="https://placehold.co/800x440/180D24/C084FC?text=Samuel+Fashion+Website&font=syne" alt="Samuel Chukwuemeka Fashion" class="proj-img">
-        </div>
-        <div class="p-7">
-          <div class="flex items-center gap-2 mb-4">
-            <span class="cs-tag" style="background:rgba(123,97,255,.1);color:#A78BFA">Client Work</span>
-            <span class="cs-tag" style="background:rgba(251,146,60,.1);color:#FB923C">Fashion & Lifestyle</span>
+          <div class="feat-img-placeholder" style="background:linear-gradient(135deg,#0A0A1F,#0D0D28)">
+            <div style="text-align:center">
+              <div style="font-size:2.5rem;margin-bottom:8px">🎓</div>
+              <span style="color:#60A5FA;opacity:.6">Education Platform</span>
+            </div>
           </div>
-          <h3 style="font-family:'Syne',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:.75rem">Samuel Chukwuemeka Fashion</h3>
-          <p style="color:#9999AA;font-size:.9rem;line-height:1.65;margin-bottom:1.5rem">Luxury menswear showcase, took a brand from zero online presence to a polished, credible digital storefront.</p>
+        </div>
+        <div class="p-8">
+          <div class="flex items-center gap-2 mb-4 flex-wrap">
+            <span class="cs-tag" style="background:rgba(96,165,250,.1);color:#60A5FA">EdTech Platform</span>
+            <span class="cs-tag" style="background:rgba(123,97,255,.1);color:#A78BFA">Multi-Page Ecosystem</span>
+            <span class="cs-tag" style="background:rgba(0,229,160,.1);color:#00E5A0">Onboarding</span>
+          </div>
+          <h3 style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:.6rem;letter-spacing:-.01em">CodeVent Digital</h3>
+          <p style="color:#9999AA;font-size:.875rem;line-height:1.7;margin-bottom:1.25rem">Educational digital platform with user onboarding systems, multi-page architecture, and creator-focused frontend experiences — built to grow a developer community from zero.</p>
+          <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:1.75rem">
+            <span class="feat-dot" style="color:#60A5FA">User onboarding &amp; structured learning flow</span>
+            <span class="feat-dot" style="color:#60A5FA">Multi-page product ecosystem architecture</span>
+            <span class="feat-dot" style="color:#60A5FA">AI assistant, shop &amp; community integration</span>
+          </div>
           <div class="flex items-center gap-3">
-            <a href="projects/fashion-website.html" class="btn-primary text-sm py-2.5 px-5" style="background:linear-gradient(135deg,#7B61FF,#C084FC)">
-              Case Study <i class="fas fa-arrow-right text-xs"></i>
-            </a>
-            <a href="https://emezch93.github.io/Samuel-Chukwuemeka-Fashion-Designs/" target="_blank" rel="noopener noreferrer" class="btn-ghost text-sm py-2.5 px-4">
-              Live <i class="fas fa-external-link-alt text-xs"></i>
+            <a href="./projects/codevent-digital.html" class="btn-primary text-sm py-2.5 px-5" style="background:linear-gradient(135deg,#3B82F6,#7B61FF)">
+              View Project <i class="fas fa-arrow-right text-xs"></i>
             </a>
           </div>
         </div>
       </article>
 
-      <!-- Project 3: EDUCOMMEX -->
-      <article class="card reveal group">
-        <div class="overflow-hidden">
-          <img src="https://placehold.co/800x440/0A1628/00E5A0?text=EDUCOMMEX+Platform&font=syne" alt="EDUCOMMEX Education Marketplace" class="proj-img">
-        </div>
-        <div class="p-7">
-          <div class="flex items-center gap-2 mb-4">
-            <span class="cs-tag" style="background:rgba(0,229,160,.1);color:#00E5A0">EdTech Platform</span>
-            <span class="cs-tag" style="background:rgba(59,130,246,.1);color:#60A5FA">Marketplace</span>
-          </div>
-          <h3 style="font-family:'Syne',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:.75rem">EDUCOMMEX Platform</h3>
-          <p style="color:#9999AA;font-size:.9rem;line-height:1.65;margin-bottom:1.5rem">Full education marketplace with course catalog, purchasing flow, and an integrated quiz engine with scoring & timers.</p>
-          <div class="flex items-center gap-3">
-            <a href="projects/educommex.html" class="btn-primary text-sm py-2.5 px-5">
-              Case Study <i class="fas fa-arrow-right text-xs"></i>
-            </a>
-            <a href="https://emezch93.github.io/EDUCOMMEX/" target="_blank" rel="noopener noreferrer" class="btn-ghost text-sm py-2.5 px-4">
-              Live <i class="fas fa-external-link-alt text-xs"></i>
-            </a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Project 4: Swift Course -->
-      <article class="card card-lav reveal group">
-        <div class="overflow-hidden">
-          <img src="https://placehold.co/800x440/0F1A10/84CC16?text=Swift+Web+Dev+Course&font=syne" alt="Swift Web Development Course" class="proj-img">
-        </div>
-        <div class="p-7">
-          <div class="flex items-center gap-2 mb-4">
-            <span class="cs-tag" style="background:rgba(132,204,22,.1);color:#A3E635">Course Platform</span>
-            <span class="cs-tag" style="background:rgba(123,97,255,.1);color:#A78BFA">CodeVent Digital</span>
-          </div>
-          <h3 style="font-family:'Syne',sans-serif;font-size:1.35rem;font-weight:700;margin-bottom:.75rem">Swift Web Dev Course</h3>
-          <p style="color:#9999AA;font-size:.9rem;line-height:1.65;margin-bottom:1.5rem">Structured HTML/CSS/JS curriculum platform, CodeVent Digital's flagship free learning product for beginners.</p>
-          <div class="flex items-center gap-3">
-            <a href="projects/swift-course.html" class="btn-primary text-sm py-2.5 px-5" style="background:linear-gradient(135deg,#7B61FF,#C084FC)">
-              Case Study <i class="fas fa-arrow-right text-xs"></i>
-            </a>
-            <a href="https://emezch93.github.io/CodeVent-Swift-Web-Development-Course/" target="_blank" rel="noopener noreferrer" class="btn-ghost text-sm py-2.5 px-4">
-              Live <i class="fas fa-external-link-alt text-xs"></i>
-            </a>
-          </div>
-        </div>
-      </article>
-
-    </div><!-- /grid -->
+    </div>
   </div>
 </section>
 
@@ -278,17 +332,17 @@
     <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
     <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">Tailwind CSS</span>
     <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
+    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">API Integration</span>
+    <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
+    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">PWA</span>
+    <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
     <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">Responsive Design</span>
     <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
-    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">UI/UX</span>
+    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">UI/UX Systems</span>
     <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
     <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">Git & GitHub</span>
     <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
-    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">Web Performance</span>
-    <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
-    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">Accessibility</span>
-    <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
-    <!-- Duplicate -->
+    <!-- Duplicate for seamless loop -->
     <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">HTML5</span>
     <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
     <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">CSS3</span>
@@ -297,18 +351,83 @@
     <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
     <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">Tailwind CSS</span>
     <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
+    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">API Integration</span>
+    <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
+    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">PWA</span>
+    <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
     <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">Responsive Design</span>
     <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
-    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">UI/UX</span>
+    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">UI/UX Systems</span>
     <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
     <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">Git & GitHub</span>
     <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
-    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">Web Performance</span>
-    <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
-    <span style="color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em">Accessibility</span>
-    <span style="color:#00E5A0;font-family:'Syne',sans-serif;font-weight:600">✦</span>
   </div>
 </div>
+
+<!-- ═══════════ OTHER PROJECTS ═══════════ -->
+<section class="py-20 px-6" style="border-bottom:1px solid rgba(255,255,255,.06)">
+  <div class="max-w-6xl mx-auto">
+    <div class="reveal mb-10">
+      <div class="section-label">More Work</div>
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <h2 style="font-family:'Syne',sans-serif;font-size:clamp(1.6rem,4vw,2.2rem);font-weight:700;letter-spacing:-.02em;color:#9999AA">
+          Other Projects
+        </h2>
+        <a href="projects.html" class="btn-ghost text-sm py-2.5 px-5 self-start sm:self-auto">
+          Full Archive <i class="fas fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+      <p style="color:#666677;font-size:.85rem;margin-top:.5rem">Earlier builds and standalone tools — all functional and live.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 reveal">
+
+      <a href="projects/code-editor.html" class="mini-card">
+        <div style="width:36px;height:36px;border-radius:10px;background:#1E1E2A;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <i class="fas fa-code text-sm" style="color:#00E5A0"></i>
+        </div>
+        <div style="flex:1">
+          <p style="font-family:'Syne',sans-serif;font-weight:600;font-size:.875rem">Portable Code Editor</p>
+          <p style="color:#9999AA;font-size:.75rem;margin-top:2px">In-browser IDE · Live preview</p>
+        </div>
+        <i class="fas fa-arrow-right text-xs" style="color:#444455"></i>
+      </a>
+
+      <a href="projects/fashion-website.html" class="mini-card">
+        <div style="width:36px;height:36px;border-radius:10px;background:#1E1E2A;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <i class="fas fa-tshirt text-sm" style="color:#A78BFA"></i>
+        </div>
+        <div style="flex:1">
+          <p style="font-family:'Syne',sans-serif;font-weight:600;font-size:.875rem">Samuel Fashion</p>
+          <p style="color:#9999AA;font-size:.75rem;margin-top:2px">Luxury brand website</p>
+        </div>
+        <i class="fas fa-arrow-right text-xs" style="color:#444455"></i>
+      </a>
+
+      <a href="projects/swift-course.html" class="mini-card">
+        <div style="width:36px;height:36px;border-radius:10px;background:#1E1E2A;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <i class="fas fa-graduation-cap text-sm" style="color:#A3E635"></i>
+        </div>
+        <div style="flex:1">
+          <p style="font-family:'Syne',sans-serif;font-weight:600;font-size:.875rem">Swift Web Dev Course</p>
+          <p style="color:#9999AA;font-size:.75rem;margin-top:2px">Beginner curriculum platform</p>
+        </div>
+        <i class="fas fa-arrow-right text-xs" style="color:#444455"></i>
+      </a>
+
+      <a href="https://emezch93.github.io/Machine-Learning-AlgoNation-Course/" target="_blank" rel="noopener noreferrer" class="mini-card">
+        <div style="width:36px;height:36px;border-radius:10px;background:#1E1E2A;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <i class="fas fa-brain text-sm" style="color:#818CF8"></i>
+        </div>
+        <div style="flex:1">
+          <p style="font-family:'Syne',sans-serif;font-weight:600;font-size:.875rem">ML AlgoNation</p>
+          <p style="color:#9999AA;font-size:.75rem;margin-top:2px">Machine learning curriculum</p>
+        </div>
+        <i class="fas fa-external-link-alt text-xs" style="color:#444455"></i>
+      </a>
+
+    </div>
+  </div>
+</section>
 
 <!-- ═══════════ SERVICES PREVIEW ═══════════ -->
 <section class="py-24 px-6">
@@ -335,33 +454,33 @@
       </div>
       <div class="service-card group">
         <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform" style="background:rgba(123,97,255,.1)">
-          <i class="fas fa-rocket text-sm" style="color:#A78BFA"></i>
+          <i class="fas fa-robot text-sm" style="color:#A78BFA"></i>
+        </div>
+        <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;margin-bottom:.5rem">AI-Powered Systems</h3>
+        <p style="color:#9999AA;font-size:.85rem;line-height:1.6">Interactive AI frontends with API integration and dynamic conversation systems.</p>
+        <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.06);font-size:.75rem;color:#9999AA">API-connected · Real-time · Responsive</div>
+      </div>
+      <div class="service-card group">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform" style="background:rgba(0,229,160,.1)">
+          <i class="fas fa-rocket text-sm" style="color:#00E5A0"></i>
         </div>
         <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;margin-bottom:.5rem">Landing Pages</h3>
         <p style="color:#9999AA;font-size:.85rem;line-height:1.6">High-converting single pages for products, campaigns, or services.</p>
         <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.06);font-size:.75rem;color:#9999AA">CTA-focused · SEO-ready</div>
       </div>
       <div class="service-card group">
-        <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform" style="background:rgba(0,229,160,.1)">
-          <i class="fas fa-mobile-alt text-sm" style="color:#00E5A0"></i>
-        </div>
-        <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;margin-bottom:.5rem">Responsive UI</h3>
-        <p style="color:#9999AA;font-size:.85rem;line-height:1.6">Pixel-perfect interfaces across all screen sizes, phone, tablet, desktop.</p>
-        <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.06);font-size:.75rem;color:#9999AA">Tailwind · Accessible · Cross-browser</div>
-      </div>
-      <div class="service-card group">
         <div class="w-10 h-10 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform" style="background:rgba(123,97,255,.1)">
-          <i class="fas fa-wrench text-sm" style="color:#A78BFA"></i>
+          <i class="fas fa-layer-group text-sm" style="color:#A78BFA"></i>
         </div>
-        <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;margin-bottom:.5rem">Fixes & Redesigns</h3>
-        <p style="color:#9999AA;font-size:.85rem;line-height:1.6">Existing site broken, slow, or outdated? I'll audit, fix, and modernise it.</p>
-        <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.06);font-size:.75rem;color:#9999AA">Audit · Debug · Revamp</div>
+        <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;margin-bottom:.5rem">Platform Architecture</h3>
+        <p style="color:#9999AA;font-size:.85rem;line-height:1.6">Multi-page product ecosystems with onboarding, content systems, and user flows.</p>
+        <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.06);font-size:.75rem;color:#9999AA">Structured · Scalable · Purposeful</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ ABOUT (SHORT) ═══════════ -->
+<!-- ═══════════ ABOUT ═══════════ -->
 <section id="about" class="py-24 px-6" style="border-top:1px solid rgba(255,255,255,.06)">
   <div class="max-w-6xl mx-auto">
     <div class="grid md:grid-cols-2 gap-16 items-center">
@@ -384,19 +503,20 @@
       <div class="reveal">
         <div class="section-label">About Me</div>
         <h2 style="font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;letter-spacing:-.02em;margin-bottom:1.5rem;line-height:1.15">
-          I Turn Ideas Into <span class="grad">Working Websites.</span>
+          I Build <span class="grad">Platforms That Work.</span>
         </h2>
         <div style="color:#9999AA;font-size:.95rem;line-height:1.75;margin-bottom:2rem">
-          <p style="margin-bottom:1rem">I'm <strong style="color:#F0EEE9;font-weight:500">Ezenwa Chidera Emmanuel</strong>, a self-driven frontend developer from Nigeria with 4+ years of building real digital products for real people.</p>
-          <p style="margin-bottom:1rem">I've shipped luxury brand sites, education platforms, browser-based dev tools, and more. Alongside client work, I founded <a href="https://emezch93.github.io/codevent-digital/" target="_blank" rel="noopener noreferrer" style="color:#00E5A0;font-weight:500;text-decoration:none;border-bottom:1px solid rgba(0,229,160,.3)">CodeVent Digital</a>, a platform teaching web development to beginners.</p>
-          <p>My focus: clean code, fast performance, and designs that actually <em>do something</em> for the business.</p>
+          <p style="margin-bottom:1rem">I'm <strong style="color:#F0EEE9;font-weight:500">Ezenwa Chidera Emmanuel</strong>, a self-driven frontend developer and digital product builder from Nigeria with 4+ years of shipping real systems for real users.</p>
+          <p style="margin-bottom:1rem">I've built AI chat platforms, PWAs, event systems, and full education ecosystems. I also founded <a href="https://emezch93.github.io/codevent-digital/" target="_blank" rel="noopener noreferrer" style="color:#00E5A0;font-weight:500;text-decoration:none;border-bottom:1px solid rgba(0,229,160,.3)">CodeVent Digital</a> — a full web development education platform with AI assistant, community, and mentorship system.</p>
+          <p>My focus: product thinking, clean code, and frontend systems that deliver measurable outcomes.</p>
         </div>
         <div class="flex flex-wrap gap-2 mb-8">
           <span class="badge badge-jade">HTML5 / CSS3</span>
           <span class="badge badge-lav">JavaScript</span>
           <span class="badge badge-jade">Tailwind CSS</span>
-          <span class="badge badge-lav">Responsive Design</span>
-          <span class="badge badge-jade">Git & GitHub</span>
+          <span class="badge badge-lav">API Integration</span>
+          <span class="badge badge-jade">PWA</span>
+          <span class="badge badge-lav">Git & GitHub</span>
         </div>
         <div class="flex flex-wrap gap-4">
           <a href="https://wa.me/+2348185947780?text=Hi%20Emmanuel%2C%20I%27d%20like%20to%20work%20with%20you" target="_blank" rel="noopener noreferrer" class="btn-primary">
@@ -425,7 +545,7 @@
         <h2 style="font-family:'Syne',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.03em;margin-bottom:1.25rem;line-height:1.1">
           Have a project in mind?<br><span class="grad">Let's build it.</span>
         </h2>
-        <p style="color:#9999AA;font-size:1.1rem;max-width:520px;margin:0 auto 2.5rem;line-height:1.7">Whether you need a brand-new website, a landing page, or a frontend fix, reach out and let's talk.</p>
+        <p style="color:#9999AA;font-size:1.1rem;max-width:520px;margin:0 auto 2.5rem;line-height:1.7">Whether you need a platform, an AI-powered system, or a conversion-focused website — reach out and let's talk.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="contact.html" class="btn-primary"><i class="fas fa-paper-plane"></i> Get In Touch</a>
           <a href="https://wa.me/+2348185947780?text=Hi%20Emmanuel%2C%20I%27d%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener noreferrer" class="btn-ghost"><i class="fab fa-whatsapp"></i> WhatsApp Me</a>
@@ -454,23 +574,16 @@
 </button>
 
 <script>
-  // Navbar
   const navbar=document.getElementById('navbar');
   window.addEventListener('scroll',()=>{ navbar.classList.toggle('nav-blur',window.scrollY>80) });
-  // Mobile menu
   document.getElementById('mobileMenuBtn').addEventListener('click',()=>{ document.getElementById('mobileMenu').classList.toggle('hidden') });
   function closeMobileMenu(){ document.getElementById('mobileMenu').classList.add('hidden') }
-  // Scroll reveal
   const revealEls=document.querySelectorAll('.reveal');
-  new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('visible')} }) },{threshold:.1,rootMargin:'0px 0px -40px 0px'}).observe ? (() => {
-    const obs = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('visible')} }) },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
-    revealEls.forEach(el=>obs.observe(el));
-  })() : revealEls.forEach(el=>el.classList.add('visible'));
-  // Scroll top
+  const obs=new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('visible')} }) },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  revealEls.forEach(el=>obs.observe(el));
   const stb=document.getElementById('scrollTop');
   window.addEventListener('scroll',()=>{ const s=window.scrollY>600;stb.style.opacity=s?'1':'0';stb.style.pointerEvents=s?'auto':'none' });
   stb.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-  // Active nav
   document.querySelectorAll('.nav-link').forEach(l=>{ if(l.getAttribute('href')===window.location.pathname.split('/').pop()||window.location.pathname==='/'&&l.getAttribute('href')==='index.html'){ l.classList.add('active') } });
 </script>
 </body>
