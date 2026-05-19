@@ -1,0 +1,29 @@
+{
+  "name": "Ezenwa Chidera Emmanuel — Philosophical Quotes",
+  "short_name": "ECE Quotes",
+  "description": "Original philosophical quotes by Ezenwa Chidera Emmanuel. Nothing in life delays, only our readiness does.",
+  "start_url": "/quote-site-ezenwa-chidera-emmanuel/",
+  "scope": "/quote-site-ezenwa-chidera-emmanuel/",
+  "display": "standalone",
+  "background_color": "#080A0F",
+  "theme_color": "#080A0F",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

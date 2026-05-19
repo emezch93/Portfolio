@@ -1,0 +1,48 @@
+{
+  "author": {
+    "name": "Ezenwa Chidera Emmanuel",
+    "url": "https://emezch93.github.io/quote-site-ezenwa-chidera-emmanuel/about.html",
+    "sameAs": [
+      "https://emezch93.github.io/portfolio-ezenwa-chidera-emmanuel/",
+      "https://github.com/emezch93",
+      "https://medium.com/@emmanuelezenwa_78715",
+      "https://x.com/i/status/2055114625536999688"
+    ]
+  },
+  "quotes": [
+    {
+      "id": "readiness-001",
+      "text": "Nothing in life delays, only our readiness does.",
+      "slug": "quote.html",
+      "category": "Readiness & Preparation",
+      "tags": ["readiness","preparation","human-behavior","philosophy","timing","discipline"],
+      "year": 2025,
+      "primary": true,
+      "excerpt": "Time does not withhold outcomes from us — we withhold them from ourselves by arriving at moments before we are ready to receive them.",
+      "medium": [
+        "https://medium.com/@emmanuelezenwa_78715/nothing-in-life-delays-only-our-readiness-does-3219a33b432c",
+        "https://medium.com/@emmanuelezenwa_78715/nothing-in-life-delays-only-our-readiness-does-3c6986b362e7"
+      ]
+    },
+    {
+      "id": "discipline-001",
+      "text": "Discipline is not punishment. It is the architecture of freedom.",
+      "slug": "quotes.html#discipline-001",
+      "category": "Discipline",
+      "tags": ["discipline","freedom","systems-thinking","philosophy"],
+      "year": 2025,
+      "primary": false,
+      "excerpt": "Those who mistake structure for constraint have never experienced the liberation that comes from mastering the self."
+    },
+    {
+      "id": "systems-001",
+      "text": "Systems outlast intentions. Build the system before you need the result.",
+      "slug": "quotes.html#systems-001",
+      "category": "Systems Thinking",
+      "tags": ["systems","preparation","discipline","results"],
+      "year": 2026,
+      "primary": false,
+      "excerpt": "Relying on motivation alone is a fragile strategy. Motivation fluctuates; systems persist."
+    }
+  ]
+}
