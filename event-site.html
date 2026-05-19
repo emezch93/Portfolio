@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Anambra Green Enterprise & Circular Economy Festival 2026 — Nigeria's biggest circular economy event. June 5, 2026 at Prof. Dora Akunyili Women Development Centre, Awka." />
+  <meta name="keywords" content="Anambra Green Festival, circular economy, Nigeria sustainability, recycling, green entrepreneurs, Awka" />
+  <meta property="og:title" content="Anambra Green Enterprise & Circular Economy Festival 2026" />
+  <meta property="og:description" content="Turn Waste Into Wealth. Build Green Businesses. Grow Anambra." />
+  <meta property="og:type" content="website" />
+  <title>Anambra Green Enterprise & Circular Economy Festival 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ==================== LOADER ==================== -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="leaf-spin">🌿</div>
+      <p>Loading...</p>
+    </div>
+  </div>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <header id="navbar" role="banner">
+    <nav class="nav-container" aria-label="Main navigation">
+
+      <a href="#hero" class="nav-logo" aria-label="Anambra Green Fest Home">
+        <span class="logo-leaf">🌱</span>
+        <span class="logo-text">AnambraGreenFest</span>
+      </a>
+
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        aria-controls="navLinks">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#why-attend" class="nav-link">Why Attend</a></li>
+        <li><a href="#highlights" class="nav-link">Highlights</a></li>
+        <li>
+          <a href="https://forms.gle/qYZwyTAoeqimoVk27"
+             class="nav-cta"
+             target="_blank"
+             rel="noopener noreferrer">
+            Register Free
+          </a>
+        </li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section id="hero" aria-label="Hero">
+
+      <div class="hero-bg" role="img" aria-label="Sustainability and green enterprise scene"></div>
+      <div class="hero-overlay"></div>
+
+      <!-- Floating background blobs -->
+      <div class="blob blob-1" aria-hidden="true"></div>
+      <div class="blob blob-2" aria-hidden="true"></div>
+      <div class="blob blob-3" aria-hidden="true"></div>
+
+      <!-- Floating leaf particles -->
+      <div class="particles" aria-hidden="true">
+        <span class="particle">🌿</span>
+        <span class="particle">♻️</span>
+        <span class="particle">🌱</span>
+        <span class="particle">☀️</span>
+        <span class="particle">🌿</span>
+        <span class="particle">🍃</span>
+        <span class="particle">♻️</span>
+        <span class="particle">🌱</span>
+      </div>
+
+      <div class="hero-content">
+
+        <div class="hero-badge reveal-up">🇳🇬 Nigeria's #1 Circular Economy Event</div>
+
+        <h1 class="hero-title reveal-up">
+          Anambra Green Enterprise<br />
+          &amp; Circular Economy<br />
+          <span class="title-accent">Festival 2026 🌱</span>
+        </h1>
+
+        <p class="hero-sub reveal-up">Turn Waste Into Wealth. Build Green Businesses. Grow Anambra.</p>
+
+        <p class="hero-desc reveal-up">
+          Join 2,000+ entrepreneurs, recyclers, investors, policymakers, and sustainability innovators<br class="break-desktop" />
+          for Nigeria's biggest circular economy event.
+        </p>
+
+        <div class="hero-meta reveal-up">
+          <div class="meta-item">
+            <span class="meta-icon">📍</span>
+            <span>Prof. Dora Akunyili Women Development Centre, Awka</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-icon">📅</span>
+            <span>5th June 2026 | <strong>World Environment Day</strong></span>
+          </div>
+        </div>
+
+        <div class="hero-ctas reveal-up">
+          <a href="https://forms.gle/qYZwyTAoeqimoVk27"
+             class="btn btn-primary"
+             target="_blank"
+             rel="noopener noreferrer">
+            Register Free
+          </a>
+          <a href="#exhibitor" class="btn btn-outline">Become an Exhibitor</a>
+          <a href="mailto:info@anambragreenfest.ng?subject=Send%20Me%20the%20Festival%20Program&body=Hello%2C%0A%0APlease%20send%20me%20the%20AnambraGreenFest%202026%20festival%20program.%0A%0AMy%20Name%3A%0AMy%20Phone%3A"
+             class="btn btn-ghost"
+             aria-label="Request Festival Program"
+             target="_blank">
+            📩 Request Program
+          </a>
+        </div>
+
+        <!-- COUNTDOWN TIMER -->
+        <div class="countdown-wrap reveal-up" aria-label="Countdown to event">
+          <p class="countdown-label" id="countdownLabel">Event starts in</p>
+          <div class="countdown" id="countdown">
+            <div class="countdown-item">
+              <span class="count-num" id="days">00</span>
+              <span class="count-label">Days</span>
+            </div>
+            <div class="countdown-sep" aria-hidden="true">:</div>
+            <div class="countdown-item">
+              <span class="count-num" id="hours">00</span>
+              <span class="count-label">Hours</span>
+            </div>
+            <div class="countdown-sep" aria-hidden="true">:</div>
+            <div class="countdown-item">
+              <span class="count-num" id="minutes">00</span>
+              <span class="count-label">Minutes</span>
+            </div>
+            <div class="countdown-sep" aria-hidden="true">:</div>
+            <div class="countdown-item">
+              <span class="count-num" id="seconds">00</span>
+              <span class="count-label">Seconds</span>
+            </div>
+          </div>
+          <!-- Shown when event is live or has passed -->
+          <p class="countdown-message" id="countdownMessage" style="display:none;"></p>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator reveal-up" aria-hidden="true">
+          <span>Scroll</span>
+          <div class="scroll-line">
+            <div class="scroll-dot"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== WHY ATTEND ===== -->
+    <section id="why-attend" aria-labelledby="why-title">
+      <div class="section-container">
+
+        <div class="section-header">
+          <span class="section-tag">Why Attend</span>
+          <h2 id="why-title" class="section-title">Why You Can't Miss This</h2>
+          <p class="section-sub">Four powerful reasons to be at Awka on June 5th</p>
+        </div>
+
+        <div class="why-grid">
+
+          <article class="why-card glass reveal-card" tabindex="0">
+            <div class="why-icon" aria-hidden="true">🤝</div>
+            <h3>Network &amp; Sell</h3>
+            <p>Meet buyers, manufacturers, NGOs, and investors looking for green solutions.</p>
+            <div class="card-glow" aria-hidden="true"></div>
+          </article>
+
+          <article class="why-card glass reveal-card" tabindex="0">
+            <div class="why-icon" aria-hidden="true">📚</div>
+            <h3>Learn &amp; Grow</h3>
+            <p>Practical workshops on recycling, renewable energy, upcycling, and green funding.</p>
+            <div class="card-glow" aria-hidden="true"></div>
+          </article>
+
+          <article class="why-card glass reveal-card" tabindex="0">
+            <div class="why-icon" aria-hidden="true">🏆</div>
+            <h3>Showcase Your Work</h3>
+            <p>Exhibition spaces for green startups, enterprises, and innovators.</p>
+            <div class="card-glow" aria-hidden="true"></div>
+          </article>
+
+          <article class="why-card glass reveal-card" tabindex="0">
+            <div class="why-icon" aria-hidden="true">💰</div>
+            <h3>Win &amp; Get Funded</h3>
+            <p>Pitch competitions, investor access, and funding opportunities await you.</p>
+            <div class="card-glow" aria-hidden="true"></div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EVENT HIGHLIGHTS / STATS ===== -->
+    <section id="highlights" class="dark-section" aria-labelledby="highlights-title">
+      <div class="highlights-bg-pattern" aria-hidden="true"></div>
+      <div class="section-container">
+
+        <div class="section-header light">
+          <span class="section-tag light">By The Numbers</span>
+          <h2 id="highlights-title" class="section-title light">Event Highlights</h2>
+          <p class="section-sub light">Scale, impact, and energy — all in one place</p>
+        </div>
+
+        <div class="stats-grid">
+
+          <div class="stat-card reveal-card" tabindex="0">
+            <div class="stat-icon" aria-hidden="true">🎤</div>
+            <span class="stat-num" data-target="20">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Expert Speakers</span>
+          </div>
+
+          <div class="stat-card reveal-card" tabindex="0">
+            <div class="stat-icon" aria-hidden="true">🏭</div>
+            <span class="stat-num" data-target="50">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Exhibitors</span>
+          </div>
+
+          <div class="stat-card reveal-card" tabindex="0">
+            <div class="stat-icon" aria-hidden="true">👥</div>
+            <span class="stat-num" data-target="2000">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Attendees Expected</span>
+          </div>
+
+          <div class="stat-card reveal-card" tabindex="0">
+            <div class="stat-icon" aria-hidden="true">💡</div>
+            <span class="stat-num" data-target="15">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Live Demos</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHO SHOULD ATTEND ===== -->
+    <section id="who" aria-labelledby="who-title">
+      <div class="section-container">
+
+        <div class="section-header">
+          <span class="section-tag">Audience</span>
+          <h2 id="who-title" class="section-title">Who Should Attend</h2>
+          <p class="section-sub">This event is built for changemakers at every level</p>
+        </div>
+
+        <div class="who-grid">
+
+          <div class="who-card reveal-card" tabindex="0">
+            <div class="who-icon" aria-hidden="true">♻️</div>
+            <h3>Waste Recyclers</h3>
+            <p>Connect with buyers and learn profitable recycling models</p>
+          </div>
+
+          <div class="who-card reveal-card" tabindex="0">
+            <div class="who-icon" aria-hidden="true">🌱</div>
+            <h3>Green Entrepreneurs</h3>
+            <p>Scale your sustainable business with funding and networks</p>
+          </div>
+
+          <div class="who-card reveal-card" tabindex="0">
+            <div class="who-icon" aria-hidden="true">🛠️</div>
+            <h3>Eco-Product Makers</h3>
+            <p>Exhibit and sell your sustainable products to a ready market</p>
+          </div>
+
+          <div class="who-card reveal-card" tabindex="0">
+            <div class="who-icon" aria-hidden="true">🎓</div>
+            <h3>Students &amp; Researchers</h3>
+            <p>Learn, present your work, and find mentorship opportunities</p>
+          </div>
+
+          <div class="who-card reveal-card" tabindex="0">
+            <div class="who-icon" aria-hidden="true">🌍</div>
+            <h3>NGOs &amp; Investors</h3>
+            <p>Discover and fund the next generation of green enterprises</p>
+          </div>
+
+          <div class="who-card reveal-card" tabindex="0">
+            <div class="who-icon" aria-hidden="true">🏛️</div>
+            <h3>Policymakers &amp; Government</h3>
+            <p>Shape Anambra's green economy with evidence and partnerships</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SPEAKERS — uncomment when speakers are confirmed =====
+    <section id="speakers" class="dark-section" aria-labelledby="speakers-title">
+      <div class="section-container">
+        <div class="section-header light">
+          <span class="section-tag light">Speakers</span>
+          <h2 id="speakers-title" class="section-title light">Featured Speakers</h2>
+          <p class="section-sub light">Industry leaders shaping Nigeria's green economy</p>
+        </div>
+        <div class="speakers-grid">
+          Speaker cards go here
+        </div>
+      </div>
+    </section>
+    ===== END SPEAKERS ===== -->
+
+    <!-- ===== PARTNERS CAROUSEL ===== -->
+    <section id="partners" class="dark-section" aria-labelledby="partners-title">
+      <div class="section-container">
+
+        <div class="section-header light">
+          <span class="section-tag light">Partners &amp; Supporters</span>
+          <h2 id="partners-title" class="section-title light">Supported By</h2>
+        </div>
+
+        <div class="carousel-track-wrap" aria-label="Partner logos carousel">
+          <div class="carousel-track" id="carouselTrack">
+
+            <!-- SET 1 — real logos -->
+            <div class="partner-logo-card" aria-label="EarthServe Incorporated">
+              <img src="IMG-20260517-WA0009.jpg" alt="EarthServe Incorporated" loading="lazy" />
+            </div>
+            <div class="partner-logo-card" aria-label="SWEEP">
+              <img src="IMG-20260517-WA0011.jpg" alt="SWEEP" loading="lazy" />
+            </div>
+            <div class="partner-logo-card" aria-label="Ministry of Environment – Anambra State">
+              <img src="IMG-20260517-WA0014.jpg" alt="Ministry of Environment – Anambra State" loading="lazy" />
+            </div>
+            <div class="partner-logo-card" aria-label="The Green Campus Project">
+              <img src="IMG-20260517-WA0008.jpg" alt="The Green Campus Project" loading="lazy" />
+            </div>
+            <div class="partner-logo-card" aria-label="CityScope Africa">
+              <img src="IMG-20260517-WA0012.jpg" alt="CityScope Africa" loading="lazy" />
+            </div>
+            <div class="partner-logo-card" aria-label="The Coca-Cola Company">
+              <img src="IMG-20260517-WA0013.jpg" alt="The Coca-Cola Company" loading="lazy" />
+            </div>
+            <div class="partner-logo-card" aria-label="Waste in the City">
+              <img src="IMG-20260517-WA0015.jpg" alt="Waste in the City" loading="lazy" />
+            </div>
+            <div class="partner-logo-card" aria-label="Global Goals Games">
+              <img src="IMG-20260517-WA0010.jpg" alt="Global Goals Games for Sustainable Development" loading="lazy" />
+            </div>
+            <div class="partner-logo-card" aria-label="Dream and Pathway Aid Foundation – DPAF">
+              <img src="IMG-20260517-WA0007.jpg" alt="Dream and Pathway Aid Foundation – DPAF" loading="lazy" />
+            </div>
+            <div class="partner-logo-card" aria-label="Anambra Waste Recyclers Association – AWRA">
+              <img src="IMG-20260517-WA0005.jpg" alt="Anambra Waste Recyclers Association – AWRA" loading="lazy" />
+            </div>
+            <div class="partner-logo-card" aria-label="Green Vault">
+              <img src="IMG-20260517-WA0006.jpg" alt="Green Vault – Digital Waste-to-Capital Cooperative" loading="lazy" />
+            </div>
+            <div class="partner-logo-card" aria-label="Government of Anambra State">
+              <img src="IMG-20260517-WA0004.jpg" alt="Government of Anambra State" loading="lazy" />
+            </div>
+            <div class="partner-logo-card" aria-label="Anambra Green Enterprise Festival">
+              <img src="IMG-20260517-WA0003.jpg" alt="Anambra Green Enterprise & Circular Economy Festival" loading="lazy" />
+            </div>
+
+            <!-- SET 2 — seamless loop duplicates (hidden from screen readers) -->
+            <div class="partner-logo-card" aria-hidden="true"><img src="IMG-20260517-WA0009.jpg" alt="" loading="lazy" /></div>
+            <div class="partner-logo-card" aria-hidden="true"><img src="IMG-20260517-WA0011.jpg" alt="" loading="lazy" /></div>
+            <div class="partner-logo-card" aria-hidden="true"><img src="IMG-20260517-WA0014.jpg" alt="" loading="lazy" /></div>
+            <div class="partner-logo-card" aria-hidden="true"><img src="IMG-20260517-WA0008.jpg" alt="" loading="lazy" /></div>
+            <div class="partner-logo-card" aria-hidden="true"><img src="IMG-20260517-WA0012.jpg" alt="" loading="lazy" /></div>
+            <div class="partner-logo-card" aria-hidden="true"><img src="IMG-20260517-WA0013.jpg" alt="" loading="lazy" /></div>
+            <div class="partner-logo-card" aria-hidden="true"><img src="IMG-20260517-WA0015.jpg" alt="" loading="lazy" /></div>
+            <div class="partner-logo-card" aria-hidden="true"><img src="IMG-20260517-WA0010.jpg" alt="" loading="lazy" /></div>
+            <div class="partner-logo-card" aria-hidden="true"><img src="IMG-20260517-WA0007.jpg" alt="" loading="lazy" /></div>
+            <div class="partner-logo-card" aria-hidden="true"><img src="IMG-20260517-WA0005.jpg" alt="" loading="lazy" /></div>
+            <div class="partner-logo-card" aria-hidden="true"><img src="IMG-20260517-WA0006.jpg" alt="" loading="lazy" /></div>
+            <div class="partner-logo-card" aria-hidden="true"><img src="IMG-20260517-WA0004.jpg" alt="" loading="lazy" /></div>
+            <div class="partner-logo-card" aria-hidden="true"><img src="IMG-20260517-WA0003.jpg" alt="" loading="lazy" /></div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== GALLERY — uncomment when impact photos are received =====
+    <section id="gallery" aria-labelledby="gallery-title">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-tag">Impact</span>
+          <h2 id="gallery-title" class="section-title">Green Impact In Action</h2>
+          <p class="section-sub">A snapshot of the movement we're building</p>
+        </div>
+        <div class="masonry-grid">
+          <div class="masonry-item tall reveal-card">
+            <img src="impact1.jpg" alt="Recycling Initiatives" style="width:100%; height:100%; object-fit:cover; border-radius:18px;" />
+          </div>
+          <div class="masonry-item reveal-card">
+            <img src="impact2.jpg" alt="Green Businesses" style="width:100%; height:100%; object-fit:cover; border-radius:18px;" />
+          </div>
+          <div class="masonry-item reveal-card">
+            <img src="impact3.jpg" alt="Youth Participation" style="width:100%; height:100%; object-fit:cover; border-radius:18px;" />
+          </div>
+          <div class="masonry-item wide reveal-card">
+            <img src="impact4.jpg" alt="Renewable Energy" style="width:100%; height:100%; object-fit:cover; border-radius:18px;" />
+          </div>
+          <div class="masonry-item reveal-card">
+            <img src="impact5.jpg" alt="Sustainability Projects" style="width:100%; height:100%; object-fit:cover; border-radius:18px;" />
+          </div>
+        </div>
+      </div>
+    </section>
+    ===== END GALLERY ===== -->
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section id="testimonials" class="dark-section" aria-labelledby="testimonials-title">
+      <div class="section-container">
+
+        <div class="section-header light">
+          <span class="section-tag light">Testimonials</span>
+          <h2 id="testimonials-title" class="section-title light">What People Are Saying</h2>
+          <p class="section-sub light">Voices from our community</p>
+        </div>
+
+        <div class="testimonials-grid">
+
+          <article class="testimonial-card glass reveal-card" tabindex="0">
+            <div class="quote-mark" aria-hidden="true">"</div>
+            <blockquote>
+              <p>"This festival gave my recycling business the visibility it needed. I secured two major contracts just from networking at the event."</p>
+            </blockquote>
+            <footer class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">JO</div>
+              <div>
+                <strong>James Okafor</strong>
+                <span>Founder, GreenLoop Recyclers, Onitsha</span>
+              </div>
+            </footer>
+          </article>
+
+          <article class="testimonial-card glass reveal-card" tabindex="0">
+            <div class="quote-mark" aria-hidden="true">"</div>
+            <blockquote>
+              <p>"As an environmental advocate, this is the most impactful sustainability gathering I've attended in Nigeria. Truly transformative."</p>
+            </blockquote>
+            <footer class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">AI</div>
+              <div>
+                <strong>Adaeze Ifeoma</strong>
+                <span>Environmental Advocate &amp; NGO Lead</span>
+              </div>
+            </footer>
+          </article>
+
+          <article class="testimonial-card glass reveal-card" tabindex="0">
+            <div class="quote-mark" aria-hidden="true">"</div>
+            <blockquote>
+              <p>"I came as a student and left with a startup idea, a mentor, and a grant application in progress. This event changes lives."</p>
+            </blockquote>
+            <footer class="testimonial-author">
+              <div class="author-avatar" aria-hidden="true">CN</div>
+              <div>
+                <strong>Chidi Nwosu</strong>
+                <span>Student, Nnamdi Azikiwe University</span>
+              </div>
+            </footer>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXHIBITOR SECTION ===== -->
+    <section id="exhibitor" aria-labelledby="exhibitor-title">
+      <div class="section-container">
+        <div class="exhibitor-card glass-green reveal-up">
+
+          <div class="exhibitor-text">
+            <span class="section-tag">For Businesses</span>
+            <h2 id="exhibitor-title">Exhibit Your Green Brand</h2>
+            <p>Set up your booth among 2,000+ potential customers, partners, and investors. Limited exhibition spaces available — secure yours now.</p>
+            <ul class="exhibitor-perks">
+              <li>✅ Premium booth placement</li>
+              <li>✅ Brand visibility on all event materials</li>
+              <li>✅ Direct access to investors and buyers</li>
+              <li>✅ Social media spotlight</li>
+            </ul>
+            <a href="mailto:info@anambragreenfest.ng?subject=Exhibitor%20Application%20%E2%80%94%20AnambraGreenFest%202026&body=Full%20Name%3A%0A%0AOrganization%2FBusiness%20Name%3A%0A%0AProduct%2FService%20Category%3A%0A%0APhone%20Number%3A%0A%0APreferred%20Booth%20Size%3A%0A%0AAnything%20else%3A"
+               class="btn btn-primary"
+               target="_blank">
+              Become an Exhibitor
+            </a>
+          </div>
+
+          <div class="exhibitor-visual" aria-hidden="true">
+            <div class="exhibitor-badge">
+              <span class="big-icon">🏭</span>
+              <p>Limited Spots</p>
+              <strong>Apply Now</strong>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section id="register" class="cta-section" aria-labelledby="cta-title">
+      <div class="cta-bg-pattern" aria-hidden="true"></div>
+      <div class="cta-blobs" aria-hidden="true">
+        <div class="cta-blob cta-blob-1"></div>
+        <div class="cta-blob cta-blob-2"></div>
+      </div>
+      <div class="section-container">
+        <div class="cta-content reveal-up">
+
+          <div class="ticket-badge" aria-label="Free ticket">🎟️</div>
+          <h2 id="cta-title" class="cta-title">Limited Free Tickets Available 🎟️</h2>
+          <p class="cta-sub">Secure your spot before registration closes on <strong>30th May 2026.</strong></p>
+          <p class="cta-desc">Over 1,400 spots already claimed. Don't miss Nigeria's biggest green economy event of 2026.</p>
+
+          <div class="urgency-bar" aria-label="Registration progress: 72% full">
+            <div class="urgency-fill" style="width:72%"></div>
+          </div>
+          <p class="urgency-text">72% Full — Register before it's too late</p>
+
+          <a href="https://forms.gle/qYZwyTAoeqimoVk27"
+             class="btn btn-cta"
+             target="_blank"
+             rel="noopener noreferrer">
+            Register Now — It's Free 🚀
+          </a>
+
+          <div class="cta-meta">
+            <span>📍 Awka, Anambra State</span>
+            <span>📅 June 5, 2026</span>
+            <span>⏰ 10:00 AM WAT</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer id="footer" role="contentinfo">
+    <div class="footer-container">
+
+      <div class="footer-top">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="#hero" class="footer-logo" aria-label="Anambra Green Fest Home">
+            <span>🌱</span> AnambraGreenFest
+          </a>
+          <p>Nigeria's premier circular economy event, celebrating sustainability, innovation, and green enterprise in the heart of Anambra State.</p>
+
+          <!-- Social links — uncomment when handles are confirmed
+          <div class="social-links" aria-label="Social media links">
+            <a href="https://twitter.com/AnambraGreenFest" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://instagram.com/AnambraGreenFest" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+            <a href="https://facebook.com/AnambraGreenFest" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+          </div>
+          -->
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#why-attend">Why Attend</a></li>
+            <li><a href="#highlights">Event Highlights</a></li>
+            <li><a href="#who">Who Should Attend</a></li>
+            <li><a href="#partners">Partners &amp; Supporters</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#register">Register Free</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul class="contact-list">
+            <li>
+              <span aria-hidden="true">📞</span>
+              <a href="tel:+2348163193136" target="_blank">0816 319 3136</a>
+            </li>
+            <li>
+              <span aria-hidden="true">✉️</span>
+              <a href="mailto:info@anambragreenfest.ng"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                info@anambragreenfest.ng
+              </a>
+            </li>
+            <li>
+              <span aria-hidden="true">📍</span>
+              <span>Prof. Dora Akunyili Women Development Centre, Awka, Anambra State</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p>Get event updates, speaker announcements, and sustainability tips.</p>
+          <a href="https://forms.gle/pWUEt9YfXSYFrp7u9"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="btn btn-primary"
+             style="display:inline-block; margin-top:0.5rem; font-size:0.88rem; padding:0.7rem 1.5rem; text-align:center;">
+            ✉️ Subscribe for Updates
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>© 2026 Anambra Green Enterprise &amp; Circular Economy Festival. All rights reserved.</p>
+        <p class="footer-handle">#AnambraGreenFest2026 &nbsp;·&nbsp; #CircularEconomy</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
