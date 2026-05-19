@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Services — Ezenwa Emmanuel · Frontend Developer</title>
-  <meta name="description" content="Frontend development services by Ezenwa Emmanuel — business websites, landing pages, responsive UI, and redesigns. Available for freelance work." />
+  <title>Services — Ezenwa Emmanuel · Frontend Developer & Digital Product Builder</title>
+  <meta name="description" content="Frontend development services by Ezenwa Emmanuel — platforms, AI systems, PWAs, business websites, landing pages, and redesigns. Available for freelance work." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -24,7 +24,6 @@
     .grad-lav{background:linear-gradient(135deg,#7B61FF 0%,#C084FC 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
     .orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;z-index:0}
     .nav-blur{background:rgba(10,10,15,.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
-    .badge-jade{background:rgba(0,229,160,.12);color:#00E5A0;border:1px solid rgba(0,229,160,.25);display:inline-flex;align-items:center;gap:6px;padding:4px 14px;border-radius:999px;font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
     .btn-primary{display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:linear-gradient(135deg,#00E5A0 0%,#7B61FF 100%);color:#0A0A0F;font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;border-radius:10px;transition:all .3s cubic-bezier(.16,1,.3,1);box-shadow:0 0 30px rgba(0,229,160,.25);text-decoration:none}
     .btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 50px rgba(0,229,160,.4)}
     .btn-ghost{display:inline-flex;align-items:center;gap:10px;padding:13px 32px;border:1.5px solid rgba(240,238,233,.2);color:#F0EEE9;font-family:'Syne',sans-serif;font-weight:600;font-size:.95rem;border-radius:10px;transition:all .3s ease;text-decoration:none}
@@ -36,22 +35,40 @@
     .section-label::before{content:'';display:block;width:24px;height:1px;background:#9999AA}
     .reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s cubic-bezier(.16,1,.3,1)}
     .reveal.visible{opacity:1;transform:translateY(0)}
-    /* Service cards — full detail version */
-    .svc-card{background:#13131A;border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:36px;transition:all .4s ease}
-    .svc-card:hover{border-color:rgba(0,229,160,.2);transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.4)}
-    .svc-card.lav:hover{border-color:rgba(123,97,255,.25)}
+    /* ── SERVICE CARDS ── */
+    .svc-card{background:#13131A;border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:36px;transition:all .4s ease;position:relative;overflow:hidden}
+    .svc-card::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .4s ease;border-radius:20px}
+    .svc-card.jade-card::before{background:radial-gradient(600px circle at top left,rgba(0,229,160,.04),transparent 60%)}
+    .svc-card.lav-card::before{background:radial-gradient(600px circle at top left,rgba(123,97,255,.05),transparent 60%)}
+    .svc-card.blue-card::before{background:radial-gradient(600px circle at top left,rgba(96,165,250,.04),transparent 60%)}
+    .svc-card.green-card::before{background:radial-gradient(600px circle at top left,rgba(163,230,53,.04),transparent 60%)}
+    .svc-card:hover::before{opacity:1}
+    .svc-card.jade-card:hover{border-color:rgba(0,229,160,.22);transform:translateY(-5px);box-shadow:0 24px 60px rgba(0,0,0,.45)}
+    .svc-card.lav-card:hover{border-color:rgba(123,97,255,.28);transform:translateY(-5px);box-shadow:0 24px 60px rgba(0,0,0,.45)}
+    .svc-card.blue-card:hover{border-color:rgba(96,165,250,.22);transform:translateY(-5px);box-shadow:0 24px 60px rgba(0,0,0,.45)}
+    .svc-card.green-card:hover{border-color:rgba(163,230,53,.2);transform:translateY(-5px);box-shadow:0 24px 60px rgba(0,0,0,.45)}
     .check{display:flex;align-items:flex-start;gap:10px;font-size:.875rem;color:#9999AA;line-height:1.6}
-    .check i{color:#00E5A0;font-size:.7rem;margin-top:5px;flex-shrink:0}
-    /* FAQ accordion */
-    .faq-item{background:#13131A;border:1px solid rgba(255,255,255,.07);border-radius:14px;overflow:hidden;margin-bottom:8px}
+    .check i{font-size:.7rem;margin-top:5px;flex-shrink:0}
+    /* ── TECH PILL ── */
+    .t-pill{padding:3px 12px;border-radius:999px;font-size:.75rem;font-weight:600}
+    /* ── CAPABILITY STRIP ── */
+    .cap-strip{display:flex;flex-wrap:wrap;gap:8px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+    .cap-strip:last-child{border-bottom:none}
+    .cap-tag{padding:5px 14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:8px;font-size:.78rem;color:#9999AA;font-family:'Syne',sans-serif;font-weight:600;letter-spacing:.04em}
+    /* ── FAQ ── */
+    .faq-item{background:#13131A;border:1px solid rgba(255,255,255,.07);border-radius:14px;overflow:hidden;margin-bottom:8px;transition:border-color .25s}
+    .faq-item:hover{border-color:rgba(255,255,255,.12)}
     .faq-trigger{width:100%;text-align:left;padding:22px 24px;background:transparent;border:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;color:#F0EEE9;font-family:'Syne',sans-serif;font-weight:600;font-size:.95rem}
     .faq-trigger:hover{color:#00E5A0}
-    .faq-content{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1),padding .3s ease}
+    .faq-content{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.16,1,.3,1)}
     .faq-content.open{max-height:300px}
     .faq-inner{padding:0 24px 22px;color:#9999AA;font-size:.9rem;line-height:1.75}
-    /* Process steps */
+    /* ── PROCESS ── */
     .step{display:flex;gap:20px;align-items:flex-start}
     .step-num{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:700;font-size:.85rem;flex-shrink:0}
+    /* ── PROOF BAR ── */
+    .proof-item{text-align:center;padding:0 32px;border-right:1px solid rgba(255,255,255,.08)}
+    .proof-item:last-child{border-right:none}
     ::-webkit-scrollbar{width:6px}
     ::-webkit-scrollbar-track{background:#0A0A0F}
     ::-webkit-scrollbar-thumb{background:#2A2A3A;border-radius:3px}
@@ -59,7 +76,7 @@
 </head>
 <body class="min-h-screen overflow-x-hidden">
 
-<!-- ═══════════ NAVBAR ═══════════ -->
+<!-- NAVBAR -->
 <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
   <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
     <a href="index.html" style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:#F0EEE9;text-decoration:none">eze<span style="color:#00E5A0">.</span>dev</a>
@@ -85,9 +102,10 @@
   </div>
 </nav>
 
-<!-- ═══════════ PAGE HEADER ═══════════ -->
+<!-- PAGE HEADER -->
 <header class="relative pt-36 pb-16 px-6 overflow-hidden">
   <div class="orb w-[500px] h-[500px] top-[-150px] left-[-100px]" style="background:#7B61FF;opacity:.07"></div>
+  <div class="orb w-[400px] h-[400px] top-[-100px] right-[-80px]" style="background:#00E5A0;opacity:.04"></div>
   <div class="max-w-6xl mx-auto relative z-10">
     <div class="mb-6" style="font-family:'Syne',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#9999AA;display:flex;align-items:center;gap:10px">
       <span style="display:block;width:24px;height:1px;background:#9999AA"></span>Services
@@ -95,113 +113,202 @@
     <h1 style="font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.5rem,6vw,4.5rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:1.25rem">
       What I Build <span class="grad-lav">For You.</span>
     </h1>
-    <p style="color:#9999AA;font-size:1.1rem;max-width:560px;line-height:1.7">Clear deliverables. Honest timelines. No fluff, just production-quality frontend work that moves your business forward.</p>
+    <p style="color:#9999AA;font-size:1.1rem;max-width:580px;line-height:1.7;margin-bottom:2.5rem">From AI-powered systems and full platform ecosystems to clean business websites and landing pages, production-quality frontend work, delivered on time.</p>
+
+    <!-- Proof bar -->
+    <div class="flex flex-wrap gap-0 reveal">
+      <div class="proof-item">
+        <p style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.75rem;color:#00E5A0;line-height:1">4+</p>
+        <p style="color:#9999AA;font-size:.78rem;margin-top:4px">Years Building</p>
+      </div>
+      <div class="proof-item">
+        <p style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.75rem;color:#F0EEE9;line-height:1">14+</p>
+        <p style="color:#9999AA;font-size:.78rem;margin-top:4px">Projects Shipped</p>
+      </div>
+      <div class="proof-item">
+        <p style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.75rem;color:#A78BFA;line-height:1">AI</p>
+        <p style="color:#9999AA;font-size:.78rem;margin-top:4px">Systems Built</p>
+      </div>
+      <div class="proof-item">
+        <p style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.75rem;color:#F0EEE9;line-height:1">PWA</p>
+        <p style="color:#9999AA;font-size:.78rem;margin-top:4px">Capable</p>
+      </div>
+    </div>
   </div>
 </header>
 
-<!-- ═══════════ SERVICES GRID ═══════════ -->
+<!-- SERVICES GRID -->
 <section class="py-16 px-6">
   <div class="max-w-6xl mx-auto">
     <div class="grid md:grid-cols-2 gap-6">
 
-      <!-- Service 1 -->
-      <div class="svc-card reveal">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style="background:rgba(0,229,160,.1)">
-          <i class="fas fa-globe" style="color:#00E5A0;font-size:1.1rem"></i>
-        </div>
-        <h2 style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:.5rem">Business Website</h2>
-        <p style="color:#9999AA;font-size:.9rem;line-height:1.7;margin-bottom:1.75rem">A professional, multi-page website that represents your brand clearly and turns visitors into leads. Built from scratch, no templates, no shortcuts.</p>
-        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:2rem">
-          <div class="check"><i class="fas fa-check"></i><span>Custom design matching your brand identity</span></div>
-          <div class="check"><i class="fas fa-check"></i><span>Home, About, Services, Contact pages minimum</span></div>
-          <div class="check"><i class="fas fa-check"></i><span>Mobile-first, fully responsive layout</span></div>
-          <div class="check"><i class="fas fa-check"></i><span>Fast load times and clean code</span></div>
-          <div class="check"><i class="fas fa-check"></i><span>SEO-ready semantic HTML structure</span></div>
-          <div class="check"><i class="fas fa-check"></i><span>2 rounds of revisions included</span></div>
-        </div>
-        <div style="padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.07)">
-          <p style="font-family:'Syne',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9999AA;margin-bottom:.75rem">Stack</p>
-          <div class="flex flex-wrap gap-2">
-            <span style="background:rgba(0,229,160,.1);color:#00E5A0;border:1px solid rgba(0,229,160,.2);padding:3px 12px;border-radius:999px;font-size:.75rem;font-weight:600">HTML5</span>
-            <span style="background:rgba(0,229,160,.1);color:#00E5A0;border:1px solid rgba(0,229,160,.2);padding:3px 12px;border-radius:999px;font-size:.75rem;font-weight:600">CSS3</span>
-            <span style="background:rgba(0,229,160,.1);color:#00E5A0;border:1px solid rgba(0,229,160,.2);padding:3px 12px;border-radius:999px;font-size:.75rem;font-weight:600">JavaScript</span>
-            <span style="background:rgba(0,229,160,.1);color:#00E5A0;border:1px solid rgba(0,229,160,.2);padding:3px 12px;border-radius:999px;font-size:.75rem;font-weight:600">Tailwind</span>
+      <!-- ── SERVICE 1: Platform & Ecosystem ── -->
+      <div class="svc-card lav-card reveal">
+        <div class="relative z-10">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style="background:rgba(123,97,255,.12)">
+            <i class="fas fa-layer-group" style="color:#A78BFA;font-size:1.1rem"></i>
+          </div>
+          <div style="display:inline-flex;align-items:center;gap:6px;padding:3px 10px;background:rgba(123,97,255,.1);border:1px solid rgba(123,97,255,.2);border-radius:6px;font-family:'Syne',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#A78BFA;margin-bottom:14px">Flagship</div>
+          <h2 style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:.5rem">Platform & Digital Ecosystem</h2>
+          <p style="color:#9999AA;font-size:.9rem;line-height:1.7;margin-bottom:1.75rem">Full multi-page digital products with structured user flows, onboarding systems, and interconnected pages,  built to function as a real product, not just a website.</p>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:2rem">
+            <div class="check"><i class="fas fa-check" style="color:#A78BFA"></i><span>Multi-page architecture with unified design system</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#A78BFA"></i><span>User onboarding and structured navigation flows</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#A78BFA"></i><span>Education platforms, SaaS frontends, course systems</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#A78BFA"></i><span>Community funnels and conversion architecture</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#A78BFA"></i><span>Payment integration (Paystack) where needed</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#A78BFA"></i><span>Deployable on GitHub Pages or any static host</span></div>
+          </div>
+          <div style="padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.07)">
+            <p style="font-family:'Syne',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9999AA;margin-bottom:.75rem">Stack</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="t-pill" style="background:rgba(123,97,255,.1);color:#A78BFA;border:1px solid rgba(123,97,255,.2)">HTML5</span>
+              <span class="t-pill" style="background:rgba(123,97,255,.1);color:#A78BFA;border:1px solid rgba(123,97,255,.2)">CSS3</span>
+              <span class="t-pill" style="background:rgba(123,97,255,.1);color:#A78BFA;border:1px solid rgba(123,97,255,.2)">JavaScript</span>
+              <span class="t-pill" style="background:rgba(123,97,255,.1);color:#A78BFA;border:1px solid rgba(123,97,255,.2)">Tailwind</span>
+              <span class="t-pill" style="background:rgba(123,97,255,.1);color:#A78BFA;border:1px solid rgba(123,97,255,.2)">Paystack</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Service 2 -->
-      <div class="svc-card lav reveal">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style="background:rgba(123,97,255,.1)">
-          <i class="fas fa-rocket" style="color:#A78BFA;font-size:1.1rem"></i>
-        </div>
-        <h2 style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:.5rem">Landing Page</h2>
-        <p style="color:#9999AA;font-size:.9rem;line-height:1.7;margin-bottom:1.75rem">A single, focused page designed to convert. Whether it's a product launch, service offering, or lead capture, every element is built around a clear call-to-action.</p>
-        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:2rem">
-          <div class="check"><i class="fas fa-check"></i><span>Strong hero with clear value proposition</span></div>
-          <div class="check"><i class="fas fa-check"></i><span>Conversion-focused copywriting structure</span></div>
-          <div class="check"><i class="fas fa-check"></i><span>Social proof and trust elements</span></div>
-          <div class="check"><i class="fas fa-check"></i><span>Strategic CTA placement throughout</span></div>
-          <div class="check"><i class="fas fa-check"></i><span>Mobile-optimised from the start</span></div>
-          <div class="check"><i class="fas fa-check"></i><span>Fast delivery — typically 3–5 days</span></div>
-        </div>
-        <div style="padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.07)">
-          <p style="font-family:'Syne',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9999AA;margin-bottom:.75rem">Stack</p>
-          <div class="flex flex-wrap gap-2">
-            <span style="background:rgba(123,97,255,.1);color:#A78BFA;border:1px solid rgba(123,97,255,.2);padding:3px 12px;border-radius:999px;font-size:.75rem;font-weight:600">HTML5</span>
-            <span style="background:rgba(123,97,255,.1);color:#A78BFA;border:1px solid rgba(123,97,255,.2);padding:3px 12px;border-radius:999px;font-size:.75rem;font-weight:600">CSS3</span>
-            <span style="background:rgba(123,97,255,.1);color:#A78BFA;border:1px solid rgba(123,97,255,.2);padding:3px 12px;border-radius:999px;font-size:.75rem;font-weight:600">JavaScript</span>
-            <span style="background:rgba(123,97,255,.1);color:#A78BFA;border:1px solid rgba(123,97,255,.2);padding:3px 12px;border-radius:999px;font-size:.75rem;font-weight:600">Tailwind</span>
+      <!-- ── SERVICE 2: AI-Powered Frontend ── -->
+      <div class="svc-card lav-card reveal">
+        <div class="relative z-10">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style="background:rgba(99,102,241,.12)">
+            <i class="fas fa-robot" style="color:#818CF8;font-size:1.1rem"></i>
+          </div>
+          <div style="display:inline-flex;align-items:center;gap:6px;padding:3px 10px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2);border-radius:6px;font-family:'Syne',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#818CF8;margin-bottom:14px">AI Systems</div>
+          <h2 style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:.5rem">AI-Powered Frontend System</h2>
+          <p style="color:#9999AA;font-size:.9rem;line-height:1.7;margin-bottom:1.75rem">Custom AI chat interfaces and API-connected frontends — built with secure backend routing via Cloudflare Workers, not exposed API keys in browser code.</p>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:2rem">
+            <div class="check"><i class="fas fa-check" style="color:#818CF8"></i><span>AI API integration (Gemini, OpenAI, or custom)</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#818CF8"></i><span>Cloudflare Worker backend for secure key handling</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#818CF8"></i><span>Real-time conversational UI with message history</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#818CF8"></i><span>Command systems, session memory, feedback tools</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#818CF8"></i><span>Rate limiting, retry logic, and error handling</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#818CF8"></i><span>Admin control panel for AI on/off toggle</span></div>
+          </div>
+          <div style="padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.07)">
+            <p style="font-family:'Syne',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9999AA;margin-bottom:.75rem">Stack</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="t-pill" style="background:rgba(99,102,241,.1);color:#818CF8;border:1px solid rgba(99,102,241,.2)">HTML/CSS/JS</span>
+              <span class="t-pill" style="background:rgba(99,102,241,.1);color:#818CF8;border:1px solid rgba(99,102,241,.2)">Cloudflare Workers</span>
+              <span class="t-pill" style="background:rgba(99,102,241,.1);color:#818CF8;border:1px solid rgba(99,102,241,.2)">Gemini API</span>
+              <span class="t-pill" style="background:rgba(99,102,241,.1);color:#818CF8;border:1px solid rgba(99,102,241,.2)">KV Storage</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Service 3 -->
-      <div class="svc-card reveal">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style="background:rgba(0,229,160,.1)">
-          <i class="fas fa-mobile-alt" style="color:#00E5A0;font-size:1.1rem"></i>
-        </div>
-        <h2 style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:.5rem">Responsive UI Build</h2>
-        <p style="color:#9999AA;font-size:.9rem;line-height:1.7;margin-bottom:1.75rem">You have a design or wireframe that needs to be built into clean, working HTML/CSS/JS. I'll bring it to life pixel-perfectly, across every screen size and browser.</p>
-        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:2rem">
-          <div class="check"><i class="fas fa-check"></i><span>Faithful to design specs (Figma, XD, or image)</span></div>
-          <div class="check"><i class="fas fa-check"></i><span>Fully responsive — mobile, tablet, desktop</span></div>
-          <div class="check"><i class="fas fa-check"></i><span>Cross-browser tested (Chrome, Firefox, Safari)</span></div>
-          <div class="check"><i class="fas fa-check"></i><span>Accessible markup (WCAG guidelines)</span></div>
-          <div class="check"><i class="fas fa-check"></i><span>Smooth interactions and micro-animations</span></div>
-          <div class="check"><i class="fas fa-check"></i><span>Clean, commented, maintainable code</span></div>
-        </div>
-        <div style="padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.07)">
-          <p style="font-family:'Syne',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9999AA;margin-bottom:.75rem">Stack</p>
-          <div class="flex flex-wrap gap-2">
-            <span style="background:rgba(0,229,160,.1);color:#00E5A0;border:1px solid rgba(0,229,160,.2);padding:3px 12px;border-radius:999px;font-size:.75rem;font-weight:600">HTML5</span>
-            <span style="background:rgba(0,229,160,.1);color:#00E5A0;border:1px solid rgba(0,229,160,.2);padding:3px 12px;border-radius:999px;font-size:.75rem;font-weight:600">Tailwind</span>
-            <span style="background:rgba(0,229,160,.1);color:#00E5A0;border:1px solid rgba(0,229,160,.2);padding:3px 12px;border-radius:999px;font-size:.75rem;font-weight:600">Vanilla JS</span>
+      <!-- ── SERVICE 3: Business Website ── -->
+      <div class="svc-card jade-card reveal">
+        <div class="relative z-10">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style="background:rgba(0,229,160,.1)">
+            <i class="fas fa-globe" style="color:#00E5A0;font-size:1.1rem"></i>
+          </div>
+          <h2 style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:.5rem">Business Website</h2>
+          <p style="color:#9999AA;font-size:.9rem;line-height:1.7;margin-bottom:1.75rem">A professional, multi-page website that represents your brand clearly and turns visitors into leads. Built from scratch — no templates, no shortcuts.</p>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:2rem">
+            <div class="check"><i class="fas fa-check" style="color:#00E5A0"></i><span>Custom design matching your brand identity</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#00E5A0"></i><span>Home, About, Services, Contact pages minimum</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#00E5A0"></i><span>Mobile-first, fully responsive layout</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#00E5A0"></i><span>Fast load times and clean semantic code</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#00E5A0"></i><span>SEO-ready HTML structure throughout</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#00E5A0"></i><span>2 rounds of revisions included</span></div>
+          </div>
+          <div style="padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.07)">
+            <p style="font-family:'Syne',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9999AA;margin-bottom:.75rem">Stack</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="t-pill" style="background:rgba(0,229,160,.1);color:#00E5A0;border:1px solid rgba(0,229,160,.2)">HTML5</span>
+              <span class="t-pill" style="background:rgba(0,229,160,.1);color:#00E5A0;border:1px solid rgba(0,229,160,.2)">CSS3</span>
+              <span class="t-pill" style="background:rgba(0,229,160,.1);color:#00E5A0;border:1px solid rgba(0,229,160,.2)">JavaScript</span>
+              <span class="t-pill" style="background:rgba(0,229,160,.1);color:#00E5A0;border:1px solid rgba(0,229,160,.2)">Tailwind</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Service 4 -->
-      <div class="svc-card lav reveal">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style="background:rgba(123,97,255,.1)">
-          <i class="fas fa-wrench" style="color:#A78BFA;font-size:1.1rem"></i>
+      <!-- ── SERVICE 4: Landing Page ── -->
+      <div class="svc-card jade-card reveal">
+        <div class="relative z-10">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style="background:rgba(0,229,160,.1)">
+            <i class="fas fa-rocket" style="color:#00E5A0;font-size:1.1rem"></i>
+          </div>
+          <h2 style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:.5rem">Landing Page</h2>
+          <p style="color:#9999AA;font-size:.9rem;line-height:1.7;margin-bottom:1.75rem">A single, focused page designed to convert — for product launches, event campaigns, service offerings, or lead capture. Every element earns its place.</p>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:2rem">
+            <div class="check"><i class="fas fa-check" style="color:#00E5A0"></i><span>Strong hero with clear value proposition</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#00E5A0"></i><span>Conversion-focused structure and copywriting</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#00E5A0"></i><span>Social proof, trust elements, and FAQs</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#00E5A0"></i><span>Strategic CTA placement throughout</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#00E5A0"></i><span>Mobile-optimised from the first line</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#00E5A0"></i><span>Fast delivery — typically 3–5 days</span></div>
+          </div>
+          <div style="padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.07)">
+            <p style="font-family:'Syne',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9999AA;margin-bottom:.75rem">Stack</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="t-pill" style="background:rgba(0,229,160,.1);color:#00E5A0;border:1px solid rgba(0,229,160,.2)">HTML5</span>
+              <span class="t-pill" style="background:rgba(0,229,160,.1);color:#00E5A0;border:1px solid rgba(0,229,160,.2)">CSS3</span>
+              <span class="t-pill" style="background:rgba(0,229,160,.1);color:#00E5A0;border:1px solid rgba(0,229,160,.2)">JavaScript</span>
+              <span class="t-pill" style="background:rgba(0,229,160,.1);color:#00E5A0;border:1px solid rgba(0,229,160,.2)">Tailwind</span>
+            </div>
+          </div>
         </div>
-        <h2 style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:.5rem">Fixes & Redesigns</h2>
-        <p style="color:#9999AA;font-size:.9rem;line-height:1.7;margin-bottom:1.75rem">Your existing site is broken, slow, looks outdated, or doesn't work on mobile. Send it over, I'll audit it, fix the issues, and modernise it where needed.</p>
-        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:2rem">
-          <div class="check"><i class="fas fa-check"></i><span>Full site audit — layout, performance, UX</span></div>
-          <div class="check"><i class="fas fa-check"></i><span>Bug fixing and broken layout repairs</span></div>
-          <div class="check"><i class="fas fa-check"></i><span>Performance improvements (load speed)</span></div>
-          <div class="check"><i class="fas fa-check"></i><span>Mobile responsiveness fixes</span></div>
-          <div class="check"><i class="fas fa-check"></i><span>Visual refresh and modernisation</span></div>
-          <div class="check"><i class="fas fa-check"></i><span>Documented changes delivered with code</span></div>
+      </div>
+
+      <!-- ── SERVICE 5: PWA ── -->
+      <div class="svc-card green-card reveal">
+        <div class="relative z-10">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style="background:rgba(163,230,53,.1)">
+            <i class="fas fa-mobile-alt" style="color:#A3E635;font-size:1.1rem"></i>
+          </div>
+          <div style="display:inline-flex;align-items:center;gap:6px;padding:3px 10px;background:rgba(163,230,53,.08);border:1px solid rgba(163,230,53,.2);border-radius:6px;font-family:'Syne',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#A3E635;margin-bottom:14px">PWA</div>
+          <h2 style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:.5rem">Progressive Web App</h2>
+          <p style="color:#9999AA;font-size:.9rem;line-height:1.7;margin-bottom:1.75rem">A web experience that installs on any device, works offline, and behaves like a native app — no App Store, no React Native, no extra infrastructure.</p>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:2rem">
+            <div class="check"><i class="fas fa-check" style="color:#A3E635"></i><span>Installable on Android and iOS home screen</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#A3E635"></i><span>Offline-first with Service Worker + Cache API</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#A3E635"></i><span>Web App Manifest configured for native feel</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#A3E635"></i><span>Accessibility-first design (WCAG guidelines)</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#A3E635"></i><span>Fast, lightweight ,no bloated dependencies</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#A3E635"></i><span>Deployable on GitHub Pages or any static host</span></div>
+          </div>
+          <div style="padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.07)">
+            <p style="font-family:'Syne',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9999AA;margin-bottom:.75rem">Stack</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="t-pill" style="background:rgba(163,230,53,.08);color:#A3E635;border:1px solid rgba(163,230,53,.2)">HTML5</span>
+              <span class="t-pill" style="background:rgba(163,230,53,.08);color:#A3E635;border:1px solid rgba(163,230,53,.2)">CSS3 / Tailwind</span>
+              <span class="t-pill" style="background:rgba(163,230,53,.08);color:#A3E635;border:1px solid rgba(163,230,53,.2)">Service Worker</span>
+              <span class="t-pill" style="background:rgba(163,230,53,.08);color:#A3E635;border:1px solid rgba(163,230,53,.2)">Web Manifest</span>
+            </div>
+          </div>
         </div>
-        <div style="padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.07)">
-          <p style="font-family:'Syne',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9999AA;margin-bottom:.75rem">Works With</p>
-          <div class="flex flex-wrap gap-2">
-            <span style="background:rgba(123,97,255,.1);color:#A78BFA;border:1px solid rgba(123,97,255,.2);padding:3px 12px;border-radius:999px;font-size:.75rem;font-weight:600">HTML/CSS/JS</span>
-            <span style="background:rgba(123,97,255,.1);color:#A78BFA;border:1px solid rgba(123,97,255,.2);padding:3px 12px;border-radius:999px;font-size:.75rem;font-weight:600">Tailwind</span>
-            <span style="background:rgba(123,97,255,.1);color:#A78BFA;border:1px solid rgba(123,97,255,.2);padding:3px 12px;border-radius:999px;font-size:.75rem;font-weight:600">Bootstrap</span>
+      </div>
+
+      <!-- ── SERVICE 6: Fixes & Redesigns ── -->
+      <div class="svc-card blue-card reveal">
+        <div class="relative z-10">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style="background:rgba(96,165,250,.1)">
+            <i class="fas fa-wrench" style="color:#60A5FA;font-size:1.1rem"></i>
+          </div>
+          <h2 style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:.5rem">Fixes & Redesigns</h2>
+          <p style="color:#9999AA;font-size:.9rem;line-height:1.7;margin-bottom:1.75rem">Your existing site is broken, slow, looks outdated, or doesn't work on mobile. Send it over, I'll audit it, fix the issues, and modernise it fast.</p>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:2rem">
+            <div class="check"><i class="fas fa-check" style="color:#60A5FA"></i><span>Full audit — layout, performance, UX, mobile</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#60A5FA"></i><span>Bug fixing and broken layout repairs</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#60A5FA"></i><span>Performance improvements and load speed</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#60A5FA"></i><span>Mobile responsiveness fixes</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#60A5FA"></i><span>Visual refresh and modernisation</span></div>
+            <div class="check"><i class="fas fa-check" style="color:#60A5FA"></i><span>Documented changes delivered with code</span></div>
+          </div>
+          <div style="padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.07)">
+            <p style="font-family:'Syne',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9999AA;margin-bottom:.75rem">Works With</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="t-pill" style="background:rgba(96,165,250,.08);color:#60A5FA;border:1px solid rgba(96,165,250,.2)">HTML/CSS/JS</span>
+              <span class="t-pill" style="background:rgba(96,165,250,.08);color:#60A5FA;border:1px solid rgba(96,165,250,.2)">Tailwind</span>
+              <span class="t-pill" style="background:rgba(96,165,250,.08);color:#60A5FA;border:1px solid rgba(96,165,250,.2)">Bootstrap</span>
+            </div>
           </div>
         </div>
       </div>
@@ -210,7 +317,49 @@
   </div>
 </section>
 
-<!-- ═══════════ PROCESS ═══════════ -->
+<!-- FULL CAPABILITY STRIP -->
+<section class="py-16 px-6" style="border-top:1px solid rgba(255,255,255,.06)">
+  <div class="max-w-4xl mx-auto reveal">
+    <div class="section-label">Full Capability</div>
+    <h2 style="font-family:'Syne',sans-serif;font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:700;letter-spacing:-.02em;margin-bottom:1.75rem">Everything I can build for you</h2>
+    <div style="background:#13131A;border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:24px 28px">
+      <div class="cap-strip">
+        <span style="font-family:'Syne',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#00E5A0;min-width:120px">Platforms</span>
+        <span class="cap-tag">Education Platform</span>
+        <span class="cap-tag">Course System</span>
+        <span class="cap-tag">SaaS Frontend</span>
+        <span class="cap-tag">Community Platform</span>
+        <span class="cap-tag">Digital Shop</span>
+      </div>
+      <div class="cap-strip">
+        <span style="font-family:'Syne',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#818CF8;min-width:120px">AI Systems</span>
+        <span class="cap-tag">AI Chat Interface</span>
+        <span class="cap-tag">API Integration</span>
+        <span class="cap-tag">Cloudflare Worker</span>
+        <span class="cap-tag">Admin Dashboard</span>
+        <span class="cap-tag">Session Management</span>
+      </div>
+      <div class="cap-strip">
+        <span style="font-family:'Syne',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#A3E635;min-width:120px">Web Apps</span>
+        <span class="cap-tag">PWA</span>
+        <span class="cap-tag">Offline-First App</span>
+        <span class="cap-tag">Browser IDE</span>
+        <span class="cap-tag">Quiz Engine</span>
+        <span class="cap-tag">Interactive Tools</span>
+      </div>
+      <div class="cap-strip">
+        <span style="font-family:'Syne',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#F0EEE9;min-width:120px">Websites</span>
+        <span class="cap-tag">Business Website</span>
+        <span class="cap-tag">Landing Page</span>
+        <span class="cap-tag">Event Platform</span>
+        <span class="cap-tag">Brand Showcase</span>
+        <span class="cap-tag">Portfolio Site</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
 <section class="py-20 px-6" style="border-top:1px solid rgba(255,255,255,.06)">
   <div class="max-w-4xl mx-auto">
     <div class="reveal mb-14 text-center">
@@ -220,33 +369,27 @@
       <h2 style="font-family:'Syne',sans-serif;font-size:clamp(1.75rem,4vw,2.8rem);font-weight:700;letter-spacing:-.02em">My Process</h2>
     </div>
     <div style="display:flex;flex-direction:column;gap:0;position:relative">
-      <!-- Connector line -->
-      <div style="position:absolute;left:20px;top:40px;bottom:40px;width:1px;background:linear-gradient(to bottom,rgba(0,229,160,.3),rgba(123,97,255,.3));display:none" class="md:block"></div>
-
       <div class="step reveal" style="padding-bottom:32px">
         <div class="step-num" style="background:rgba(0,229,160,.12);color:#00E5A0;border:1px solid rgba(0,229,160,.3)">1</div>
         <div>
           <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;margin-bottom:.5rem">Discovery & Brief</h3>
-          <p style="color:#9999AA;font-size:.9rem;line-height:1.7">We talk through your goals, target audience, and what success looks like for you. I ask the right questions so I can build the right thing, not just what's asked for.</p>
+          <p style="color:#9999AA;font-size:.9rem;line-height:1.7">We talk through your goals, target audience, and what success looks like. I ask the right questions,  so I build the right thing, not just what's asked for.</p>
         </div>
       </div>
-
       <div class="step reveal" style="padding-bottom:32px">
         <div class="step-num" style="background:rgba(123,97,255,.12);color:#A78BFA;border:1px solid rgba(123,97,255,.3)">2</div>
         <div>
           <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;margin-bottom:.5rem">Design & Structure</h3>
-          <p style="color:#9999AA;font-size:.9rem;line-height:1.7">I plan the layout, visual direction, and information hierarchy. You'll see and approve the direction before a single line of production code is written.</p>
+          <p style="color:#9999AA;font-size:.9rem;line-height:1.7">I plan the layout, visual direction, and information hierarchy. You see and approve the direction before a single line of production code is written.</p>
         </div>
       </div>
-
       <div class="step reveal" style="padding-bottom:32px">
         <div class="step-num" style="background:rgba(0,229,160,.12);color:#00E5A0;border:1px solid rgba(0,229,160,.3)">3</div>
         <div>
           <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;margin-bottom:.5rem">Build & Review</h3>
-          <p style="color:#9999AA;font-size:.9rem;line-height:1.7">I build the full site, test across devices and browsers, then share a live preview for your feedback. Revisions are included, typically resolved within 24 hours.</p>
+          <p style="color:#9999AA;font-size:.9rem;line-height:1.7">I build the full product, test across devices and browsers, then share a live preview for feedback. Revisions included,  typically resolved within 24 hours.</p>
         </div>
       </div>
-
       <div class="step reveal">
         <div class="step-num" style="background:rgba(0,229,160,.15);color:#00E5A0;border:1px solid rgba(0,229,160,.4)">4</div>
         <div>
@@ -258,7 +401,7 @@
   </div>
 </section>
 
-<!-- ═══════════ FAQ ═══════════ -->
+<!-- FAQ -->
 <section class="py-20 px-6" style="border-top:1px solid rgba(255,255,255,.06)">
   <div class="max-w-3xl mx-auto">
     <div class="reveal mb-12">
@@ -271,48 +414,55 @@
           <span>How long does a typical project take?</span>
           <i class="fas fa-plus text-sm" style="color:#9999AA;flex-shrink:0;transition:transform .3s"></i>
         </button>
-        <div class="faq-content"><div class="faq-inner">It depends on scope. A landing page typically takes 3–5 days. A full multi-page business website usually takes 7–14 days. I'll give you a specific estimate once I understand your requirements.</div></div>
+        <div class="faq-content"><div class="faq-inner">It depends on scope. A landing page takes 3–5 days. A business website 7–14 days. An AI-powered system or full platform typically 2–4 weeks depending on features. I'll give a specific estimate once I understand your requirements.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span>Can you build an AI chatbot for my website?</span>
+          <i class="fas fa-plus text-sm" style="color:#9999AA;flex-shrink:0;transition:transform .3s"></i>
+        </button>
+        <div class="faq-content"><div class="faq-inner">Yes,  this is one of my specialisations. I build custom AI frontends connected to Gemini or OpenAI through a secure Cloudflare Worker backend. The AI is trained on your context and deployed to your site.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-trigger" onclick="toggleFaq(this)">
           <span>Do you work with clients outside Nigeria?</span>
           <i class="fas fa-plus text-sm" style="color:#9999AA;flex-shrink:0;transition:transform .3s"></i>
         </button>
-        <div class="faq-content"><div class="faq-inner">Yes, I'm fully remote-ready and have experience working across time zones via WhatsApp, email, and video calls. My work output doesn't change based on location.</div></div>
+        <div class="faq-content"><div class="faq-inner">Yes — I'm fully remote-ready and work with clients across time zones via WhatsApp, email, and video calls. My output quality doesn't change based on location.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-trigger" onclick="toggleFaq(this)">
           <span>What do you need from me to get started?</span>
           <i class="fas fa-plus text-sm" style="color:#9999AA;flex-shrink:0;transition:transform .3s"></i>
         </button>
-        <div class="faq-content"><div class="faq-inner">At minimum: what you want built, who it's for, any brand assets (logo, colours), and content (text, images). No design file needed, I can work from a description or rough sketch too.</div></div>
+        <div class="faq-content"><div class="faq-inner">At minimum: what you want built, who it's for, any brand assets (logo, colours), and content (text, images). No design file needed , I can work from a description or rough sketch.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-trigger" onclick="toggleFaq(this)">
           <span>How many revisions do I get?</span>
           <i class="fas fa-plus text-sm" style="color:#9999AA;flex-shrink:0;transition:transform .3s"></i>
         </button>
-        <div class="faq-content"><div class="faq-inner">2 rounds of revisions are included in every project. Additional rounds can be arranged at an agreed rate. In practice, most projects are resolved in 1–2 rounds because I ask detailed questions upfront.</div></div>
+        <div class="faq-content"><div class="faq-inner">2 rounds of revisions are included. Additional rounds can be arranged at an agreed rate. In practice, most projects are resolved in 1–2 rounds because I ask detailed questions upfront.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-trigger" onclick="toggleFaq(this)">
-          <span>Can you redesign my existing website?</span>
+          <span>Can you build a PWA that installs on a phone?</span>
           <i class="fas fa-plus text-sm" style="color:#9999AA;flex-shrink:0;transition:transform .3s"></i>
         </button>
-        <div class="faq-content"><div class="faq-inner">Yes, see the Fixes & Redesigns service above. Share your current site and I'll do a quick audit to identify what needs attention before we agree on scope.</div></div>
+        <div class="faq-content"><div class="faq-inner">Yes, I've already built and deployed one. A PWA gives you an installable, offline-capable app experience without the App Store or extra development cost. It's one of the most underused capabilities in frontend development.</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ CTA ═══════════ -->
+<!-- CTA -->
 <section class="py-20 px-6">
   <div class="max-w-3xl mx-auto text-center reveal">
     <div class="relative rounded-3xl overflow-hidden p-10 md:p-14" style="background:linear-gradient(135deg,rgba(123,97,255,.12) 0%,rgba(0,229,160,.08) 100%);border:1px solid rgba(255,255,255,.08)">
       <h2 style="font-family:'Syne',sans-serif;font-size:clamp(1.75rem,4vw,2.8rem);font-weight:800;letter-spacing:-.03em;margin-bottom:1rem;line-height:1.1">
         Ready to start? <span class="grad">Let's talk.</span>
       </h2>
-      <p style="color:#9999AA;font-size:1rem;line-height:1.7;margin-bottom:2rem;max-width:400px;margin-left:auto;margin-right:auto">Tell me what you need and I'll respond with a clear plan and timeline within a few hours.</p>
+      <p style="color:#9999AA;font-size:1rem;line-height:1.7;margin-bottom:2rem;max-width:400px;margin-left:auto;margin-right:auto">Tell me what you need and I'll respond with a clear plan and timeline,  usually within a few hours.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="contact.html" class="btn-primary"><i class="fas fa-paper-plane"></i> Contact Me</a>
         <a href="https://wa.me/+2348185947780?text=Hi%20Emmanuel%2C%20I%27d%20like%20to%20discuss%20a%20project" target="_blank" rel="noopener noreferrer" class="btn-ghost"><i class="fab fa-whatsapp"></i> WhatsApp</a>
@@ -321,7 +471,7 @@
   </div>
 </section>
 
-<!-- ═══════════ FOOTER ═══════════ -->
+<!-- FOOTER -->
 <footer class="py-8 px-6" style="border-top:1px solid rgba(255,255,255,.06)">
   <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
     <a href="index.html" style="font-family:'Syne',sans-serif;font-weight:700;color:#F0EEE9;text-decoration:none">eze<span style="color:#00E5A0">.</span>dev</a>
@@ -347,13 +497,12 @@
   const stb=document.getElementById('scrollTop');
   window.addEventListener('scroll',()=>{const s=window.scrollY>400;stb.style.opacity=s?'1':'0';stb.style.pointerEvents=s?'auto':'none'});
   stb.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-  function toggleFaq(btn) {
-    const content = btn.nextElementSibling;
-    const icon = btn.querySelector('i');
-    const isOpen = content.classList.contains('open');
-    // Close all
-    document.querySelectorAll('.faq-content.open').forEach(c=>{ c.classList.remove('open'); c.previousElementSibling.querySelector('i').style.transform=''; });
-    if(!isOpen){ content.classList.add('open'); icon.style.transform='rotate(45deg)'; }
+  function toggleFaq(btn){
+    const content=btn.nextElementSibling;
+    const icon=btn.querySelector('i');
+    const isOpen=content.classList.contains('open');
+    document.querySelectorAll('.faq-content.open').forEach(c=>{c.classList.remove('open');c.previousElementSibling.querySelector('i').style.transform='';});
+    if(!isOpen){content.classList.add('open');icon.style.transform='rotate(45deg)';}
   }
 </script>
 </body>
